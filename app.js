@@ -489,8 +489,11 @@ function renderChart() {
     });
 
     // 3. Build Datasets
-    const datasets = [
-        {
+    const datasets = [];
+    
+    // Only add 'Total General' if more than one category is selected OR if none are
+    if (State.activeCategories.size !== 1) {
+        datasets.push({
             label: 'Total General',
             data: allQs.map(q => qTotals[q] || 0),
             borderColor: '#f8fafc',
@@ -498,8 +501,8 @@ function renderChart() {
             backgroundColor: 'transparent',
             tension: 0.3,
             fill: false
-        }
-    ];
+        });
+    }
 
     Object.entries(CategoryMapper.CATEGORIES).forEach(([id, catInfo]) => {
         if(State.activeCategories.has(id)) {
