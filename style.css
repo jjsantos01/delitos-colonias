@@ -124,6 +124,8 @@ body.dark-theme {
     font-size: 0.85rem;
     color: var(--text-secondary);
     font-weight: 500;
+    padding-right: 65px;
+    min-height: 2.2rem; /* Keep height uniform */
 }
 
 .kpi-value {

@@ -30,25 +30,27 @@ class CKANClient {
         `);
     }
 
-    static getQuarterlyData(colonia) {
+    static getQuarterlyData(alcaldia, colonia) {
         return this.fetchSQL(`
             SELECT anio_hecho,
                    EXTRACT(QUARTER FROM fecha_hecho)::int AS trimestre,
                    delito,
                    COUNT(*) AS total
             FROM "${RESOURCE_ID}"
-            WHERE colonia_hecho = '${colonia.replace(/'/g, "''")}'
+            WHERE alcaldia_hecho = '${alcaldia.replace(/'/g, "''")}'
+              AND colonia_hecho = '${colonia.replace(/'/g, "''")}'
               AND anio_hecho >= 2019
             GROUP BY anio_hecho, trimestre, delito
             ORDER BY anio_hecho, trimestre
         `);
     }
 
-    static getMapPoints(colonia, year, quarter) {
+    static getMapPoints(alcaldia, colonia, year, quarter) {
         return this.fetchSQL(`
             SELECT latitud, longitud, delito, fecha_hecho
             FROM "${RESOURCE_ID}"
-            WHERE colonia_hecho = '${colonia.replace(/'/g, "''")}'
+            WHERE alcaldia_hecho = '${alcaldia.replace(/'/g, "''")}'
+              AND colonia_hecho = '${colonia.replace(/'/g, "''")}'
               AND anio_hecho = ${year}
               AND EXTRACT(QUARTER FROM fecha_hecho) = ${quarter}
               AND latitud IS NOT NULL
@@ -245,7 +247,7 @@ async function onColoniaChange(colonia) {
     UI.showLoading(true);
     try {
         // Fetch Aggregated data
-        State.coloniaData = await CKANClient.getQuarterlyData(colonia);
+        State.coloniaData = await CKANClient.getQuarterlyData(State.selectedAlcaldia, colonia);
         
         // Add macro category to raw data natively
         State.coloniaData.forEach(r => {
@@ -286,7 +288,7 @@ async function onTrimestreChange(qKey, forceMapFetch = false) {
     if (changed || forceMapFetch) {
         UI.showLoading(true);
         try {
-            State.mapPoints = await CKANClient.getMapPoints(State.selectedColonia, State.selectedYear, State.selectedQuarter);
+            State.mapPoints = await CKANClient.getMapPoints(State.selectedAlcaldia, State.selectedColonia, State.selectedYear, State.selectedQuarter);
         } catch (e) {
             console.error("Map fetch failed", e);
             State.mapPoints = [];
@@ -532,6 +534,11 @@ function renderKPIs() {
     const qoqPct = prevQVal > 0 ? ((curVal - prevQVal) / prevQVal) * 100 : 0;
     const yoyPct = prevYQVal > 0 ? ((curVal - prevYQVal) / prevYQVal) * 100 : 0;
     const ytdPct = prevYTD > 0 ? ((curYTD - prevYTD) / prevYTD) * 100 : 0;
+
+    // Render DOM Labels
+    document.getElementById('lbl-prev-q').textContent = `(${prevQKey})`;
+    document.getElementById('lbl-yoy-q').textContent = `(${prevYQKey})`;
+    document.getElementById('lbl-ytd-q').textContent = `(${y-1})`;
 
     // Render DOM
     document.getElementById('kpi-total').textContent = curVal.toLocaleString();
