@@ -165,6 +165,8 @@ async function init() {
         initChart();
         buildCategoryCheckboxes();
         setupShareButton();
+        setupExportPDF();
+        setupAdvancedFiltersToggle();
         
         State.catalog = await CKANClient.getCatalog();
         initSelects();
@@ -190,9 +192,11 @@ function updateUrlState() {
     const newUrl = `${window.location.pathname}?${params.toString()}`;
     window.history.replaceState({}, '', newUrl);
     
-    // Show share button
+    // Show share & export buttons
     const shareBtn = document.getElementById('btn-share');
-    if(shareBtn) shareBtn.style.display = 'block';
+    if(shareBtn) shareBtn.style.display = 'inline-flex';
+    const exportBtn = document.getElementById('btn-export-pdf');
+    if(exportBtn) exportBtn.style.display = 'inline-flex';
 }
 
 function loadInitialStateFromUrl() {
@@ -224,10 +228,153 @@ function setupShareButton() {
             try {
                 await navigator.clipboard.writeText(window.location.href);
                 const prevText = shareBtn.innerHTML;
-                shareBtn.innerHTML = '✅ Copiado!';
+                shareBtn.innerHTML = '✅ <span class="btn-label">Copiado!</span>';
                 setTimeout(() => shareBtn.innerHTML = prevText, 2000);
             } catch (err) {
                 alert("No se pudo copiar el enlace automáticamente. Copia la URL de tu navegador.");
+            }
+        });
+    }
+}
+
+function setupExportPDF() {
+    const exportBtn = document.getElementById('btn-export-pdf');
+    if(exportBtn) {
+        exportBtn.addEventListener('click', exportPDF);
+    }
+}
+
+// Lazy-load a script and return a promise
+function loadScript(src) {
+    return new Promise((resolve, reject) => {
+        // Check if already loaded
+        if (document.querySelector(`script[src="${src}"]`)) {
+            resolve();
+            return;
+        }
+        const script = document.createElement('script');
+        script.src = src;
+        script.onload = resolve;
+        script.onerror = () => reject(new Error(`Failed to load ${src}`));
+        document.head.appendChild(script);
+    });
+}
+
+let pdfLibsLoaded = false;
+
+async function ensurePDFLibs() {
+    if (pdfLibsLoaded && typeof html2canvas !== 'undefined' && typeof jspdf !== 'undefined') return;
+    await Promise.all([
+        loadScript('https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js'),
+        loadScript('https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js')
+    ]);
+    pdfLibsLoaded = true;
+}
+
+async function exportPDF() {
+    const btn = document.getElementById('btn-export-pdf');
+    const prevHTML = btn.innerHTML;
+    btn.innerHTML = '⏳ <span class="btn-label">Cargando...</span>';
+    btn.disabled = true;
+
+    try {
+        await ensurePDFLibs();
+
+        btn.innerHTML = '⏳ <span class="btn-label">Generando...</span>';
+
+        const { jsPDF } = jspdf;
+        const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'letter' });
+        const pageW = pdf.internal.pageSize.getWidth();
+        const margin = 12;
+        const contentW = pageW - margin * 2;
+        let cursorY = margin;
+
+        // Title
+        pdf.setFontSize(16);
+        pdf.setFont('helvetica', 'bold');
+        pdf.text('Reporte trimestral de delitos — CDMX', margin, cursorY + 6);
+        cursorY += 10;
+        pdf.setFontSize(10);
+        pdf.setFont('helvetica', 'normal');
+        pdf.setTextColor(100);
+        pdf.text(`${State.selectedAlcaldia} — ${State.selectedColonia} | Trimestre: ${State.selectedYear}-Q${State.selectedQuarter}`, margin, cursorY + 4);
+        pdf.setTextColor(0);
+        cursorY += 10;
+
+        // Helper to capture a section
+        async function captureSection(elementId) {
+            const el = document.getElementById(elementId);
+            if (!el || el.offsetHeight === 0) return null;
+            const canvas = await html2canvas(el, {
+                backgroundColor: '#0f172a',
+                scale: 2,
+                useCORS: true,
+                logging: false
+            });
+            return canvas;
+        }
+
+        // KPIs
+        const kpiCanvas = await captureSection('section-kpis');
+        if (kpiCanvas) {
+            const kpiH = (kpiCanvas.height / kpiCanvas.width) * contentW;
+            pdf.addImage(kpiCanvas.toDataURL('image/png'), 'PNG', margin, cursorY, contentW, kpiH);
+            cursorY += kpiH + 6;
+        }
+
+        // Chart
+        const chartCanvas = await captureSection('section-chart-historical');
+        if (chartCanvas) {
+            const chartH = (chartCanvas.height / chartCanvas.width) * contentW;
+            if (cursorY + chartH > pdf.internal.pageSize.getHeight() - margin) {
+                pdf.addPage();
+                cursorY = margin;
+            }
+            pdf.addImage(chartCanvas.toDataURL('image/png'), 'PNG', margin, cursorY, contentW, chartH);
+            cursorY += chartH + 6;
+        }
+
+        // Map
+        const mapCanvas = await captureSection('section-map');
+        if (mapCanvas) {
+            const mapH = (mapCanvas.height / mapCanvas.width) * contentW;
+            if (cursorY + mapH > pdf.internal.pageSize.getHeight() - margin) {
+                pdf.addPage();
+                cursorY = margin;
+            }
+            pdf.addImage(mapCanvas.toDataURL('image/png'), 'PNG', margin, cursorY, contentW, mapH);
+            cursorY += mapH + 6;
+        }
+
+        // Footer
+        const footerY = pdf.internal.pageSize.getHeight() - 8;
+        pdf.setFontSize(7);
+        pdf.setTextColor(150);
+        pdf.text('Fuente: Datos abiertos de la Fiscalía General de Justicia de CDMX vía datos.cdmx.gob.mx', margin, footerY);
+        pdf.text(`Generado: ${new Date().toLocaleDateString('es-MX')}`, pageW - margin - 35, footerY);
+
+        const filename = `delitos_cdmx_${State.selectedColonia.replace(/\s+/g, '_')}_${State.selectedYear}Q${State.selectedQuarter}.pdf`;
+        pdf.save(filename);
+    } catch (e) {
+        console.error('PDF Export Error:', e);
+        alert('Error al generar el PDF. Revisa la consola.');
+    } finally {
+        btn.innerHTML = prevHTML;
+        btn.disabled = false;
+    }
+}
+
+function setupAdvancedFiltersToggle() {
+    const details = document.getElementById('advanced-filters');
+    if(details) {
+        // On desktop (≥1024px), always open since summary is hidden by CSS
+        if(window.matchMedia('(min-width: 1024px)').matches) {
+            details.open = true;
+        }
+        details.addEventListener('toggle', () => {
+            // Re-invalidate map size when filters panel expands/collapses on mobile
+            if(UI.map) {
+                setTimeout(() => UI.map.invalidateSize(), 200);
             }
         });
     }

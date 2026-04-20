@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CDMX Delitos por Colonia</title>
-    
+    <title>Delitos por Colonia CDMX</title>
+    <meta name="description" content="Consulta los delitos reportados en tu colonia de la Ciudad de México. Datos abiertos con gráficas, mapas y comparativas trimestrales.">
+    <meta property="og:title" content="Delitos por Colonia CDMX">
+    <meta property="og:description" content="Consulta en tiempo real los delitos reportados por colonia en CDMX con datos oficiales abiertos.">
+    <meta property="og:type" content="website">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,51 +27,75 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-theme">
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="app-header">
+        <div class="header-inner">
+            <div class="header-brand">
+                <span class="header-shield" aria-hidden="true">🛡️</span>
+                <div class="header-text">
+                    <h1 class="app-title">Reporte trimestral de delitos por colonia en CDMX</h1>
+                    <p class="app-subtitle">Consulta los delitos reportados en tu colonia</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button id="btn-share" class="btn-action" title="Copiar enlace a este reporte" style="display:none;">
+                    🔗 <span class="btn-label">Compartir</span>
+                </button>
+                <button id="btn-export-pdf" class="btn-action btn-export-pdf" title="Exportar reporte en PDF" style="display:none;">
+                    📄 <span class="btn-label">PDF</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
     <div class="dashboard-container">
         
-        <!-- Sidebar -->
-        <aside class="sidebar glass-panel">
-            <div class="sidebar-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <h1 class="app-title" style="margin-bottom: 0;">CDMX Delitos por Colonia</h1>
-                <button id="btn-share" title="Copiar enlace a este reporte" style="background: rgba(56, 189, 248, 0.2); border: 1px solid rgba(56,189,248,0.5); color: #38bdf8; border-radius: 6px; padding: 6px 10px; cursor: pointer; display: none; font-size: 0.85rem; font-family: var(--font-main); font-weight: 500; transition: background 0.2s;">🔗 Compartir</button>
-            </div>
-            
-            <div class="control-group">
-                <label for="alcaldia-select">Alcaldía</label>
-                <select id="alcaldia-select" placeholder="Selecciona Alcaldía..."></select>
-            </div>
-            
-            <div class="control-group">
-                <label for="colonia-select">Colonia</label>
-                <select id="colonia-select" placeholder="Selecciona Colonia..." disabled></select>
-            </div>
-
-            <div class="control-group">
-                <label for="trimestre-select">Trimestre de Análisis (Para KPIs y Mapa)</label>
-                <select id="trimestre-select" placeholder="Selecciona Trimestre..." disabled></select>
-            </div>
-
-            <hr class="divider">
-
-            <div class="control-group categories-filter">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <label>Macro-Categorías</label>
-                    <label style="font-size: 0.8rem; cursor: pointer; display: flex; align-items: center; gap: 4px; color: var(--text-primary);">
-                        <input type="checkbox" id="toggle-all-cats" checked> Todas
-                    </label>
+        <!-- ═══ SIDEBAR / FILTERS ═══ -->
+        <aside class="sidebar" id="sidebar-filters">
+            <!-- Primary Filters (always visible) -->
+            <div class="primary-filters">
+                <div class="control-group">
+                    <label for="alcaldia-select">Alcaldía</label>
+                    <select id="alcaldia-select" placeholder="Selecciona Alcaldía..."></select>
                 </div>
-                <div id="category-checkboxes" class="checkbox-container">
-                    <!-- Checkboxes will be injected here JS -->
+                
+                <div class="control-group">
+                    <label for="colonia-select">Colonia</label>
+                    <select id="colonia-select" placeholder="Selecciona Colonia..." disabled></select>
+                </div>
+
+                <div class="control-group">
+                    <label for="trimestre-select">Trimestre (KPIs y Mapa)</label>
+                    <select id="trimestre-select" placeholder="Selecciona Trimestre..." disabled></select>
                 </div>
             </div>
 
-            <div class="control-group">
-                <label for="delito-select">Sub-filtro (Delito Específico)</label>
-                <select id="delito-select" multiple placeholder="Todos los delitos..."></select>
-            </div>
+            <!-- Advanced Filters (collapsible on mobile, always open on desktop) -->
+            <details class="advanced-filters" id="advanced-filters">
+                <summary>⚙️ Filtros avanzados</summary>
+                <div class="advanced-filters-body">
+                    <div class="control-group categories-filter">
+                        <div class="categories-header">
+                            <label>Macro-Categorías</label>
+                            <label class="toggle-all-label">
+                                <input type="checkbox" id="toggle-all-cats" checked> Todas
+                            </label>
+                        </div>
+                        <div id="category-checkboxes" class="checkbox-container">
+                            <!-- Checkboxes injected by JS -->
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="delito-select">Sub-filtro (Delito Específico)</label>
+                        <select id="delito-select" multiple placeholder="Todos los delitos..."></select>
+                    </div>
+                </div>
+            </details>
         </aside>
 
-        <!-- Main Content -->
+        <!-- ═══ MAIN CONTENT ═══ -->
         <main class="main-content">
             <div id="loading-overlay" class="loading-overlay active">
                 <div class="spinner"></div>
@@ -76,40 +104,40 @@
 
             <div class="content-wrapper" id="content-wrapper" style="display: none;">
                 <!-- KPI Cards -->
-                <section class="kpi-grid">
+                <section class="kpi-grid" id="section-kpis">
                     <div class="kpi-card glass-panel">
                         <h3>Total Delitos (<span class="kpi-q-label">Q</span>)</h3>
                         <div class="kpi-value" id="kpi-total">0</div>
                     </div>
                     <div class="kpi-card glass-panel">
-                        <h3>vs Trimestre Anterior <span id="lbl-prev-q" style="font-size: 0.8em; font-weight: normal; opacity: 0.8;"></span></h3>
+                        <h3>vs Trimestre Anterior <span id="lbl-prev-q" style="font-size:0.85em;font-weight:normal;opacity:0.8;"></span></h3>
                         <div class="kpi-value-small" id="kpi-prev-total">0</div>
                         <div class="kpi-badge" id="kpi-qoq-badge">-</div>
                     </div>
                     <div class="kpi-card glass-panel">
-                        <h3>vs Mismo Trimestre (Año Ant.) <span id="lbl-yoy-q" style="font-size: 0.8em; font-weight: normal; opacity: 0.8;"></span></h3>
+                        <h3>vs Mismo Trim. Año Ant. <span id="lbl-yoy-q" style="font-size:0.85em;font-weight:normal;opacity:0.8;"></span></h3>
                         <div class="kpi-value-small" id="kpi-yoy-total">0</div>
                         <div class="kpi-badge" id="kpi-yoy-badge">-</div>
                     </div>
                     <div class="kpi-card glass-panel">
-                        <h3>YTD vs YTD Año Anterior <span id="lbl-ytd-q" style="font-size: 0.8em; font-weight: normal; opacity: 0.8;"></span></h3>
+                        <h3>YTD vs YTD Año Anterior <span id="lbl-ytd-q" style="font-size:0.85em;font-weight:normal;opacity:0.8;"></span></h3>
                         <div class="kpi-value-small"><span id="kpi-ytd-total">0</span> vs <span id="kpi-ytd-prev-total">0</span></div>
                         <div class="kpi-badge" id="kpi-ytd-badge">-</div>
                     </div>
                 </section>
 
-                <div class="charts-map-grid">
+                <div class="charts-map-grid" id="section-charts">
                     <!-- Line Chart -->
-                    <section class="chart-container glass-panel">
-                        <h2>Evolución Histórica por Trimestre</h2>
+                    <section class="chart-container glass-panel" id="section-chart-historical">
+                        <h2>📈 Evolución Histórica por Trimestre</h2>
                         <div class="canvas-wrapper">
                             <canvas id="historicalChart"></canvas>
                         </div>
                     </section>
 
                     <!-- Map -->
-                    <section class="map-container glass-panel">
-                        <h2>Mapa de Incidentes (<span class="kpi-q-label">Q</span>)</h2>
+                    <section class="map-container glass-panel" id="section-map">
+                        <h2>📍 Mapa de Incidentes (<span class="kpi-q-label">Q</span>)</h2>
                         <div id="crimeMap"></div>
                     </section>
                 </div>
@@ -118,16 +146,36 @@
             <div id="empty-state" class="empty-state">
                 <div class="icon-placeholder">📍</div>
                 <h2>Selecciona una Colonia</h2>
-                <p>Elige una alcaldía y una colonia en la barra lateral para ver los datos históricos y el mapa.</p>
+                <p>Elige una alcaldía y una colonia para ver los datos históricos de delitos y el mapa de incidentes.</p>
             </div>
+
+            <!-- ═══ FOOTER (inside main so it scrolls on desktop) ═══ -->
+            <footer class="app-footer" id="app-footer">
+                <div class="footer-inner">
+                    <div class="footer-source">
+                        <span>📊</span>
+                        <span>Fuente: Datos abiertos de la <strong>Fiscalía General de Justicia de CDMX</strong> vía <a href="https://datos.cdmx.gob.mx" target="_blank" rel="noopener" style="color:var(--accent-cyan);text-decoration:none">datos.cdmx.gob.mx</a></span>
+                    </div>
+                    <div class="footer-links">
+                        <a href="https://github.com/jjsantos01/delitos-colonias" target="_blank" rel="noopener">🐙 GitHub</a>
+                    </div>
+                    <div class="footer-divider"></div>
+                    <div class="footer-copy">
+                        Herramienta ciudadana de consulta · No oficial · Datos públicos actualizados periódicamente
+                    </div>
+                </div>
+            </footer>
         </main>
     </div>
+
+
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js" crossorigin=""></script>
+
     <script type="module" src="app.js"></script>
 </body>
 </html>
