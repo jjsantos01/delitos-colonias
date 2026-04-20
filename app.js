@@ -164,13 +164,72 @@ async function init() {
         await initMap();
         initChart();
         buildCategoryCheckboxes();
+        setupShareButton();
         
         State.catalog = await CKANClient.getCatalog();
         initSelects();
+        loadInitialStateFromUrl();
     } catch (e) {
         alert("Error cargando el catálogo de colonias. Revisa la consola.");
     } finally {
         UI.showLoading(false);
+    }
+}
+
+// ==========================================
+// URL State & Share Logic
+// ==========================================
+function updateUrlState() {
+    if(!State.selectedAlcaldia || !State.selectedColonia) return;
+    const params = new URLSearchParams();
+    params.set('alcaldia', State.selectedAlcaldia);
+    params.set('colonia', State.selectedColonia);
+    if(State.selectedYear && State.selectedQuarter) {
+        params.set('q', `${State.selectedYear}-Q${State.selectedQuarter}`);
+    }
+    const newUrl = `${window.location.pathname}?${params.toString()}`;
+    window.history.replaceState({}, '', newUrl);
+    
+    // Show share button
+    const shareBtn = document.getElementById('btn-share');
+    if(shareBtn) shareBtn.style.display = 'block';
+}
+
+function loadInitialStateFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const alcaldiaUrl = params.get('alcaldia');
+    const coloniaUrl = params.get('colonia');
+    const qUrl = params.get('q'); 
+    
+    if(qUrl) State.urlRequestedQ = qUrl;
+
+    if (alcaldiaUrl) {
+        // Find if alcaldia exists in TomSelect options
+        const match = Object.keys(UI.alcaldiaSelect.options).find(k => k === alcaldiaUrl);
+        if(match) {
+            UI.alcaldiaSelect.setValue(match); 
+            if (coloniaUrl) {
+                setTimeout(() => {
+                    UI.coloniaSelect.setValue(coloniaUrl);
+                }, 100);
+            }
+        }
+    }
+}
+
+function setupShareButton() {
+    const shareBtn = document.getElementById('btn-share');
+    if(shareBtn) {
+        shareBtn.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(window.location.href);
+                const prevText = shareBtn.innerHTML;
+                shareBtn.innerHTML = '✅ Copiado!';
+                setTimeout(() => shareBtn.innerHTML = prevText, 2000);
+            } catch (err) {
+                alert("No se pudo copiar el enlace automáticamente. Copia la URL de tu navegador.");
+            }
+        });
     }
 }
 
@@ -323,6 +382,7 @@ async function onTrimestreChange(qKey, forceMapFetch = false) {
         }
     }
     
+    updateUrlState();
     applyFiltersAndRender();
 }
 
@@ -342,8 +402,11 @@ function updateTrimestreChoices() {
     if(qKeys.length > 0) {
         UI.trimestreSelect.addOption(qKeys.map(q => ({value: q, text: q})));
         UI.trimestreSelect.enable();
-        // Select most recent by default
-        if(!State.selectedYear) {
+        // Respond to URL param first if it exists
+        if(State.urlRequestedQ && qKeys.includes(State.urlRequestedQ)) {
+            UI.trimestreSelect.setValue(State.urlRequestedQ);
+            State.urlRequestedQ = null; // consume it
+        } else if(!State.selectedYear) {
             UI.trimestreSelect.setValue(qKeys[0]);
         } else {
             const currentQKey = `${State.selectedYear}-Q${State.selectedQuarter}`;
