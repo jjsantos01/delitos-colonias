@@ -113,7 +113,8 @@ const State = {
     selectedQuarter: null,
     
     activeCategories: new Set(Object.keys(CategoryMapper.CATEGORIES)),
-    selectedDelitos: []   // Empty means all
+    selectedDelitos: [],  // Empty means all
+    heatmapMode: false
 };
 
 const UI = {
@@ -130,7 +131,8 @@ const UI = {
     // Subcomponents
     chart: null,
     map: null,
-    clusterGroup: null,
+    pointsGroup: null,
+    heatLayer: null,
     
     showLoading(show) { show ? this.loading.classList.add('active') : this.loading.classList.remove('active'); },
     showContent(show) { 
@@ -167,6 +169,7 @@ async function init() {
         setupShareButton();
         setupExportPDF();
         setupAdvancedFiltersToggle();
+        setupHeatmapToggle();
         
         State.catalog = await CKANClient.getCatalog();
         initSelects();
@@ -376,6 +379,16 @@ function setupAdvancedFiltersToggle() {
             if(UI.map) {
                 setTimeout(() => UI.map.invalidateSize(), 200);
             }
+        });
+    }
+}
+
+function setupHeatmapToggle() {
+    const cb = document.getElementById('toggle-heatmap-cb');
+    if(cb) {
+        cb.addEventListener('change', (e) => {
+            State.heatmapMode = e.target.checked;
+            renderMap();
         });
     }
 }
@@ -605,16 +618,16 @@ async function initMap() {
         maxZoom: 19
     }).addTo(UI.map);
 
-    UI.clusterGroup = L.markerClusterGroup({
-        chunkedLoading: true,
-        maxClusterRadius: 40
-    });
-    UI.map.addLayer(UI.clusterGroup);
+    UI.pointsGroup = L.layerGroup();
+    if(typeof L.heatLayer === 'function') {
+        UI.heatLayer = L.heatLayer([], {radius: 20, blur: 15, maxZoom: 16});
+    }
+    UI.map.addLayer(UI.pointsGroup);
 }
 
 function renderMap() {
     if(!UI.map) return;
-    UI.clusterGroup.clearLayers();
+    if(UI.pointsGroup) UI.pointsGroup.clearLayers();
     
     let bounds = L.latLngBounds();
     let hasPoints = false;
@@ -627,23 +640,44 @@ function renderMap() {
         return catMatch && subDelitoMatch;
     });
 
+    if(State.heatmapMode) {
+        if(UI.map.hasLayer(UI.pointsGroup)) UI.map.removeLayer(UI.pointsGroup);
+        if(UI.heatLayer && !UI.map.hasLayer(UI.heatLayer)) UI.map.addLayer(UI.heatLayer);
+    } else {
+        if(UI.heatLayer && UI.map.hasLayer(UI.heatLayer)) UI.map.removeLayer(UI.heatLayer);
+        if(UI.pointsGroup && !UI.map.hasLayer(UI.pointsGroup)) UI.map.addLayer(UI.pointsGroup);
+    }
+
+    const heatData = [];
+
     filteredPoints.forEach(p => {
-        const cat = CategoryMapper.classify(p.delito);
-        const catConfig = CategoryMapper.CATEGORIES[cat];
-        
-        // Custom dot marker
-        const markerHTML = `<div style="background-color: ${catConfig.color}; width: 10px; height: 10px; border-radius: 50%; border: 1px solid white;"></div>`;
-        const icon = L.divIcon({ html: markerHTML, className: '', iconSize: [12, 12] });
-
-        const dDate = new Date(p.fecha_hecho).toLocaleDateString('es-MX', {timeZone: 'UTC'});
-
-        const marker = L.marker([p.latitud, p.longitud], {icon})
-            .bindPopup(`<strong>${p.delito}</strong><br/>${catConfig.label}<br/><em>${dDate}</em>`);
-        
-        UI.clusterGroup.addLayer(marker);
-        bounds.extend([p.latitud, p.longitud]);
+        const lat = p.latitud;
+        const lng = p.longitud;
+        bounds.extend([lat, lng]);
         hasPoints = true;
+
+        if (State.heatmapMode) {
+            heatData.push([lat, lng, 1.0]);
+        } else {
+            const cat = CategoryMapper.classify(p.delito);
+            const catConfig = CategoryMapper.CATEGORIES[cat];
+            
+            // Custom dot marker
+            const markerHTML = `<div style="background-color: ${catConfig.color}; width: 10px; height: 10px; border-radius: 50%; border: 1px solid white;"></div>`;
+            const icon = L.divIcon({ html: markerHTML, className: '', iconSize: [12, 12] });
+
+            const dDate = new Date(p.fecha_hecho).toLocaleDateString('es-MX', {timeZone: 'UTC'});
+
+            const marker = L.marker([lat, lng], {icon})
+                .bindPopup(`<strong>${p.delito}</strong><br/>${catConfig.label}<br/><em>${dDate}</em>`);
+            
+            UI.pointsGroup.addLayer(marker);
+        }
     });
+
+    if (State.heatmapMode && UI.heatLayer) {
+        UI.heatLayer.setLatLngs(heatData);
+    }
 
     if (hasPoints) {
         UI.map.fitBounds(bounds, {padding: [50, 50], maxZoom: 16});

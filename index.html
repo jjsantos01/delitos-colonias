@@ -20,8 +20,6 @@
 
     <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" crossorigin=""/>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" crossorigin=""/>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
@@ -137,7 +135,13 @@
 
                     <!-- Map -->
                     <section class="map-container glass-panel" id="section-map">
-                        <h2>📍 Mapa de Incidentes (<span class="kpi-q-label">Q</span>)</h2>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                            <h2 style="margin-bottom: 0;">📍 Mapa de Incidentes (<span class="kpi-q-label">Q</span>)</h2>
+                            <label style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer;" title="Mostrar como mapa de calor">
+                                Mapa de calor
+                                <input type="checkbox" id="toggle-heatmap-cb" style="cursor: pointer; width: 16px; height: 16px; accent-color: var(--accent-cyan);">
+                            </label>
+                        </div>
                         <div id="crimeMap"></div>
                     </section>
                 </div>
@@ -174,7 +178,7 @@
     <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js" crossorigin=""></script>
 
     <script type="module" src="app.js"></script>
 </body>
