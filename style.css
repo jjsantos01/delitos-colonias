@@ -1,0 +1,301 @@
+:root {
+    --bg-base: #0f172a;
+    --bg-glass: rgba(30, 41, 59, 0.7);
+    --border-glass: rgba(255, 255, 255, 0.1);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-red: #ef4444;    /* Robos */
+    --accent-purple: #a855f7; /* Violencia y Lesiones */
+    --accent-yellow: #eab308; /* Patrimoniales */
+    --accent-blue: #3b82f6;   /* Sexuales */
+    --accent-gray: #6b7280;   /* Otros */
+    --font-main: 'Inter', sans-serif;
+    
+    --success: #10b981;
+    --danger: #ef4444;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body.dark-theme {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Layout */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-glass);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 320px;
+    min-width: 320px;
+    height: calc(100vh - 32px);
+    margin: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.app-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid var(--border-glass);
+    margin: 8px 0;
+}
+
+/* Form Controls */
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.control-group label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    height: 100vh;
+    padding: 16px 16px 16px 0;
+    position: relative;
+    overflow-y: auto;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+}
+
+/* KPI Grid */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.kpi-card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.kpi-card h3 {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.kpi-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.kpi-value-small {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.kpi-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: rgba(255,255,255,0.1);
+}
+
+.kpi-badge.up-bad { background: rgba(239, 68, 68, 0.2); color: #fca5a5; }
+.kpi-badge.down-good { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; }
+
+/* Charts and Map */
+.charts-map-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(300px, 1.5fr) minmax(350px, 1.5fr);
+    gap: 16px;
+    flex: 1;
+}
+
+@media (min-width: 1200px) {
+    .charts-map-grid {
+        grid-template-columns: 1.5fr 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+.chart-container, .map-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-container h2, .map-container h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.canvas-wrapper {
+    flex: 1;
+    position: relative;
+    min-height: 250px;
+}
+
+#crimeMap {
+    flex: 1;
+    border-radius: 8px;
+    background: #1e293b;
+    z-index: 1;
+}
+
+/* Checkboxes */
+.checkbox-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.category-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    transition: opacity 0.2s;
+}
+
+.category-checkbox:hover {
+    opacity: 0.8;
+}
+
+.cat-color-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* TomSelect Customization for Dark theme */
+.ts-control {
+    background: rgba(15, 23, 42, 0.6) !important;
+    border: 1px solid var(--border-glass) !important;
+    color: var(--text-primary) !important;
+    border-radius: 8px !important;
+}
+.ts-control input { color: var(--text-primary) !important; }
+.ts-dropdown {
+    background: #1e293b !important;
+    border: 1px solid var(--border-glass) !important;
+    color: var(--text-primary) !important;
+}
+.ts-dropdown .option.active { background: rgba(56, 189, 248, 0.2) !important; color: #38bdf8 !important; }
+
+/* Empty State / Loading */
+.empty-state {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--text-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    max-width: 400px;
+}
+
+.icon-placeholder {
+    font-size: 4rem;
+}
+
+.loading-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.2s, opacity 0.2s;
+}
+
+.loading-overlay.active {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+    border-top-color: #38bdf8;
+    animation: spin 1s ease-in-out infinite;
+    margin-bottom: 16px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Map Popups Dark Theme */
+.leaflet-popup-content-wrapper {
+    background: var(--bg-base) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-glass);
+}
+.leaflet-popup-tip { background: var(--bg-base) !important; }

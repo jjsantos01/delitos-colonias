@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDMX Delitos por Colonia</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- TomSelect (Autocomplete) -->
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.default.css" rel="stylesheet">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" crossorigin=""/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <div class="dashboard-container">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar glass-panel">
+            <h1 class="app-title">CDMX Delitos por Colonia</h1>
+            
+            <div class="control-group">
+                <label for="alcaldia-select">Alcaldía</label>
+                <select id="alcaldia-select" placeholder="Selecciona Alcaldía..."></select>
+            </div>
+            
+            <div class="control-group">
+                <label for="colonia-select">Colonia</label>
+                <select id="colonia-select" placeholder="Selecciona Colonia..." disabled></select>
+            </div>
+
+            <div class="control-group">
+                <label for="trimestre-select">Trimestre de Análisis (Para KPIs y Mapa)</label>
+                <select id="trimestre-select" placeholder="Selecciona Trimestre..." disabled></select>
+            </div>
+
+            <hr class="divider">
+
+            <div class="control-group categories-filter">
+                <label>Macro-Categorías</label>
+                <div id="category-checkboxes" class="checkbox-container">
+                    <!-- Checkboxes will be injected here JS -->
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="delito-select">Sub-filtro (Delito Específico)</label>
+                <select id="delito-select" multiple placeholder="Todos los delitos..."></select>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div id="loading-overlay" class="loading-overlay active">
+                <div class="spinner"></div>
+                <p>Cargando datos...</p>
+            </div>
+
+            <div class="content-wrapper" id="content-wrapper" style="display: none;">
+                <!-- KPI Cards -->
+                <section class="kpi-grid">
+                    <div class="kpi-card glass-panel">
+                        <h3>Total Delitos (<span class="kpi-q-label">Q</span>)</h3>
+                        <div class="kpi-value" id="kpi-total">0</div>
+                    </div>
+                    <div class="kpi-card glass-panel">
+                        <h3>vs Trimestre Anterior</h3>
+                        <div class="kpi-value-small" id="kpi-prev-total">0</div>
+                        <div class="kpi-badge" id="kpi-qoq-badge">-</div>
+                    </div>
+                    <div class="kpi-card glass-panel">
+                        <h3>vs Mismo Trimestre (Año Ant.)</h3>
+                        <div class="kpi-value-small" id="kpi-yoy-total">0</div>
+                        <div class="kpi-badge" id="kpi-yoy-badge">-</div>
+                    </div>
+                    <div class="kpi-card glass-panel">
+                        <h3>YTD vs YTD Año Anterior</h3>
+                        <div class="kpi-value-small"><span id="kpi-ytd-total">0</span> vs <span id="kpi-ytd-prev-total">0</span></div>
+                        <div class="kpi-badge" id="kpi-ytd-badge">-</div>
+                    </div>
+                </section>
+
+                <div class="charts-map-grid">
+                    <!-- Line Chart -->
+                    <section class="chart-container glass-panel">
+                        <h2>Evolución Histórica por Trimestre</h2>
+                        <div class="canvas-wrapper">
+                            <canvas id="historicalChart"></canvas>
+                        </div>
+                    </section>
+
+                    <!-- Map -->
+                    <section class="map-container glass-panel">
+                        <h2>Mapa de Incidentes (<span class="kpi-q-label">Q</span>)</h2>
+                        <div id="crimeMap"></div>
+                    </section>
+                </div>
+            </div>
+            
+            <div id="empty-state" class="empty-state">
+                <div class="icon-placeholder">📍</div>
+                <h2>Selecciona una Colonia</h2>
+                <p>Elige una alcaldía y una colonia en la barra lateral para ver los datos históricos y el mapa.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js" crossorigin=""></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
