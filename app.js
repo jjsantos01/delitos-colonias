@@ -205,17 +205,41 @@ function buildCategoryCheckboxes() {
         const label = document.createElement('label');
         label.className = 'category-checkbox';
         label.innerHTML = `
-            <input type="checkbox" value="${id}" checked>
+            <input type="checkbox" value="${id}" class="cat-cb" checked>
             <span class="cat-color-dot" style="background-color: ${cat.color}"></span>
             ${cat.label}
         `;
         label.querySelector('input').addEventListener('change', (e) => {
             if(e.target.checked) State.activeCategories.add(id);
             else State.activeCategories.delete(id);
+            updateToggleAllState();
             applyFiltersAndRender();
         });
         container.appendChild(label);
     });
+
+    const toggleAllCheckbox = document.getElementById('toggle-all-cats');
+    if (toggleAllCheckbox) {
+        toggleAllCheckbox.addEventListener('change', (e) => {
+            const isChecked = e.target.checked;
+            document.querySelectorAll('.cat-cb').forEach(cb => cb.checked = isChecked);
+            if (isChecked) {
+                Object.keys(CategoryMapper.CATEGORIES).forEach(id => State.activeCategories.add(id));
+            } else {
+                State.activeCategories.clear();
+            }
+            applyFiltersAndRender();
+        });
+    }
+}
+
+function updateToggleAllState() {
+    const totalCats = Object.keys(CategoryMapper.CATEGORIES).length;
+    const activeCats = State.activeCategories.size;
+    const toggleAllCheckbox = document.getElementById('toggle-all-cats');
+    if (toggleAllCheckbox) {
+        toggleAllCheckbox.checked = (totalCats === activeCats);
+    }
 }
 
 // ==========================================
@@ -247,7 +271,9 @@ async function onColoniaChange(colonia) {
     UI.showLoading(true);
     try {
         // Fetch Aggregated data
-        State.coloniaData = await CKANClient.getQuarterlyData(State.selectedAlcaldia, colonia);
+        const rawData = await CKANClient.getQuarterlyData(State.selectedAlcaldia, colonia);
+        // Exclude incomplete quarter (2025-Q1)
+        State.coloniaData = rawData.filter(r => !(r.anio_hecho == 2025 && r.trimestre == 1));
         
         // Add macro category to raw data natively
         State.coloniaData.forEach(r => {

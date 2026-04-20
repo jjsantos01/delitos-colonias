@@ -47,7 +47,12 @@
             <hr class="divider">
 
             <div class="control-group categories-filter">
-                <label>Macro-Categorías</label>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <label>Macro-Categorías</label>
+                    <label style="font-size: 0.8rem; cursor: pointer; display: flex; align-items: center; gap: 4px; color: var(--text-primary);">
+                        <input type="checkbox" id="toggle-all-cats" checked> Todas
+                    </label>
+                </div>
                 <div id="category-checkboxes" class="checkbox-container">
                     <!-- Checkboxes will be injected here JS -->
                 </div>
@@ -74,17 +79,17 @@
                         <div class="kpi-value" id="kpi-total">0</div>
                     </div>
                     <div class="kpi-card glass-panel">
-                        <h3>vs <span id="lbl-prev-q">Trimestre Anterior</span></h3>
+                        <h3>vs Trimestre Anterior <span id="lbl-prev-q" style="font-size: 0.8em; font-weight: normal; opacity: 0.8;"></span></h3>
                         <div class="kpi-value-small" id="kpi-prev-total">0</div>
                         <div class="kpi-badge" id="kpi-qoq-badge">-</div>
                     </div>
                     <div class="kpi-card glass-panel">
-                        <h3>vs <span id="lbl-yoy-q">Mismo Trimestre (Año Ant.)</span></h3>
+                        <h3>vs Mismo Trimestre (Año Ant.) <span id="lbl-yoy-q" style="font-size: 0.8em; font-weight: normal; opacity: 0.8;"></span></h3>
                         <div class="kpi-value-small" id="kpi-yoy-total">0</div>
                         <div class="kpi-badge" id="kpi-yoy-badge">-</div>
                     </div>
                     <div class="kpi-card glass-panel">
-                        <h3>YTD vs <span id="lbl-ytd-q">YTD Año Anterior</span></h3>
+                        <h3>YTD vs YTD Año Anterior <span id="lbl-ytd-q" style="font-size: 0.8em; font-weight: normal; opacity: 0.8;"></span></h3>
                         <div class="kpi-value-small"><span id="kpi-ytd-total">0</span> vs <span id="kpi-ytd-prev-total">0</span></div>
                         <div class="kpi-badge" id="kpi-ytd-badge">-</div>
                     </div>
