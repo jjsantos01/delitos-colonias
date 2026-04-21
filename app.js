@@ -605,6 +605,7 @@ function applyFiltersAndRender() {
     renderMap();
     renderChart();
     renderKPIs();
+    renderKPITable();
 }
 
 // ==========================================
@@ -832,6 +833,82 @@ function renderKPIs() {
     const bdgYTD = document.getElementById('kpi-ytd-badge');
     bdgYTD.textContent = formatPct(ytdPct);
     bdgYTD.className = `kpi-badge ${getBadgeClass(ytdPct)}`;
+}
+
+// ==========================================
+// KPI Breakdown Table
+// ==========================================
+function renderKPITable() {
+    const tbody = document.getElementById('kpi-table-body');
+    if (!tbody || !State.selectedYear || !State.selectedQuarter) return;
+
+    const y  = State.selectedYear;
+    const q  = State.selectedQuarter;
+    const currentQKey = `${y}-Q${q}`;
+    const prevQKey    = q === 1 ? `${y-1}-Q4` : `${y}-Q${q-1}`;
+    const prevYQKey   = `${y-1}-Q${q}`;
+
+    // Update column sub-labels (mirrors the KPI cards)
+    const setTxt = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+    setTxt('th-prev-q',  `(${prevQKey})`);
+    setTxt('th-yoy-q',   `(${prevYQKey})`);
+    setTxt('th-ytd-q',   `(${y-1})`);
+
+    // Aggregation helpers — operate on filteredData
+    function sumQ(data, qKey, catId) {
+        return data
+            .filter(r => r.q_key === qKey && (catId === '__ALL__' || r.macro_cat === catId))
+            .reduce((s, r) => s + parseInt(r.total), 0);
+    }
+    function sumYTD(data, yr, maxQ, catId) {
+        return data
+            .filter(r => r.anio_hecho == yr && r.trimestre <= maxQ && (catId === '__ALL__' || r.macro_cat === catId))
+            .reduce((s, r) => s + parseInt(r.total), 0);
+    }
+
+    // Badge helper
+    function badge(pct) {
+        if (pct === null) return `<span class="kpi-tbl-badge na">N/A</span>`;
+        const cls = parseFloat(pct) > 0 ? 'up-bad' : (parseFloat(pct) < 0 ? 'down-good' : '');
+        return `<span class="kpi-tbl-badge ${cls}">${formatPct(pct)}</span>`;
+    }
+    function pct(cur, prev) {
+        return prev > 0 ? ((cur - prev) / prev) * 100 : null;
+    }
+
+    // Rows: Total first, then each active category
+    const rows = [
+        { id: '__ALL__', label: 'Total', color: null, isTotal: true },
+        ...Object.entries(CategoryMapper.CATEGORIES)
+            .filter(([id]) => State.activeCategories.has(id))
+            .map(([id, cat]) => ({ id, label: cat.label, color: cat.color, isTotal: false }))
+    ];
+
+    tbody.innerHTML = '';
+
+    rows.forEach(row => {
+        const cur    = sumQ(State.filteredData, currentQKey, row.id);
+        const prevQ  = sumQ(State.filteredData, prevQKey,    row.id);
+        const prevYQ = sumQ(State.filteredData, prevYQKey,   row.id);
+        const curYTD  = sumYTD(State.filteredData, y,   q, row.id);
+        const prevYTD = sumYTD(State.filteredData, y-1, q, row.id);
+
+        const dotHtml = row.color
+            ? `<span class="kpi-table-dot" style="background:${row.color}"></span>`
+            : `<span class="kpi-table-dot" style="background:var(--accent-cyan)"></span>`;
+
+        const tr = document.createElement('tr');
+        if (row.isTotal) tr.classList.add('row-total');
+
+        tr.innerHTML = `
+            <td><div class="kpi-table-cat">${dotHtml}<span>${row.label}</span></div></td>
+            <td class="col-num">${cur.toLocaleString('es-MX')}</td>
+            <td class="col-num">${prevQ.toLocaleString('es-MX')} ${badge(pct(cur, prevQ))}</td>
+            <td class="col-num">${prevYQ.toLocaleString('es-MX')} ${badge(pct(cur, prevYQ))}</td>
+            <td class="col-num">${curYTD.toLocaleString('es-MX')} / ${prevYTD.toLocaleString('es-MX')} ${badge(pct(curYTD, prevYTD))}</td>
+        `;
+        tbody.appendChild(tr);
+    });
 }
 
 // ==========================================

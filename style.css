@@ -899,6 +899,172 @@ body.dark-theme {
 }
 
 /* ========================================
+   KPI BREAKDOWN TABLE
+   ======================================== */
+.kpi-table-section {
+    padding: 16px;
+}
+
+.kpi-table-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.kpi-table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius-sm);
+}
+
+/* Thin scrollbar */
+.kpi-table-scroll::-webkit-scrollbar { height: 3px; }
+.kpi-table-scroll::-webkit-scrollbar-track { background: transparent; }
+.kpi-table-scroll::-webkit-scrollbar-thumb { background: var(--border-glass-hover); border-radius: 3px; }
+
+.kpi-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    min-width: 560px;
+}
+
+.kpi-table thead tr {
+    border-bottom: 1px solid var(--border-glass-hover);
+}
+
+.kpi-table th {
+    padding: 8px 12px;
+    text-align: left;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+
+.kpi-table th.col-num {
+    text-align: right;
+}
+
+.kpi-table th .th-sub {
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    opacity: 0.75;
+    font-size: 0.68rem;
+}
+
+.kpi-table tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    transition: background var(--transition-base);
+}
+
+.kpi-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* Total row */
+.kpi-table tbody tr.row-total {
+    border-bottom: 1px solid var(--border-glass-hover);
+    background: rgba(56, 189, 248, 0.04);
+}
+
+.kpi-table tbody tr.row-total td {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.kpi-table td {
+    padding: 9px 12px;
+    color: var(--text-secondary);
+    vertical-align: middle;
+}
+
+.kpi-table td.col-num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+/* Category cell */
+.kpi-table-cat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    color: var(--text-primary);
+}
+
+.kpi-table-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: inline-block;
+}
+
+/* Inline badge inside table cells */
+.kpi-tbl-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 5px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    margin-left: 6px;
+    background: rgba(255, 255, 255, 0.07);
+    color: var(--text-muted);
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.kpi-tbl-badge.up-bad {
+    background: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+}
+
+.kpi-tbl-badge.down-good {
+    background: rgba(16, 185, 129, 0.15);
+    color: #6ee7b7;
+}
+
+.kpi-tbl-badge.na {
+    background: transparent;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* No data state */
+.kpi-table-empty {
+    text-align: center;
+    padding: 24px;
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.82rem;
+}
+
+@media print {
+    .kpi-table-section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    .kpi-table-scroll {
+        overflow: visible;
+    }
+    .kpi-table {
+        min-width: unset;
+        width: 100%;
+    }
+}
+
+
+
+/* ========================================
    INFO BUTTON (header variant)
    ======================================== */
 .btn-info {
@@ -1210,6 +1376,37 @@ body.dark-theme {
     border-radius: 50%;
     flex-shrink: 0;
     margin-top: 3px;
+}
+
+/* Quarter reference grid */
+.modal-quarters-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.modal-quarter-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-sm);
+    padding: 9px 12px;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+}
+
+.modal-quarter-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 5px;
+    padding: 2px 7px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 /* ── Responsive adjustments ── */
