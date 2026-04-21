@@ -1,6 +1,14 @@
 const API_URL = 'https://datos.cdmx.gob.mx/api/3/action/datastore_search_sql';
 const RESOURCE_ID = '48fcb848-220c-4af0-839b-4fd8ac812c0f';
 
+// ── Heatmap visual tuning — adjust to taste ──────────────────────────
+const HEATMAP_OPTIONS = {
+    radius: 12,   // px de radio por punto (original: 20)
+    blur:   10,   // px de desenfoque del halo (original: 15)
+    maxZoom: 16
+};
+// ─────────────────────────────────────────────────────────────────────
+
 // ==========================================
 // 1. CKAN Client
 // ==========================================
@@ -47,7 +55,7 @@ class CKANClient {
 
     static getMapPoints(alcaldia, colonia, year, quarter) {
         return this.fetchSQL(`
-            SELECT latitud, longitud, delito, fecha_hecho
+            SELECT latitud, longitud, delito, fecha_hecho, hora_hecho
             FROM "${RESOURCE_ID}"
             WHERE alcaldia_hecho = '${alcaldia.replace(/'/g, "''")}'
               AND colonia_hecho = '${colonia.replace(/'/g, "''")}'
@@ -55,6 +63,27 @@ class CKANClient {
               AND EXTRACT(QUARTER FROM fecha_hecho) = ${quarter}
               AND latitud IS NOT NULL
               AND longitud IS NOT NULL
+            LIMIT 32000
+        `);
+    }
+
+    // Query 4 — Usuario solicita descarga explícita de datos crudos del Q seleccionado.
+    // Acotado a una colonia + trimestre específico, nunca la base completa.
+    static getQuarterDetails(alcaldia, colonia, year, quarter) {
+        return this.fetchSQL(`
+            SELECT anio_inicio, mes_inicio, fecha_inicio, hora_inicio,
+                   anio_hecho, mes_hecho, fecha_hecho, hora_hecho,
+                   delito, categoria_delito, competencia,
+                   fiscalia, agencia, unidad_investigacion,
+                   colonia_hecho, colonia_catalogo,
+                   alcaldia_hecho, alcaldia_catalogo,
+                   municipio_hecho, latitud, longitud
+            FROM "${RESOURCE_ID}"
+            WHERE alcaldia_hecho = '${alcaldia.replace(/'/g, "''")}'
+              AND colonia_hecho = '${colonia.replace(/'/g, "''")}'
+              AND anio_hecho = ${year}
+              AND EXTRACT(QUARTER FROM fecha_hecho) = ${quarter}
+            ORDER BY fecha_hecho, hora_hecho
             LIMIT 32000
         `);
     }
@@ -171,6 +200,7 @@ async function init() {
         setupAdvancedFiltersToggle();
         setupHeatmapToggle();
         setupInfoModal();
+        setupDownloadCSV();
         
         State.catalog = await CKANClient.getCatalog();
         initSelects();
@@ -389,7 +419,8 @@ function setupHeatmapToggle() {
     if(cb) {
         cb.addEventListener('change', (e) => {
             State.heatmapMode = e.target.checked;
-            renderMap();
+            // preserveView=true: only switch layers, don't reset zoom/pan
+            renderMap(true);
         });
     }
 }
@@ -601,6 +632,8 @@ function applyFiltersAndRender() {
     
     // Update labels
     document.querySelectorAll('.kpi-q-label').forEach(el => el.textContent = `${State.selectedYear}-Q${State.selectedQuarter}`);
+    const coloniaLabel = document.getElementById('download-label-colonia');
+    if (coloniaLabel) coloniaLabel.textContent = State.selectedColonia;
 
     renderMap();
     renderChart();
@@ -614,20 +647,20 @@ function applyFiltersAndRender() {
 async function initMap() {
     UI.map = L.map('crimeMap').setView([19.432608, -99.133209], 11);
     
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; CartoDB',
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 19
     }).addTo(UI.map);
 
     UI.pointsGroup = L.layerGroup();
     if(typeof L.heatLayer === 'function') {
-        UI.heatLayer = L.heatLayer([], {radius: 20, blur: 15, maxZoom: 16});
+        UI.heatLayer = L.heatLayer([], HEATMAP_OPTIONS);
     }
     UI.map.addLayer(UI.pointsGroup);
 }
 
-function renderMap() {
+function renderMap(preserveView = false) {
     if(!UI.map) return;
     if(UI.pointsGroup) UI.pointsGroup.clearLayers();
     
@@ -669,9 +702,11 @@ function renderMap() {
             const icon = L.divIcon({ html: markerHTML, className: '', iconSize: [12, 12] });
 
             const dDate = new Date(p.fecha_hecho).toLocaleDateString('es-MX', {timeZone: 'UTC'});
+            const dHora = p.hora_hecho ? p.hora_hecho.slice(0, 5) : null; // HH:MM
+            const dDateTime = dHora ? `${dDate} &nbsp;🕐 ${dHora}` : dDate;
 
             const marker = L.marker([lat, lng], {icon})
-                .bindPopup(`<strong>${p.delito}</strong><br/>${catConfig.label}<br/><em>${dDate}</em>`);
+                .bindPopup(`<strong>${p.delito}</strong><br/>${catConfig.label}<br/><em>${dDateTime}</em>`);
             
             UI.pointsGroup.addLayer(marker);
         }
@@ -681,7 +716,8 @@ function renderMap() {
         UI.heatLayer.setLatLngs(heatData);
     }
 
-    if (hasPoints) {
+    // Only fit bounds when loading new data, not when just toggling layers
+    if (hasPoints && !preserveView) {
         UI.map.fitBounds(bounds, {padding: [50, 50], maxZoom: 16});
     }
     
@@ -909,6 +945,76 @@ function renderKPITable() {
         `;
         tbody.appendChild(tr);
     });
+}
+
+// ==========================================
+// CSV Download
+// ==========================================
+function setupDownloadCSV() {
+    const btn = document.getElementById('btn-download-csv');
+    if (btn) btn.addEventListener('click', downloadCSV);
+}
+
+async function downloadCSV() {
+    if (!State.selectedColonia || !State.selectedYear || !State.selectedQuarter) return;
+
+    const btn = document.getElementById('btn-download-csv');
+    const prevHTML = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '⏳ <span class="btn-label">Descargando...</span>';
+
+    try {
+        const records = await CKANClient.getQuarterDetails(
+            State.selectedAlcaldia,
+            State.selectedColonia,
+            State.selectedYear,
+            State.selectedQuarter
+        );
+
+        if (!records.length) {
+            alert('No se encontraron registros para este trimestre y colonia.');
+            return;
+        }
+
+        // Enrich with macro-category and include all dataset fields
+        const headers = [
+            'anio_inicio', 'mes_inicio', 'fecha_inicio', 'hora_inicio',
+            'anio_hecho',  'mes_hecho',  'fecha_hecho',  'hora_hecho',
+            'delito', 'categoria_delito', 'macro_categoria', 'competencia',
+            'fiscalia', 'agencia', 'unidad_investigacion',
+            'colonia_hecho', 'colonia_catalogo',
+            'alcaldia_hecho', 'alcaldia_catalogo',
+            'municipio_hecho', 'latitud', 'longitud'
+        ];
+
+        const rows = records.map(r => {
+            const macroId  = CategoryMapper.classify(r.delito);
+            const macroLbl = CategoryMapper.CATEGORIES[macroId]?.label ?? macroId;
+            const enriched = { ...r, macro_categoria: macroLbl };
+            return headers
+                .map(h => `"${String(enriched[h] ?? '').replace(/"/g, '""')}"`)
+                .join(',');
+        });
+
+        // BOM so Excel opens it in UTF-8 without encoding issues
+        const csv  = '\uFEFF' + [headers.join(','), ...rows].join('\n');
+        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        const url  = URL.createObjectURL(blob);
+        const a    = document.createElement('a');
+        a.href     = url;
+        a.download = `delitos_${State.selectedColonia.replace(/\s+/g,'_')}_${State.selectedYear}Q${State.selectedQuarter}.csv`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+    } catch (e) {
+        console.error('CSV download error:', e);
+        alert('Error al descargar los datos. Revisa la consola.');
+    } finally {
+        btn.innerHTML = prevHTML;
+        btn.disabled  = false;
+    }
 }
 
 // ==========================================
