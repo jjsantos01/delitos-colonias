@@ -1,20 +1,10 @@
 # Metodología de Macro-Categorías
 
-## El Problema del Dataset Original
+## Motivación
 
-El dataset original de *"Carpetas de Investigación FGJ de la Ciudad de México"* clasifica los delitos mediante la columna `categoria_delito`. Al realizar un análisis estructural de la base de datos se detectó un problema de representatividad severo para fines de visualización ciudadana:
+El dataset original de *"Carpetas de Investigación FGJ de la Ciudad de México"* registra más de **350 tipos penales distintos** en la columna `delito`. Si bien el dataset también incluye una columna `categoria_delito` con agrupaciones más generales, estas no resultan suficientemente granulares ni homogéneas para producir visualizaciones ciudadanas claras: algunas categorías mezclan delitos de naturaleza muy distinta, mientras que otras son demasiado específicas o técnicas para el público general.
 
-De los más de 2 millones de registros, **el 81.5% de todas las carpetas están encasilladas bajo un único valor genérico: `DELITO DE BAJO IMPACTO`**. 
-
-Dentro de esta gigantesca "bolsa de sastre" conviven delitos que tienen naturalezas sumamente distintas, por ejemplo:
-- Violencia familiar
-- Fraude
-- Robo de objetos
-- Amenazas
-- Narcomenudeo posesión simple
-- Abuso de confianza
-
-Utilizar la `categoria_delito` original provocaría que cualquier gráfica se dibujara con una sola línea masiva e incomprensible, ocultando las verdaderas tendencias de inseguridad de cada colonia.
+Presentar al usuario una lista desplegable con cientos de delitos o una gráfica con decenas de series produce un resultado ininterpretable. Por ello, esta herramienta implementa una **re-clasificación editorial en la capa de frontend** con fines prácticos de legibilidad ciudadana: los más de 350 tipos penales se consolidan en **5 macro-categorías temáticas** basadas en el texto descriptivo del campo `delito`.
 
 ---
 

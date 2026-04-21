@@ -6,7 +6,7 @@
     <title>Delitos por Colonia CDMX</title>
     <meta name="description" content="Consulta los delitos reportados en tu colonia de la Ciudad de México. Datos abiertos con gráficas, mapas y comparativas trimestrales.">
     <meta property="og:title" content="Delitos por Colonia CDMX">
-    <meta property="og:description" content="Consulta en tiempo real los delitos reportados por colonia en CDMX con datos oficiales abiertos.">
+    <meta property="og:description" content="Consulta los delitos reportados por colonia en CDMX con datos oficiales abiertos.">
     <meta property="og:type" content="website">
 
     <!-- Fonts -->
@@ -37,6 +37,9 @@
                 </div>
             </div>
             <div class="header-actions">
+                <button id="btn-info" class="btn-action btn-info" title="Acerca de esta herramienta">
+                    ℹ️ <span class="btn-label">Acerca de</span>
+                </button>
                 <button id="btn-share" class="btn-action" title="Copiar enlace a este reporte" style="display:none;">
                     🔗 <span class="btn-label">Compartir</span>
                 </button>
@@ -136,7 +139,10 @@
                     <!-- Map -->
                     <section class="map-container glass-panel" id="section-map">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                            <h2 style="margin-bottom: 0;">📍 Mapa de Incidentes (<span class="kpi-q-label">Q</span>)</h2>
+                            <h2 style="margin-bottom: 0;">
+                                📍 Mapa de Incidentes (<span class="kpi-q-label">Q</span>)
+                                <button class="map-info-btn" id="btn-map-info" title="Nota sobre la georreferenciación de los puntos" aria-label="Información sobre georreferenciación">ⓘ</button>
+                            </h2>
                             <label style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer;" title="Mostrar como mapa de calor">
                                 Mapa de calor
                                 <input type="checkbox" id="toggle-heatmap-cb" style="cursor: pointer; width: 16px; height: 16px; accent-color: var(--accent-cyan);">
@@ -172,6 +178,88 @@
         </main>
     </div>
 
+
+    <!-- ═══ INFO MODAL ═══ -->
+    <div id="info-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-panel glass-panel">
+            <button class="modal-close" id="modal-close-btn" aria-label="Cerrar">✕</button>
+
+            <div class="modal-header">
+                <span class="modal-icon">🛡️</span>
+                <div>
+                    <h2 id="modal-title">Acerca de esta herramienta</h2>
+                    <p class="modal-subtitle">Delitos por Colonia · CDMX</p>
+                </div>
+            </div>
+
+            <div class="modal-body">
+
+                <!-- Sección 1: Fuente -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">📊 Fuente de datos</h3>
+                    <p>Esta herramienta visualiza las <strong>Carpetas de Investigación de la Fiscalía General de Justicia (FGJ)</strong> de la Ciudad de México, publicadas como datos abiertos en el portal oficial:</p>
+                    <a href="https://datos.cdmx.gob.mx/dataset/carpetas-de-investigacion-fgj-de-la-ciudad-de-mexico" target="_blank" rel="noopener" class="modal-link">datos.cdmx.gob.mx — Carpetas de Investigación FGJ →</a>
+                    <p class="modal-note">Esta página es únicamente un visualizador ciudadano. No genera, altera ni valida los datos; toda la información proviene del portal oficial.</p>
+                </div>
+
+                <div class="modal-divider"></div>
+
+                <!-- Sección 2: Alcance -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">⚠️ Alcance y limitaciones</h3>
+                    <p>Los registros corresponden exclusivamente a <strong>delitos denunciados ante la FGJ</strong>. Esto implica dos consideraciones clave:</p>
+                    <ul class="modal-list">
+                        <li><strong>Subregistro significativo:</strong> La mayoría de los delitos en México no se denuncian. Estas cifras son una aproximación —no un conteo exhaustivo— de la realidad delictiva en cada colonia.</li>
+                        <li><strong>Datos policiales, no judiciales:</strong> Una carpeta de investigación abierta no equivale a una sentencia. Los datos reflejan lo que se reporta a la fiscalía, no lo que se resuelve en tribunales.</li>
+                    </ul>
+                    <p>Se recomienda visitar la página original y leer sus <strong>notas metodológicas</strong> antes de utilizar esta información para análisis o comunicación pública.</p>
+                </div>
+
+                <div class="modal-divider"></div>
+
+                <!-- Sección 3: Georreferenciación -->
+                <div class="modal-section" id="modal-section-geo">
+                    <h3 class="modal-section-title">📍 Sobre los puntos del mapa</h3>
+                    <p>Las coordenadas que aparecen en el mapa <strong>no corresponden al lugar exacto de los hechos</strong>. Diego Valle-Jones, del sitio <a href="https://hoyodecrimen.com/acerca/" target="_blank" rel="noopener" class="modal-link-inline">Hoyo de Crimen</a>, lo explica con precisión:</p>
+                    <blockquote class="modal-quote">
+                        "Las coordenadas que se muestran no corresponden de manera exacta al lugar de los hechos, sino que representan una ubicación aproximada. Para garantizar la privacidad, la FGJ-CDMX modifica los datos a partir de una coordenada inicial, identificando la geometría correspondiente y generando un área de buffering de aproximadamente <strong>200 metros</strong>, la cual se intersecta con la colonia y el cuadrante original del delito. Dentro de esa zona se selecciona un punto aleatorio, que posteriormente se ajusta a la vialidad más cercana con el fin de evitar que quede ubicado en un predio específico."
+                        <cite>— Diego Valle-Jones, <a href="https://hoyodecrimen.com/acerca/" target="_blank" rel="noopener" class="modal-link-inline">hoyodecrimen.com/acerca</a></cite>
+                    </blockquote>
+                </div>
+
+                <div class="modal-divider"></div>
+
+                <!-- Sección 4: Categorías -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">🏷️ Categorización de delitos</h3>
+                    <p>El dataset registra más de <strong>350 tipos penales distintos</strong>. Si bien cuenta con su propia columna de categorías, estas no resultan suficientemente homogéneas para producir visualizaciones ciudadanas claras. Presentar cientos de series en una gráfica produce un resultado ininterpretable.</p>
+                    <p>Con fines de <strong>legibilidad ciudadana</strong>, esta herramienta aplica una re-clasificación editorial en el navegador: los tipos penales se agrupan en 5 macro-categorías según la descripción textual del campo <code>delito</code>:</p>
+                    <div class="modal-cats-grid">
+                        <div class="modal-cat-item"><span class="modal-cat-dot" style="background:#ef4444"></span><div><strong>Robos</strong><br><span>Robo, asalto</span></div></div>
+                        <div class="modal-cat-item"><span class="modal-cat-dot" style="background:#a855f7"></span><div><strong>Violencia y Lesiones</strong><br><span>Violencia familiar, lesiones, homicidio, feminicidio, amenazas</span></div></div>
+                        <div class="modal-cat-item"><span class="modal-cat-dot" style="background:#eab308"></span><div><strong>Delitos Patrimoniales</strong><br><span>Fraude, extorsión, despojo, daño en propiedad</span></div></div>
+                        <div class="modal-cat-item"><span class="modal-cat-dot" style="background:#3b82f6"></span><div><strong>Delitos Sexuales</strong><br><span>Violación, abuso sexual, acoso, estupro</span></div></div>
+                        <div class="modal-cat-item"><span class="modal-cat-dot" style="background:#6b7280"></span><div><strong>Otros</strong><br><span>Todo lo no clasificado en las categorías anteriores</span></div></div>
+                    </div>
+                    <p class="modal-note">Esta categorización es una interpretación editorial para facilitar la lectura ciudadana. No es una clasificación oficial de la FGJ.</p>
+                </div>
+
+                <div class="modal-divider"></div>
+
+                <!-- Sección 5: Privacidad y código -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">🔒 Privacidad y código abierto</h3>
+                    <ul class="modal-list">
+                        <li>Esta herramienta <strong>no recopila, almacena ni comparte ningún dato personal</strong> de sus usuarios. No hay cookies de seguimiento ni analíticas de terceros.</li>
+                        <li>Todo el procesamiento ocurre en tu navegador; los datos se obtienen directamente del API público de datos abiertos de la CDMX.</li>
+                        <li>El código fuente es público y auditable en GitHub:</li>
+                    </ul>
+                    <a href="https://github.com/jjsantos01/delitos-colonias" target="_blank" rel="noopener" class="modal-link">🐙 Ver repositorio en GitHub →</a>
+                </div>
+
+            </div><!-- /modal-body -->
+        </div><!-- /modal-panel -->
+    </div><!-- /info-modal -->
 
 
     <!-- Scripts -->

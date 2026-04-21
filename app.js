@@ -170,6 +170,7 @@ async function init() {
         setupExportPDF();
         setupAdvancedFiltersToggle();
         setupHeatmapToggle();
+        setupInfoModal();
         
         State.catalog = await CKANClient.getCatalog();
         initSelects();
@@ -831,6 +832,50 @@ function renderKPIs() {
     const bdgYTD = document.getElementById('kpi-ytd-badge');
     bdgYTD.textContent = formatPct(ytdPct);
     bdgYTD.className = `kpi-badge ${getBadgeClass(ytdPct)}`;
+}
+
+// ==========================================
+// Info Modal
+// ==========================================
+function setupInfoModal() {
+    const overlay  = document.getElementById('info-modal');
+    const closeBtn = document.getElementById('modal-close-btn');
+    const infoBtn  = document.getElementById('btn-info');
+    const mapInfoBtn = document.getElementById('btn-map-info');
+
+    if (!overlay) return;
+
+    function openModal(scrollToGeo = false) {
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+        if (scrollToGeo) {
+            // Small delay so the modal is visible before scrolling
+            setTimeout(() => {
+                const geoSection = document.getElementById('modal-section-geo');
+                if (geoSection) geoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+    }
+
+    function closeModal() {
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+    }
+
+    if (infoBtn)    infoBtn.addEventListener('click', () => openModal(false));
+    if (mapInfoBtn) mapInfoBtn.addEventListener('click', () => openModal(true));
+    closeBtn.addEventListener('click', closeModal);
+
+    // Click outside panel closes modal
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeModal();
+    });
+
+    // Escape key closes modal
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeModal();
+    });
 }
 
 // Start

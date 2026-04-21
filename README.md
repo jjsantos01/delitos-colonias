@@ -2,12 +2,12 @@
 
 Este repositorio contiene un dashboard interactivo, de una sola página y sin backend (Single Page Application - SPA), diseñado para visualizar y analizar el índice delictivo a nivel colonia en la Ciudad de México. 
 
-La aplicación se alimenta **en tiempo real** de la base de datos oficial *"Carpetas de Investigación FGJ"* provista a través del portal de Datos Abiertos de la CDMX, empleando la API **CKAN DataStore SQL**.
+La aplicación se alimenta de la base de datos oficial *"Carpetas de Investigación FGJ"* provista a través del portal de Datos Abiertos de la CDMX, empleando la API **CKAN DataStore SQL**.
 
 ## 🚀 Funcionalidades Actuales
 
-- **Consultas en Vivo Optimizadas**: Acceso a un histórico de más de 2 millones de registros directamente desde la API oficial de la CDMX mediante llamadas SQL `POST` seguras, sin necesidad de replicar o mantener una base de datos propia.
-- **Micro-Agrupaciones Inteligentes (Macro-Categorías)**: El dataset original presenta un 81% de datos acoplados en una categoría genérica inútil llamada "DELITO DE BAJO IMPACTO". Esta herramienta clasifica en la capa de frontend e interactiva estos esquemas en 5 macro-categorías comprensibles [(Ver Metodología Completa)](METODOLOGIA_CATEGORIAS.md):
+- **Consultas Optimizadas**: Acceso a un histórico de más de 2 millones de registros directamente desde la API oficial de la CDMX mediante llamadas SQL `POST` seguras, sin necesidad de replicar o mantener una base de datos propia.
+- **Macro-Categorías para Lectura Ciudadana**: El dataset contiene más de 350 tipos penales distintos. Con fines de legibilidad, esta herramienta los re-agrupa en la capa de frontend en 5 macro-categorías comprensibles basadas en el texto descriptivo del delito [(Ver Metodología Completa)](METODOLOGIA_CATEGORIAS.md):
   - 🔴 **Robos**
   - 🟣 **Violencia y Lesiones**
   - 🟡 **Delitos Patrimoniales**
