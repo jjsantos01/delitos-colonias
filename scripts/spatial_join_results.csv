@@ -1,0 +1,153 @@
+alcaldia,colonia_crime,colonia_geo,match_type,matched,n_points,lat,lng
+ALVARO OBREGON,19 De Mayo,,no_points,False,1,,
+ALVARO OBREGON,2a. Ampliacion Jalalpa El Grande,,spatial_miss,False,11,19.368484655146272,-99.24616865932795
+ALVARO OBREGON,2a Ampliación Jalalpa Tepito,Jalalpa Tepito 2da Ampliacion,spatial,True,28,19.37438200400816,-99.23819073588092
+ALVARO OBREGON,2o Reacomodo Corpus Christi,,no_points,False,2,,
+ALVARO OBREGON,Campo De Tiro Los Gamitos,,spatial_miss,False,9,19.380186929280445,-99.23786712928822
+ALVARO OBREGON,Desarrollo Urbano El Piru,,spatial_miss,False,8,19.384088515502285,-99.22067844408608
+ALVARO OBREGON,El Arbol Ampliacion,,spatial_miss,False,5,19.37864787499536,-99.23562864122992
+ALVARO OBREGON,Gamitos,,no_points,False,2,,
+ALVARO OBREGON,Jalalpa El Grande 1er. Reacomodo,,spatial_miss,False,40,19.37138550569461,-99.24122312894904
+ALVARO OBREGON,La Loma,,spatial_miss,False,39,19.375770868575245,-99.2373888886884
+ALVARO OBREGON,Paraje Del Caballito,,spatial_miss,False,28,19.307714513783672,-99.27172039337069
+ALVARO OBREGON,Reserva Ecologica Torres De Potrero,,spatial_miss,False,6,19.327633239311666,-99.23928223815317
+AZCAPOTZALCO,Las Armas,,no_points,False,1,,
+COYOACAN,Ampliacion San Francisco Culhuacan,,no_points,False,0,,
+COYOACAN,Unidad Obrero Hab. Ctm Culhuacan Zona 13,,spatial_miss,False,4,19.312286243765474,-99.0993127576404
+COYOACAN,Universidad Nacional Autónoma De México,,no_points,False,0,,
+CUAJIMALPA DE MORELOS,Club De Golf Bosques,,spatial_miss,False,5,19.37985892304008,-99.28292578217214
+CUAJIMALPA DE MORELOS,Cola De Pato - Pueblo,,spatial_miss,False,50,19.306218096969264,-99.33992947264716
+CUAJIMALPA DE MORELOS,La Navidad,,spatial_miss,False,12,19.3769235767632,-99.28689304500475
+CUAJIMALPA DE MORELOS,Lomas Del Chamizal,,spatial_miss,False,15,19.397143728065046,-99.26274086525444
+CUAUHTEMOC,Centro (Área 1),,no_points,False,0,,
+GUSTAVO A. MADERO,Arboledas De Cuautepec El Alto,Arboledas,spatial,True,55,19.56264679808083,-99.12170817708221
+GUSTAVO A. MADERO,Ejidos San Juan De Aragon 1a Seccion,,no_points,False,1,,
+GUSTAVO A. MADERO,La Forestal 2,,spatial_miss,False,20,19.56599262327563,-99.12479254990575
+GUSTAVO A. MADERO,Lindavista,,no_points,False,0,,
+GUSTAVO A. MADERO,Lomas De San Juan Ixhuatepec 2a Sección,,spatial_miss,False,3,19.510504183217133,-99.1069114246963
+GUSTAVO A. MADERO,Veronica Castro,,spatial_miss,False,3,19.572621427944433,-99.12771646923494
+IZTAPALAPA,Area Federal Parque Ecologico El Salado,,no_points,False,1,,
+IZTAPALAPA,La Colmena,,spatial_miss,False,12,19.371962843591618,-98.99906894968856
+IZTAPALAPA,La Valenciana,,no_points,False,2,,
+IZTAPALAPA,Lomas Estrella 2a Seccion,,spatial_miss,False,5,19.312685050693656,-99.09476825906032
+IZTAPALAPA,Predio El Molino,,spatial_miss,False,11,19.286750916655762,-99.07229896163471
+IZTAPALAPA,San Miguel Teotongo,San Miguel Teotongo Secc Corrales,spatial,True,124,19.336337762860605,-98.99097564994236
+IZTAPALAPA,Siracusa 240,,no_points,False,1,,
+IZTAPALAPA,Solidaridad,,spatial_miss,False,12,19.37530540466545,-99.00451892750927
+IZTAPALAPA,Triangulo De Las Agujas,El Vergel,spatial,True,8,19.304574526674426,-99.08749016371173
+LA MAGDALENA CONTRERAS,El Gavillero,,no_points,False,1,,
+LA MAGDALENA CONTRERAS,Ixtlahualtongo,,no_points,False,1,,
+LA MAGDALENA CONTRERAS,Tierra Colorada,,spatial_miss,False,385,19.271648539098937,-99.24609606042794
+MIGUEL HIDALGO,Militar 1 K Lomas De Sotelo,,spatial_miss,False,13,19.43082033865983,-99.22432452140275
+MIGUEL HIDALGO,Panteon Frances,,no_points,False,1,,
+MILPA ALTA,Cruztitla (San Antonio Tecomitl),,spatial_miss,False,74,19.211204334898767,-99.0007155275661
+MILPA ALTA,Emiliano Zapata 1a Seccion,La Conchita,spatial,True,3,19.21140258744,-98.97313365006
+MILPA ALTA,Emiliano Zapata 2a Seccion,La Conchita,spatial,True,11,19.20733095311956,-98.96838161600576
+MILPA ALTA,La Concepción (Villa Milpa Alta),,spatial_miss,False,76,19.18530685056453,-99.02093365500292
+MILPA ALTA,La Luz (Villa Milpa Alta),,spatial_miss,False,101,19.183313161975722,-99.02734771337335
+MILPA ALTA,Los Ángeles (Villa Milpa Alta),,spatial_miss,False,40,19.184323958347072,-99.02341360308357
+MILPA ALTA,Malvinas Primero,,spatial_miss,False,9,19.2028751660703,-99.09785141183463
+MILPA ALTA,Malvinas Segundo,,spatial_miss,False,10,19.20220763503533,-99.10072154580492
+MILPA ALTA,Nochtla (San Pedro Atocpan),,spatial_miss,False,280,19.207468979946995,-99.04532969980228
+MILPA ALTA,Noxcalco,,spatial_miss,False,7,19.20865851229017,-98.98273139936751
+MILPA ALTA,Ocotitla (San Pedro Atocpan),,spatial_miss,False,126,19.194668681949654,-99.05435422632245
+MILPA ALTA,Panchimalco (San Pedro Atocpan),Barrio Panchimalco,spatial,True,51,19.198002608791587,-99.04451154497593
+MILPA ALTA,Pueblo San Antonio Tecomitl Barrio Xochitepec,Barrio Xochitepetl,spatial,True,11,19.21179492488531,-98.98802520169512
+MILPA ALTA,Pueblo San Antonio Tecomitl (Las Arboledas),,spatial_miss,False,3,19.210242408917367,-98.9809363506109
+MILPA ALTA,Pueblo San Antonio Tecomitl (Las Joyas),,spatial_miss,False,31,19.20808176829285,-98.98421500843351
+MILPA ALTA,San Agustin (Villa Milpa Alta),,spatial_miss,False,123,19.186678358104487,-99.01662854631668
+MILPA ALTA,San Isidro Cuatepec,,no_points,False,2,,
+MILPA ALTA,San José (Santa Ana Tlacotenco),,spatial_miss,False,77,19.180416468854947,-99.00309316453765
+MILPA ALTA,San Juan (San Pablo Oztotepec),,spatial_miss,False,212,19.183040513609924,-99.06345499984032
+MILPA ALTA,San Juan Tepenahuac I,,spatial_miss,False,4,19.186974285931726,-98.99899934298732
+MILPA ALTA,San Juan Tepenahuac Ii,,spatial_miss,False,37,19.18826961146936,-98.99311821562699
+MILPA ALTA,San Marcos (Santa Ana Tlacotenco),Barrio San Marcos,spatial,True,87,19.169087283555783,-98.99284359990801
+MILPA ALTA,San Mateo (Villa Milpa Alta),Barrio San Mateo,spatial,True,109,19.188722441238813,-99.0328639478646
+MILPA ALTA,San Miguel (San Pablo Oztotepec),Barrio San Miguel,spatial,True,64,19.190390918864086,-99.07653602494136
+MILPA ALTA,San Miguel (Santa Ana Tlacotenco),,spatial_miss,False,48,19.173347628363015,-99.00476586019212
+MILPA ALTA,San Salvador Cuauhtenco Seccion I,,spatial_miss,False,55,19.195577208352223,-99.085960315501
+MILPA ALTA,San Salvador Cuauhtenco Seccion Ii,,spatial_miss,False,6,19.187608138257442,-99.08713769993354
+MILPA ALTA,San Salvador Cuauhtenco Seccion Iii,,spatial_miss,False,157,19.201185596159178,-99.09985999117002
+MILPA ALTA,San Salvador Cuauhtenco Seccion Iv,Pueblo San Salvador Cuauhtenco,spatial,True,6,19.200461850195218,-99.0971220597161
+MILPA ALTA,Santa Cruz (Villa Milpa Alta),,spatial_miss,False,98,19.19782917374654,-99.01366897410553
+MILPA ALTA,Santa Martha (Villa Milpa Alta),Barrio Santa Martha,spatial,True,107,19.19933724533209,-99.03280451342604
+MILPA ALTA,Tecaxtitla (San Antonio Tecomitl),,no_points,False,1,,
+MILPA ALTA,Tecoloxtitla,,spatial_miss,False,4,19.181114508613096,-99.02453417996811
+MILPA ALTA,Tenantitla (San Antonio Tecomitl),,spatial_miss,False,185,19.22007354339381,-99.00230295412845
+MILPA ALTA,Tula (San Pedro Atocpan),,spatial_miss,False,83,19.20892099035423,-99.0515663756815
+MILPA ALTA,Xaltipac (San Antonio Tecomitl),,spatial_miss,False,71,19.218057450937405,-98.98516786135025
+TLAHUAC,Conchita A,Miguel Hidalgo,spatial,True,35,19.286847281299327,-99.04032531248392
+TLAHUAC,Conchita B,,no_points,False,1,,
+TLAHUAC,El Mirador - Santa Catarina,,no_points,False,1,,
+TLAHUAC,Emiliano Zapata 1a Seccion,,no_points,False,1,,
+TLAHUAC,Emiliano Zapata 2a Seccion,,no_points,False,1,,
+TLAHUAC,La Asuncion - Barrio,La Asuncion,spatial,True,8,19.242316036573,-98.9925482508477
+TLAHUAC,La Cienega,,no_points,False,2,,
+TLAHUAC,La Loma,,spatial_miss,False,197,19.254968744590688,-99.00286444582163
+TLAHUAC,La Soledad,Barrio La Soledad Del Pueblo  San Juan Ixtayopan,spatial,True,5,19.238210986075,-98.9941756757301
+TLAHUAC,Las Puertas - Barrio,Pueblo San Francisco Tlaltenco,spatial,True,10,19.29036263248632,-99.01804956646845
+TLAHUAC,Los Reyes (Del Pueblo De San Andrés Mixquic),Barrio Los Reyes,spatial,True,24,19.22987311947179,-98.96745514927576
+TLAHUAC,Paraiso Santa Catarina,,no_points,False,1,,
+TLAHUAC,San Bartolomé (Del Pueblo De San Andrés Mixquic),,no_points,False,2,,
+TLAHUAC,San Ignacio De Loyola,,no_points,False,2,,
+TLAHUAC,San Isidro Tulyehualco,,no_points,False,1,,
+TLAHUAC,San Miguel (Del Pueblo De San Andrés Mixquic),Barrio San Miguel,spatial,True,10,19.2212575991187,-98.96440061644542
+TLAHUAC,San Miguel Zapotitla,Barrio San Miguel,spatial,True,61,19.30684521964452,-99.03339153839302
+TLAHUAC,Santa Cruz (Del Pueblo De San Andrés Mixquic),Barrio Santa Cruz,spatial,True,20,19.22451640347946,-98.95098948254069
+TLAHUAC,Santa Maria De Los Olivos - Barrio,,spatial_miss,False,172,19.244312732383822,-99.01007444181508
+TLAHUAC,Selene 1a. Seccion,,spatial_miss,False,9,19.2968569347038,-98.99798250397168
+TLAHUAC,Selene 2a. Seccion,,spatial_miss,False,3,19.284010680559934,-98.999446331562
+TLAHUAC,Zona De Reserva Ecologica,,spatial_miss,False,20,19.281199920889364,-98.99460850578997
+TLALPAN,Cuchilla Tepeximilpa,,spatial_miss,False,9,19.26975355456468,-99.19208516529314
+TLALPAN,Dr. Ignacio Chávez Infonavit,,spatial_miss,False,5,19.29498975750442,-99.10168645463068
+TLALPAN,Fovissste Periférico,,no_points,False,1,,
+TLALPAN,Lomas De Tepemecatl,Heroes De 1910,spatial,True,107,19.240289793339645,-99.23310451161639
+TLALPAN,Los Arcos,,spatial_miss,False,24,19.194321760659715,-99.15429880794899
+TLALPAN,Ocotla - Ocotla Chico,,no_points,False,1,,
+TLALPAN,Otra,,no_points,False,2,,
+TLALPAN,Paraje Tetenco,,spatial_miss,False,9,19.26293092593061,-99.1815196223687
+TLALPAN,Pedregal De Aminco,,spatial_miss,False,11,19.202364260673,-99.13373566123356
+TLALPAN,Piedra Larga,,no_points,False,1,,
+TLALPAN,Pista Olimpica Virgilio Uribe (Canal De Cuemanco),,no_points,False,1,,
+TLALPAN,San Miguel Tehuisco,,no_points,False,2,,
+TLALPAN,San Nicolás 2,,spatial_miss,False,437,19.267779778350103,-99.2366875324426
+TLALPAN,Solidaridad,,spatial_miss,False,67,19.264841197689336,-99.22848902101316
+TLALPAN,Tepeximilpa Servimet,,no_points,False,1,,
+TLALPAN,Tequimila,,no_points,False,2,,
+TLALPAN,Tezontitla,,no_points,False,1,,
+TLALPAN,Villa Cuemanco Infonavit,,no_points,False,1,,
+TLALPAN,Zacatón,,spatial_miss,False,254,19.26653984895996,-99.24235692506898
+VENUSTIANO CARRANZA,Aeropuerto Internacional Benito Juárez,,no_points,False,0,,
+VENUSTIANO CARRANZA,Alameda Oriente,,no_points,False,1,,
+XOCHIMILCO,Acoca,,spatial_miss,False,11,19.246921693839838,-99.13352380415168
+XOCHIMILCO,Alcanfores,,spatial_miss,False,11,19.237804093193485,-99.08754712736616
+XOCHIMILCO,Altos Tepetlica,,spatial_miss,False,8,19.23442649401581,-99.14018483628209
+XOCHIMILCO,Anahuac,,no_points,False,1,,
+XOCHIMILCO,Aztlan Los Apaches,,spatial_miss,False,5,19.28746318393358,-99.10610894399998
+XOCHIMILCO,División Del Norte Infonavit,Ampliacion San Marcos Norte,spatial,True,7,19.274553065520944,-99.11197463064121
+XOCHIMILCO,Dr. Ignacio Chávez Infonavit,,no_points,False,1,,
+XOCHIMILCO,Duraznotitla,Pueblo San Jose Zacatepec,spatial,True,4,19.2402375,-99.1270025
+XOCHIMILCO,El Mirador I(San Lucas Xochimanca),,spatial_miss,False,41,19.23449192480983,-99.10523198273884
+XOCHIMILCO,El Olivo (San Lorenzo),,no_points,False,1,,
+XOCHIMILCO,Justicia Social,,spatial_miss,False,4,19.259517778828826,-99.02749397254735
+XOCHIMILCO,Lomas Estrella 2a Seccion,,no_points,False,1,,
+XOCHIMILCO,Manantiales,,no_points,False,1,,
+XOCHIMILCO,Nueva Tototitla,,spatial_miss,False,17,19.224031203021337,-99.09585878145323
+XOCHIMILCO,Parque Ecologico De Xochimilco,,spatial_miss,False,381,19.298195933986108,-99.09740874268438
+XOCHIMILCO,Pedregal De San Francisco,,spatial_miss,False,8,19.210540171726105,-99.1303410596792
+XOCHIMILCO,Pista Olimpica Virgilio Uribe (Canal De Cuemanco),,spatial_miss,False,124,19.290541380689785,-99.10244402073072
+XOCHIMILCO,Predio El Molino,,no_points,False,1,,
+XOCHIMILCO,San Francisco Chiquimola,,spatial_miss,False,6,19.24428536126923,-99.02454305497888
+XOCHIMILCO,San Jose Obrero,,no_points,False,1,,
+XOCHIMILCO,San Salvador Cuauhtenco Seccion Iii,,no_points,False,1,,
+XOCHIMILCO,Santa Cruz Acalpixca - Pueblo,Barrio Apatlaco,spatial,True,55,19.24874251309357,-99.07518736645183
+XOCHIMILCO,Santa Maria De Los Olivos - Barrio,,spatial_miss,False,66,19.245111360043985,-99.01000850809426
+XOCHIMILCO,Tecacalanco,,spatial_miss,False,139,19.23905190812215,-99.06980790671126
+XOCHIMILCO,Tehuixtitla,,spatial_miss,False,26,19.23832050882089,-99.06867464660888
+XOCHIMILCO,Tejomulco El Alto,,spatial_miss,False,34,19.23962400441356,-99.0849835627833
+XOCHIMILCO,Tepeyeca,,spatial_miss,False,4,19.241601456699026,-99.0565184278655
+XOCHIMILCO,Toltenco,,spatial_miss,False,105,19.276982333308403,-99.11325019576597
+XOCHIMILCO,Triangulo De Las Agujas,,no_points,False,1,,
+XOCHIMILCO,Tula (San Pedro Atocpan),,no_points,False,1,,
+XOCHIMILCO,Vaso De Regulacion,,spatial_miss,False,28,19.286979971928123,-99.11142272732799
+XOCHIMILCO,Zacatepec(San Mateo Xalpa),Pueblo San Mateo Xalpa,spatial,True,8,19.237748791643412,-99.1234469491609

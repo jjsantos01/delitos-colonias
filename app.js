@@ -136,6 +136,7 @@ const State = {
     coloniaData: [],      // Raw Q2 records
     filteredData: [],     // Data after applying cat/delito filters
     mapPoints: [],
+    coloniaGeoData: null, // GeoJSON FeatureCollection from colonias_geo.json
     
     selectedAlcaldia: null,
     selectedColonia: null,
@@ -163,6 +164,7 @@ const UI = {
     map: null,
     pointsGroup: null,
     heatLayer: null,
+    coloniaPolygonLayer: null,
     
     showLoading(show) { show ? this.loading.classList.add('active') : this.loading.classList.remove('active'); },
     showContent(show) { 
@@ -203,7 +205,15 @@ async function init() {
         setupInfoModal();
         setupDownloadCSV();
         
-        State.catalog = await CKANClient.getCatalog();
+        // Load colonia polygons and catalog in parallel
+        const [catalog, geoResp] = await Promise.all([
+            CKANClient.getCatalog(),
+            fetch('colonias_geo.json').then(r => r.ok ? r.json() : null).catch(() => null)
+        ]);
+        State.catalog = catalog;
+        State.coloniaGeoData = geoResp;
+        if (!geoResp) console.warn('colonias_geo.json not found — polygon outlines disabled');
+
         initSelects();
         loadInitialStateFromUrl();
     } catch (e) {
@@ -658,6 +668,18 @@ async function initMap() {
         maxZoom: 19
     }).addTo(UI.map);
 
+    // Colonia polygon layer (rendered below points)
+    UI.coloniaPolygonLayer = L.geoJSON(null, {
+        style: {
+            color: '#38bdf8',
+            weight: 2,
+            opacity: 0.8,
+            fillColor: '#38bdf8',
+            fillOpacity: 0.06,
+            dashArray: '6 4'
+        }
+    }).addTo(UI.map);
+
     UI.pointsGroup = L.layerGroup();
     if(typeof L.heatLayer === 'function') {
         UI.heatLayer = L.heatLayer([], HEATMAP_OPTIONS);
@@ -721,9 +743,28 @@ function renderMap(preserveView = false) {
         UI.heatLayer.setLatLngs(heatData);
     }
 
+    // ── Colonia polygon outline ───────────────────────────────────────
+    if (UI.coloniaPolygonLayer) {
+        UI.coloniaPolygonLayer.clearLayers();
+        if (State.coloniaGeoData && State.selectedAlcaldia && State.selectedColonia) {
+            const polyFeature = State.coloniaGeoData.features.find(f =>
+                f.properties.alcaldia === State.selectedAlcaldia &&
+                f.properties.colonia === State.selectedColonia
+            );
+            if (polyFeature) {
+                UI.coloniaPolygonLayer.addData(polyFeature);
+                // Use polygon bounds as baseline so the view always frames the colonia
+                const polyBounds = UI.coloniaPolygonLayer.getBounds();
+                if (polyBounds.isValid()) bounds.extend(polyBounds);
+            }
+        }
+    }
+
     // Only fit bounds when loading new data, not when just toggling layers
     if (hasPoints && !preserveView) {
         UI.map.fitBounds(bounds, {padding: [50, 50], maxZoom: 16});
+    } else if (!hasPoints && UI.coloniaPolygonLayer && UI.coloniaPolygonLayer.getLayers().length > 0 && !preserveView) {
+        UI.map.fitBounds(UI.coloniaPolygonLayer.getBounds(), {padding: [50, 50], maxZoom: 16});
     }
     
     // Invalidate size to prevent half-drawn map issue
