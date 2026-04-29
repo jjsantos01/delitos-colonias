@@ -28,13 +28,14 @@ class CKANClient {
 
     static getCatalog() {
         return this.fetchSQL(`
-            SELECT DISTINCT alcaldia_hecho, colonia_hecho
+            SELECT DISTINCT alcaldia_hecho,
+                   COALESCE(NULLIF(colonia_catalogo, ''), INITCAP(colonia_hecho)) AS colonia_catalogo
             FROM "${RESOURCE_ID}"
             WHERE alcaldia_hecho IS NOT NULL
               AND alcaldia_hecho != 'nan'
-              AND colonia_hecho IS NOT NULL
-              AND colonia_hecho != ''
-            ORDER BY alcaldia_hecho, colonia_hecho
+              AND COALESCE(NULLIF(colonia_catalogo, ''), INITCAP(colonia_hecho)) IS NOT NULL
+              AND COALESCE(NULLIF(colonia_catalogo, ''), INITCAP(colonia_hecho)) != ''
+            ORDER BY alcaldia_hecho, colonia_catalogo
         `);
     }
 
@@ -46,7 +47,7 @@ class CKANClient {
                    COUNT(*) AS total
             FROM "${RESOURCE_ID}"
             WHERE alcaldia_hecho = '${alcaldia.replace(/'/g, "''")}'
-              AND colonia_hecho = '${colonia.replace(/'/g, "''")}'
+              AND COALESCE(NULLIF(colonia_catalogo, ''), INITCAP(colonia_hecho)) = '${colonia.replace(/'/g, "''")}'
               AND anio_hecho >= 2019
             GROUP BY anio_hecho, trimestre, delito
             ORDER BY anio_hecho, trimestre
@@ -58,7 +59,7 @@ class CKANClient {
             SELECT latitud, longitud, delito, fecha_hecho, hora_hecho
             FROM "${RESOURCE_ID}"
             WHERE alcaldia_hecho = '${alcaldia.replace(/'/g, "''")}'
-              AND colonia_hecho = '${colonia.replace(/'/g, "''")}'
+              AND COALESCE(NULLIF(colonia_catalogo, ''), INITCAP(colonia_hecho)) = '${colonia.replace(/'/g, "''")}'
               AND anio_hecho = ${year}
               AND EXTRACT(QUARTER FROM fecha_hecho) = ${quarter}
               AND latitud IS NOT NULL
@@ -80,7 +81,7 @@ class CKANClient {
                    municipio_hecho, latitud, longitud
             FROM "${RESOURCE_ID}"
             WHERE alcaldia_hecho = '${alcaldia.replace(/'/g, "''")}'
-              AND colonia_hecho = '${colonia.replace(/'/g, "''")}'
+              AND COALESCE(NULLIF(colonia_catalogo, ''), INITCAP(colonia_hecho)) = '${colonia.replace(/'/g, "''")}'
               AND anio_hecho = ${year}
               AND EXTRACT(QUARTER FROM fecha_hecho) = ${quarter}
             ORDER BY fecha_hecho, hora_hecho
@@ -248,7 +249,11 @@ function loadInitialStateFromUrl() {
             UI.alcaldiaSelect.setValue(match); 
             if (coloniaUrl) {
                 setTimeout(() => {
-                    UI.coloniaSelect.setValue(coloniaUrl);
+                    // Case-insensitive match for backwards compatibility
+                    // Old URLs used UPPER CASE (colonia_hecho), new ones use Title Case (colonia_catalogo)
+                    const coloniaKey = Object.keys(UI.coloniaSelect.options)
+                        .find(k => k === coloniaUrl || k.toUpperCase() === coloniaUrl.toUpperCase());
+                    if (coloniaKey) UI.coloniaSelect.setValue(coloniaKey);
                 }, 100);
             }
         }
@@ -426,7 +431,7 @@ function setupHeatmapToggle() {
 }
 
 function initSelects() {
-    const alcaldias = [...new Set(State.catalog.map(r => r.alcaldia_hecho))].sort();
+    const alcaldias = [...new Set(State.catalog.map(r => r.alcaldia_hecho))].filter(Boolean).sort();
     
     UI.alcaldiaSelect = new TomSelect('#alcaldia-select', {
         options: alcaldias.map(a => ({value: a, text: a})),
@@ -504,7 +509,7 @@ function onAlcaldiaChange(alcaldia) {
     if (alcaldia) {
         const colonias = State.catalog
             .filter(r => r.alcaldia_hecho === alcaldia)
-            .map(r => ({value: r.colonia_hecho, text: r.colonia_hecho}));
+            .map(r => ({value: r.colonia_catalogo, text: r.colonia_catalogo}));
         UI.coloniaSelect.addOption(colonias);
         UI.coloniaSelect.enable();
     } else {

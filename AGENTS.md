@@ -37,3 +37,15 @@ La función de Share/Compartir copia del estado el URL base en formato paramétr
 
 ## 5. Formato Expreso de Trimestres
 Se excluyen por directiva "Trimestres no completados" en `getQuarterlyData`. Por el actual año (hacia comienzos del repositorio), esto corresponde a excluir `2025-Q1` directamente ignorándolo desde el `rawData.filter(r => !(r.anio_hecho == 2025 && r.trimestre == 1))` para no generar un desplome falto en la curva de avance histórico en el frente del Dashbooard al usuario general.
+
+## 6. Campos de Ubicación: `_hecho` vs `_catalogo`
+
+El dataset de FGJ tiene dos pares de campos geográficos:
+- `alcaldia_hecho` / `colonia_hecho` — Ubicación declarada por el denunciante (mayúsculas, nombres genéricos).
+- `alcaldia_catalogo` / `colonia_catalogo` — Ubicación normalizada contra el catálogo oficial de colonias de CDMX (Title Case, sub-colonias precisas).
+
+**Convención actual del proyecto:**
+- **Alcaldía**: Se usa `alcaldia_hecho`. El campo `alcaldia_catalogo` está **vacío en el 98.8%** de los registros y NO es utilizable.
+- **Colonia**: Se usa `colonia_catalogo` con fallback a `colonia_hecho` mediante `COALESCE(NULLIF(colonia_catalogo, ''), INITCAP(colonia_hecho))`. Se aplica `INITCAP` al fallback para normalizar a Title Case y evitar duplicados entre catálogo (Title Case) y hecho (MAYÚSCULAS). Esto ofrece mayor granularidad (ej: "NARVARTE" → "Narvarte Poniente" / "Narvarte Oriente") sin perder registros rurales que carecen de catálogo.
+
+**CRÍTICO**: No cambiar a `alcaldia_catalogo` — está vacío. No eliminar el fallback `COALESCE` para colonias — hay ~16K registros rurales que solo tienen `colonia_hecho`. No remover `INITCAP` del fallback — sin él se generan duplicados.
