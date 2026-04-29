@@ -88,6 +88,47 @@ class CKANClient {
             LIMIT 32000
         `);
     }
+
+    // ── Multi-colonia variants (for neighbors feature) ───────────────────
+    // Uses OR compound to support cross-alcaldía neighbors
+    static _buildMultiWhere(coloniaList) {
+        return coloniaList.map(c =>
+            `(alcaldia_hecho = '${c.alcaldia.replace(/'/g, "''")}' AND COALESCE(NULLIF(colonia_catalogo, ''), INITCAP(colonia_hecho)) = '${c.colonia.replace(/'/g, "''")}')`
+        ).join(' OR ');
+    }
+
+    static getQuarterlyDataMulti(coloniaList) {
+        const where = this._buildMultiWhere(coloniaList);
+        return this.fetchSQL(`
+            SELECT alcaldia_hecho,
+                   COALESCE(NULLIF(colonia_catalogo, ''), INITCAP(colonia_hecho)) AS colonia_key,
+                   anio_hecho,
+                   EXTRACT(QUARTER FROM fecha_hecho)::int AS trimestre,
+                   delito,
+                   COUNT(*) AS total
+            FROM "${RESOURCE_ID}"
+            WHERE (${where})
+              AND anio_hecho >= 2019
+            GROUP BY alcaldia_hecho, colonia_key, anio_hecho, trimestre, delito
+            ORDER BY anio_hecho, trimestre
+        `);
+    }
+
+    static getMapPointsMulti(coloniaList, year, quarter) {
+        const where = this._buildMultiWhere(coloniaList);
+        return this.fetchSQL(`
+            SELECT alcaldia_hecho,
+                   COALESCE(NULLIF(colonia_catalogo, ''), INITCAP(colonia_hecho)) AS colonia_key,
+                   latitud, longitud, delito, fecha_hecho, hora_hecho
+            FROM "${RESOURCE_ID}"
+            WHERE (${where})
+              AND anio_hecho = ${year}
+              AND EXTRACT(QUARTER FROM fecha_hecho) = ${quarter}
+              AND latitud IS NOT NULL
+              AND longitud IS NOT NULL
+            LIMIT 32000
+        `);
+    }
 }
 
 // ==========================================
@@ -137,6 +178,7 @@ const State = {
     filteredData: [],     // Data after applying cat/delito filters
     mapPoints: [],
     coloniaGeoData: null, // GeoJSON FeatureCollection from colonias_geo.json
+    neighborsData: null,  // adjacency map from colonias_neighbors.json
     
     selectedAlcaldia: null,
     selectedColonia: null,
@@ -145,7 +187,9 @@ const State = {
     
     activeCategories: new Set(Object.keys(CategoryMapper.CATEGORIES)),
     selectedDelitos: [],  // Empty means all
-    heatmapMode: false
+    heatmapMode: false,
+    neighborsEnabled: false,
+    activeNeighbors: new Set()   // Set of "ALCALDIA||colonia" keys
 };
 
 const UI = {
@@ -165,6 +209,7 @@ const UI = {
     pointsGroup: null,
     heatLayer: null,
     coloniaPolygonLayer: null,
+    neighborPolygonLayer: null,
     
     showLoading(show) { show ? this.loading.classList.add('active') : this.loading.classList.remove('active'); },
     showContent(show) { 
@@ -205,16 +250,20 @@ async function init() {
         setupInfoModal();
         setupDownloadCSV();
         
-        // Load colonia polygons and catalog in parallel
-        const [catalog, geoResp] = await Promise.all([
+        // Load colonia polygons, neighbors, and catalog in parallel
+        const [catalog, geoResp, neighborsResp] = await Promise.all([
             CKANClient.getCatalog(),
-            fetch('colonias_geo.json').then(r => r.ok ? r.json() : null).catch(() => null)
+            fetch('colonias_geo.json').then(r => r.ok ? r.json() : null).catch(() => null),
+            fetch('colonias_neighbors.json').then(r => r.ok ? r.json() : null).catch(() => null)
         ]);
         State.catalog = catalog;
         State.coloniaGeoData = geoResp;
+        State.neighborsData = neighborsResp;
         if (!geoResp) console.warn('colonias_geo.json not found — polygon outlines disabled');
+        if (!neighborsResp) console.warn('colonias_neighbors.json not found — neighbors feature disabled');
 
         initSelects();
+        setupNeighborsToggle();
         loadInitialStateFromUrl();
     } catch (e) {
         alert("Error cargando el catálogo de colonias. Revisa la consola.");
@@ -509,6 +558,146 @@ function updateToggleAllState() {
 }
 
 // ==========================================
+// Neighbors Feature
+// ==========================================
+function setupNeighborsToggle() {
+    const cb = document.getElementById('toggle-neighbors-cb');
+    if (!cb) return;
+    cb.addEventListener('change', (e) => {
+        State.neighborsEnabled = e.target.checked;
+        const panel = document.getElementById('neighbors-panel');
+        if (panel) panel.style.display = State.neighborsEnabled ? 'block' : 'none';
+        // Re-fetch data with/without neighbors (this is the big toggle — API call justified)
+        if (State.selectedColonia) {
+            onColoniaChange(State.selectedColonia);
+        }
+    });
+
+    // Toggle all neighbors — client-side only, no API call
+    const toggleAll = document.getElementById('toggle-all-neighbors');
+    if (toggleAll) {
+        toggleAll.addEventListener('change', (e) => {
+            const isChecked = e.target.checked;
+            document.querySelectorAll('.nb-cb').forEach(nb => nb.checked = isChecked);
+            if (isChecked) {
+                const key = `${State.selectedAlcaldia}||${State.selectedColonia}`;
+                const nbs = State.neighborsData?.[key] || [];
+                nbs.forEach(n => State.activeNeighbors.add(n));
+            } else {
+                State.activeNeighbors.clear();
+            }
+            // Client-side filter only — data already fetched
+            applyFiltersAndRender();
+        });
+    }
+}
+
+function buildNeighborPanel() {
+    const control = document.getElementById('neighbors-control');
+    const container = document.getElementById('neighbors-checkboxes');
+    const countEl = document.getElementById('neighbors-count');
+    
+    if (!State.neighborsData || !control || !container) {
+        if (control) control.style.display = 'none';
+        return;
+    }
+
+    const key = `${State.selectedAlcaldia}||${State.selectedColonia}`;
+    const neighborKeys = State.neighborsData[key] || [];
+
+    if (neighborKeys.length === 0) {
+        control.style.display = 'none';
+        return;
+    }
+
+    // Show the control
+    control.style.display = 'flex';
+    countEl.textContent = neighborKeys.length;
+
+    // Reset active neighbors to all by default
+    State.activeNeighbors = new Set(neighborKeys);
+    const toggleAll = document.getElementById('toggle-all-neighbors');
+    if (toggleAll) toggleAll.checked = true;
+
+    // Clear existing checkboxes
+    container.innerHTML = '';
+
+    // Build sorted neighbor list
+    const neighbors = neighborKeys.map(nk => {
+        const [alc, col] = nk.split('||');
+        return { key: nk, alcaldia: alc, colonia: col };
+    }).sort((a, b) => {
+        // Same alcaldía first, then alphabetical
+        const sameA = a.alcaldia === State.selectedAlcaldia ? 0 : 1;
+        const sameB = b.alcaldia === State.selectedAlcaldia ? 0 : 1;
+        if (sameA !== sameB) return sameA - sameB;
+        return a.colonia.localeCompare(b.colonia);
+    });
+
+    neighbors.forEach(nb => {
+        const label = document.createElement('label');
+        label.className = 'neighbor-checkbox';
+        const crossAlcaldia = nb.alcaldia !== State.selectedAlcaldia;
+        label.innerHTML = `
+            <input type="checkbox" class="nb-cb" value="${nb.key}" checked>
+            <span class="neighbor-color-dot"></span>
+            <span class="neighbor-name">${nb.colonia}</span>
+            ${crossAlcaldia ? `<span class="neighbor-alcaldia-tag">${nb.alcaldia}</span>` : ''}
+        `;
+        label.querySelector('input').addEventListener('change', (e) => {
+            if (e.target.checked) State.activeNeighbors.add(nb.key);
+            else State.activeNeighbors.delete(nb.key);
+            updateNeighborsToggleAllState();
+            // Client-side filter only — data already fetched for all neighbors
+            applyFiltersAndRender();
+        });
+        container.appendChild(label);
+    });
+}
+
+function updateNeighborsToggleAllState() {
+    const key = `${State.selectedAlcaldia}||${State.selectedColonia}`;
+    const total = (State.neighborsData?.[key] || []).length;
+    const active = State.activeNeighbors.size;
+    const toggleAll = document.getElementById('toggle-all-neighbors');
+    if (toggleAll) toggleAll.checked = (total === active);
+}
+
+function hideNeighborsControl() {
+    const control = document.getElementById('neighbors-control');
+    if (control) control.style.display = 'none';
+    State.activeNeighbors.clear();
+    State.neighborsEnabled = false;
+    const cb = document.getElementById('toggle-neighbors-cb');
+    if (cb) cb.checked = false;
+    const panel = document.getElementById('neighbors-panel');
+    if (panel) panel.style.display = 'none';
+}
+
+/** Build the full list of ALL neighbor colonias (for API fetch). */
+function getAllNeighborColoniaList() {
+    const key = `${State.selectedAlcaldia}||${State.selectedColonia}`;
+    const list = [{ alcaldia: State.selectedAlcaldia, colonia: State.selectedColonia }];
+    const nbs = State.neighborsData?.[key] || [];
+    nbs.forEach(nk => {
+        const [alc, col] = nk.split('||');
+        list.push({ alcaldia: alc, colonia: col });
+    });
+    return list;
+}
+
+/** Check if a record's colonia_key belongs to the currently active set. */
+function isRecordInActiveColonias(record) {
+    // Records from single-colonia queries don't have colonia_key
+    if (!record.colonia_key) return true;
+    const recKey = `${record.alcaldia_hecho}||${record.colonia_key}`;
+    // Always include the selected colonia
+    if (record.alcaldia_hecho === State.selectedAlcaldia && record.colonia_key === State.selectedColonia) return true;
+    // Check if this neighbor is active
+    return State.activeNeighbors.has(recKey);
+}
+
+// ==========================================
 // Event Handlers
 // ==========================================
 function onAlcaldiaChange(alcaldia) {
@@ -531,13 +720,23 @@ async function onColoniaChange(colonia) {
     State.selectedColonia = colonia;
     if (!colonia) {
         UI.showContent(false);
+        hideNeighborsControl();
         return;
     }
 
+    // Build neighbors panel (even if not enabled, so it's ready)
+    buildNeighborPanel();
+
     UI.showLoading(true);
     try {
-        // Fetch Aggregated data
-        const rawData = await CKANClient.getQuarterlyData(State.selectedAlcaldia, colonia);
+        // Fetch ALL neighbor data in one shot (or single-colonia if neighbors disabled)
+        let rawData;
+        if (State.neighborsEnabled) {
+            const allColonias = getAllNeighborColoniaList();
+            rawData = await CKANClient.getQuarterlyDataMulti(allColonias);
+        } else {
+            rawData = await CKANClient.getQuarterlyData(State.selectedAlcaldia, colonia);
+        }
         // Exclude incomplete quarter (2025-Q1)
         State.coloniaData = rawData.filter(r => !(r.anio_hecho == 2025 && r.trimestre == 1));
         
@@ -580,7 +779,12 @@ async function onTrimestreChange(qKey, forceMapFetch = false) {
     if (changed || forceMapFetch) {
         UI.showLoading(true);
         try {
-            State.mapPoints = await CKANClient.getMapPoints(State.selectedAlcaldia, State.selectedColonia, State.selectedYear, State.selectedQuarter);
+            if (State.neighborsEnabled) {
+                const allColonias = getAllNeighborColoniaList();
+                State.mapPoints = await CKANClient.getMapPointsMulti(allColonias, State.selectedYear, State.selectedQuarter);
+            } else {
+                State.mapPoints = await CKANClient.getMapPoints(State.selectedAlcaldia, State.selectedColonia, State.selectedYear, State.selectedQuarter);
+            }
         } catch (e) {
             console.error("Map fetch failed", e);
             State.mapPoints = [];
@@ -636,11 +840,12 @@ function updateDelitoChoices() {
 function applyFiltersAndRender() {
     if(!State.selectedColonia) return;
 
-    // Filter local data
+    // Filter local data (categories + delitos + active neighbor colonias)
     State.filteredData = State.coloniaData.filter(r => {
         const catMatch = State.activeCategories.has(r.macro_cat);
         const subDelitoMatch = State.selectedDelitos.length === 0 || State.selectedDelitos.includes(r.delito);
-        return catMatch && subDelitoMatch;
+        const coloniaMatch = isRecordInActiveColonias(r);
+        return catMatch && subDelitoMatch && coloniaMatch;
     });
 
     UI.showContent(true);
@@ -672,11 +877,23 @@ async function initMap() {
     UI.coloniaPolygonLayer = L.geoJSON(null, {
         style: {
             color: '#38bdf8',
-            weight: 2,
-            opacity: 0.8,
+            weight: 2.5,
+            opacity: 0.9,
             fillColor: '#38bdf8',
-            fillOpacity: 0.06,
+            fillOpacity: 0.08,
             dashArray: '6 4'
+        }
+    }).addTo(UI.map);
+
+    // Neighbor polygon layer (yellow, below selected colonia)
+    UI.neighborPolygonLayer = L.geoJSON(null, {
+        style: {
+            color: '#fbbf24',
+            weight: 1.5,
+            opacity: 0.7,
+            fillColor: '#fbbf24',
+            fillOpacity: 0.05,
+            dashArray: '4 3'
         }
     }).addTo(UI.map);
 
@@ -699,7 +916,8 @@ function renderMap(preserveView = false) {
         const macroCat = CategoryMapper.classify(p.delito);
         const catMatch = State.activeCategories.has(macroCat);
         const subDelitoMatch = State.selectedDelitos.length === 0 || State.selectedDelitos.includes(p.delito);
-        return catMatch && subDelitoMatch;
+        const coloniaMatch = isRecordInActiveColonias(p);
+        return catMatch && subDelitoMatch && coloniaMatch;
     });
 
     if(State.heatmapMode) {
@@ -743,28 +961,47 @@ function renderMap(preserveView = false) {
         UI.heatLayer.setLatLngs(heatData);
     }
 
-    // ── Colonia polygon outline ───────────────────────────────────────
-    if (UI.coloniaPolygonLayer) {
-        UI.coloniaPolygonLayer.clearLayers();
-        if (State.coloniaGeoData && State.selectedAlcaldia && State.selectedColonia) {
-            const polyFeature = State.coloniaGeoData.features.find(f =>
-                f.properties.alcaldia === State.selectedAlcaldia &&
-                f.properties.colonia === State.selectedColonia
-            );
-            if (polyFeature) {
-                UI.coloniaPolygonLayer.addData(polyFeature);
-                // Use polygon bounds as baseline so the view always frames the colonia
-                const polyBounds = UI.coloniaPolygonLayer.getBounds();
-                if (polyBounds.isValid()) bounds.extend(polyBounds);
-            }
+    // ── Colonia polygon outlines ──────────────────────────────────────
+    if (UI.coloniaPolygonLayer) UI.coloniaPolygonLayer.clearLayers();
+    if (UI.neighborPolygonLayer) UI.neighborPolygonLayer.clearLayers();
+
+    if (State.coloniaGeoData && State.selectedAlcaldia && State.selectedColonia) {
+        // Draw neighbor polygons first (below selected)
+        if (State.neighborsEnabled && State.activeNeighbors.size > 0) {
+            State.activeNeighbors.forEach(key => {
+                const [alc, col] = key.split('||');
+                const nFeat = State.coloniaGeoData.features.find(f =>
+                    f.properties.alcaldia === alc && f.properties.colonia === col
+                );
+                if (nFeat && UI.neighborPolygonLayer) {
+                    UI.neighborPolygonLayer.addData(nFeat);
+                }
+            });
+            const nbBounds = UI.neighborPolygonLayer.getBounds();
+            if (nbBounds.isValid()) bounds.extend(nbBounds);
+        }
+
+        // Draw selected colonia polygon (on top)
+        const polyFeature = State.coloniaGeoData.features.find(f =>
+            f.properties.alcaldia === State.selectedAlcaldia &&
+            f.properties.colonia === State.selectedColonia
+        );
+        if (polyFeature && UI.coloniaPolygonLayer) {
+            UI.coloniaPolygonLayer.addData(polyFeature);
+            const polyBounds = UI.coloniaPolygonLayer.getBounds();
+            if (polyBounds.isValid()) bounds.extend(polyBounds);
         }
     }
 
     // Only fit bounds when loading new data, not when just toggling layers
     if (hasPoints && !preserveView) {
         UI.map.fitBounds(bounds, {padding: [50, 50], maxZoom: 16});
-    } else if (!hasPoints && UI.coloniaPolygonLayer && UI.coloniaPolygonLayer.getLayers().length > 0 && !preserveView) {
-        UI.map.fitBounds(UI.coloniaPolygonLayer.getBounds(), {padding: [50, 50], maxZoom: 16});
+    } else if (!hasPoints && !preserveView) {
+        // Fit to polygons if available
+        const allPolyBounds = L.latLngBounds();
+        if (UI.coloniaPolygonLayer?.getLayers().length > 0) allPolyBounds.extend(UI.coloniaPolygonLayer.getBounds());
+        if (UI.neighborPolygonLayer?.getLayers().length > 0) allPolyBounds.extend(UI.neighborPolygonLayer.getBounds());
+        if (allPolyBounds.isValid()) UI.map.fitBounds(allPolyBounds, {padding: [50, 50], maxZoom: 16});
     }
     
     // Invalidate size to prevent half-drawn map issue
