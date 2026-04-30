@@ -1,12 +1,16 @@
 alcaldia,colonia_crime,colonia_geo,match_type,matched
 ALVARO OBREGON,16 De Septiembre,16 De Septiembre,cross_alcaldia,True
+ALVARO OBREGON,19 De Mayo,,unmatched,False
 ALVARO OBREGON,1ra Ampliacion Presidentes,1ra Ampliacion Presidentes,direct,True
 ALVARO OBREGON,1ra Seccion Cañada,1ra Seccion Cañada,direct,True
 ALVARO OBREGON,1ra Victoria,1ra Victoria,direct,True
+ALVARO OBREGON,2a. Ampliacion Jalalpa El Grande,,unmatched,False
+ALVARO OBREGON,2a Ampliación Jalalpa Tepito,,unmatched,False
 ALVARO OBREGON,2da Ampliacion Presidentes,2da Ampliacion Presidentes,direct,True
 ALVARO OBREGON,2da Del Moral Del Pueblo Tetelpan,2da Del Moral Del Pueblo Tetelpan,direct,True
 ALVARO OBREGON,2da Seccion Cañada,2da Seccion Cañada,direct,True
 ALVARO OBREGON,2do Reacomodo Tlacuitlapa,2do Reacomodo Tlacuitlapa,direct,True
+ALVARO OBREGON,2o Reacomodo Corpus Christi,,unmatched,False
 ALVARO OBREGON,2o Reacomodo Tlacuitlapa,2do Reacomodo Tlacuitlapa,fuzzy_0.98,True
 ALVARO OBREGON,8 De Agosto,8 De Agosto,direct,True
 ALVARO OBREGON,Abraham M Gonzalez,Abraham M Gonzalez,direct,True
@@ -57,6 +61,7 @@ ALVARO OBREGON,Bosque,Bosque,direct,True
 ALVARO OBREGON,Calzada Jalalpa,Calzada Jalalpa,direct,True
 ALVARO OBREGON,Campestre,Campestre,direct,True
 ALVARO OBREGON,Campestre Palo Alto,Campestre Palo Alto,cross_alcaldia,True
+ALVARO OBREGON,Campo De Tiro Los Gamitos,,unmatched,False
 ALVARO OBREGON,Canutillo,Canutillo,direct,True
 ALVARO OBREGON,Canutillo 2da Seccion,Canutillo 2da Seccion,direct,True
 ALVARO OBREGON,Canutillo 3ra Seccion,Canutillo 3ra Seccion,direct,True
@@ -77,9 +82,11 @@ ALVARO OBREGON,Cuevitas,Cuevitas,direct,True
 ALVARO OBREGON,Daniel Garza,Daniel Garza,cross_alcaldia,True
 ALVARO OBREGON,Del Carmen,Del Carmen,cross_alcaldia_ambiguous,True
 ALVARO OBREGON,Desarrollo Urbano,Desarrollo Urbano,direct,True
+ALVARO OBREGON,Desarrollo Urbano El Piru,,unmatched,False
 ALVARO OBREGON,Dos Rios Del Pueblo De Santa Lucia,Dos Rios Del Pueblo De Santa Lucia,direct,True
 ALVARO OBREGON,Ejido San Mateo,Ejido San Mateo,direct,True
 ALVARO OBREGON,El Arbol,El Arbol,direct,True
+ALVARO OBREGON,El Arbol Ampliacion,,unmatched,False
 ALVARO OBREGON,El Bosque 2a Secc,El Bosque 2a Secc,direct,True
 ALVARO OBREGON,El Capulin,El Capulin,direct,True
 ALVARO OBREGON,El Cuernito,El Cuernito,direct,True
@@ -104,6 +111,7 @@ ALVARO OBREGON,Flor De Maria,Flor De Maria,direct,True
 ALVARO OBREGON,Florida,Florida,direct,True
 ALVARO OBREGON,Francisco Villa,Francisco Villa,direct,True
 ALVARO OBREGON,Galeana,Galeana,direct,True
+ALVARO OBREGON,Gamitos,,unmatched,False
 ALVARO OBREGON,Garcimarrero,Garcimarrero,direct,True
 ALVARO OBREGON,Golondrinas,Golondrinas,direct,True
 ALVARO OBREGON,Golondrinas 1ra Seccion,Golondrinas 1ra Seccion,direct,True
@@ -117,6 +125,7 @@ ALVARO OBREGON,Hueytlale,Hueytlale,direct,True
 ALVARO OBREGON,Isidro Fabela,Isidro Fabela,direct,True
 ALVARO OBREGON,Jalalpa,Ampliacion Jalalpa,loose_prefix,True
 ALVARO OBREGON,Jalalpa El Grande,Jalalpa El Grande,direct,True
+ALVARO OBREGON,Jalalpa El Grande 1er. Reacomodo,,unmatched,False
 ALVARO OBREGON,Jalalpa Tepito,Jalalpa Tepito,direct,True
 ALVARO OBREGON,Jalalpa Tepito 2da Ampliacion,Jalalpa Tepito 2da Ampliacion,direct,True
 ALVARO OBREGON,Jardines Del Pedregal,Jardines Del Pedregal,direct,True
@@ -132,6 +141,7 @@ ALVARO OBREGON,La Herradura Del Pueblo Tetelpan,La Herradura Del Pueblo Tetelpan
 ALVARO OBREGON,La Huerta,La Huerta,direct,True
 ALVARO OBREGON,La Joya,La Joya,direct,True
 ALVARO OBREGON,La Joyita Del Pueblo Tetelpan,La Joyita Del Pueblo Tetelpan,direct,True
+ALVARO OBREGON,La Loma,,unmatched,False
 ALVARO OBREGON,La Martinica,La Martinica,direct,True
 ALVARO OBREGON,La Mexicana,La Mexicana,direct,True
 ALVARO OBREGON,La Mexicana 2da Ampliacion,La Mexicana 2da Ampliacion,direct,True
@@ -192,6 +202,7 @@ ALVARO OBREGON,Palmas,Palmas,direct,True
 ALVARO OBREGON,Palmas Axotitla,Palmas Axotitla,direct,True
 ALVARO OBREGON,Panteon Civil De Dolores,Panteon Civil De Dolores,cross_alcaldia,True
 ALVARO OBREGON,Paraiso,Paraiso,direct,True
+ALVARO OBREGON,Paraje Del Caballito,,unmatched,False
 ALVARO OBREGON,Paseo De Las Lomas,Paseo De Las Lomas,direct,True
 ALVARO OBREGON,Piloto Adolfo Lopez Mateos,Piloto Adolfo Lopez Mateos,direct,True
 ALVARO OBREGON,Piru Santa Lucia,Piru Santa Lucia,direct,True
@@ -222,6 +233,7 @@ ALVARO OBREGON,Reacomodo El Cuernito,Reacomodo El Cuernito,direct,True
 ALVARO OBREGON,Reacomodo Pino Suarez,Reacomodo Pino Suarez,direct,True
 ALVARO OBREGON,Reacomodo Valentin Gomez Farias,Reacomodo Valentin Gomez Farias,direct,True
 ALVARO OBREGON,Real Del Monte,Real Del Monte,direct,True
+ALVARO OBREGON,Reserva Ecologica Torres De Potrero,,unmatched,False
 ALVARO OBREGON,Rinconada De Tarango,Rinconada De Tarango,direct,True
 ALVARO OBREGON,Rinconada Las Cuevitas,Rinconada Las Cuevitas,direct,True
 ALVARO OBREGON,Rincon De La Bolsa,Rincon De La Bolsa,direct,True
@@ -312,6 +324,7 @@ AZCAPOTZALCO,Industrial Vallejo,Industrial Vallejo,direct,True
 AZCAPOTZALCO,Jardin Azpeitia,Jardin Azpeitia,direct,True
 AZCAPOTZALCO,La Preciosa,La Preciosa,direct,True
 AZCAPOTZALCO,La Raza,La Raza,direct,True
+AZCAPOTZALCO,Las Armas,,unmatched,False
 AZCAPOTZALCO,Las Salinas,Las Salinas,direct,True
 AZCAPOTZALCO,Liberacion,Liberacion,direct,True
 AZCAPOTZALCO,Libertad,Libertad,direct,True
@@ -460,6 +473,7 @@ COYOACAN,Adolfo Ruiz Cortines,Adolfo Ruiz Cortinez,fuzzy_0.95,True
 COYOACAN,Adolfo Ruiz Cortinez,Adolfo Ruiz Cortinez,direct,True
 COYOACAN,Ajusco,Ajusco,direct,True
 COYOACAN,Alianza Popular Revolucionaria,Alianza Popular Revolucionaria,direct,True
+COYOACAN,Ampliacion San Francisco Culhuacan,,unmatched,False
 COYOACAN,Atlantida,Atlantida,direct,True
 COYOACAN,Avante,Avante,direct,True
 COYOACAN,Barrio Del Niño Jesus,Barrio Del Niño Jesus,direct,True
@@ -585,6 +599,8 @@ COYOACAN,San Mateo,San Mateo,direct,True
 COYOACAN,Santa Cecilia,Santa Cecilia,direct,True
 COYOACAN,Tenorios,Tenorios,cross_alcaldia_ambiguous,True
 COYOACAN,Toriello Guerra,Toriello Guerra,cross_alcaldia_ambiguous,True
+COYOACAN,Unidad Obrero Hab. Ctm Culhuacan Zona 13,,unmatched,False
+COYOACAN,Universidad Nacional Autónoma De México,,unmatched,False
 COYOACAN,Valle Del Sur,Valle Del Sur,cross_alcaldia,True
 COYOACAN,Vergel Coapa,Vergel Coapa,cross_alcaldia,True
 COYOACAN,Vergel De Coyoacan,Vergel De Coyoacan,cross_alcaldia,True
@@ -607,6 +623,8 @@ CUAJIMALPA DE MORELOS,Ampliacion Memetla,Ampliacion Memetla,direct,True
 CUAJIMALPA DE MORELOS,Bosque De Las Lomas,Bosque De Las Lomas,cross_alcaldia,True
 CUAJIMALPA DE MORELOS,Bosques De Las Lomas,Bosques De Las Lomas,direct,True
 CUAJIMALPA DE MORELOS,Campestre Palo Alto,Campestre Palo Alto,direct,True
+CUAJIMALPA DE MORELOS,Club De Golf Bosques,,unmatched,False
+CUAJIMALPA DE MORELOS,Cola De Pato - Pueblo,,unmatched,False
 CUAJIMALPA DE MORELOS,Contadero,Contadero,direct,True
 CUAJIMALPA DE MORELOS,Cooperativa Palo Alto,Cooperativa Palo Alto,direct,True
 CUAJIMALPA DE MORELOS,Cruz Blanca,Cruz Blanca,direct,True
@@ -622,6 +640,7 @@ CUAJIMALPA DE MORELOS,Granjas Navidad,Granjas Navidad,direct,True
 CUAJIMALPA DE MORELOS,Granjas Palo Alto,Granjas Palo Alto,direct,True
 CUAJIMALPA DE MORELOS,Jesus Del Monte,Jesus Del Monte,direct,True
 CUAJIMALPA DE MORELOS,La Manzanita,La Manzanita,direct,True
+CUAJIMALPA DE MORELOS,La Navidad,,unmatched,False
 CUAJIMALPA DE MORELOS,La Pila,La Pila,direct,True
 CUAJIMALPA DE MORELOS,Las Lajas,Las Lajas,direct,True
 CUAJIMALPA DE MORELOS,Las Maromas,Las Maromas,direct,True
@@ -630,6 +649,7 @@ CUAJIMALPA DE MORELOS,La Venta,La Venta,direct,True
 CUAJIMALPA DE MORELOS,Locaxco,Locaxco,direct,True
 CUAJIMALPA DE MORELOS,Loma Del Padre,Loma Del Padre,direct,True
 CUAJIMALPA DE MORELOS,Lomas De Bezares,Lomas De Bezares,cross_alcaldia,True
+CUAJIMALPA DE MORELOS,Lomas Del Chamizal,,unmatched,False
 CUAJIMALPA DE MORELOS,Lomas De Memetla,Lomas De Memetla,direct,True
 CUAJIMALPA DE MORELOS,Lomas De Sn Pedro,Lomas De Sn Pedro,direct,True
 CUAJIMALPA DE MORELOS,Lomas De Vista Hermosa,Lomas De Vista Hermosa,direct,True
@@ -674,6 +694,7 @@ CUAUHTEMOC,Bosque De Chapultepec I Seccion,Bosque De Chapultepec I Seccion,cross
 CUAUHTEMOC,Buenavista,Buenavista,direct,True
 CUAUHTEMOC,Buenos Aires,Buenos Aires,direct,True
 CUAUHTEMOC,Centro,Centro,direct,True
+CUAUHTEMOC,Centro (Área 1),,unmatched,False
 CUAUHTEMOC,Condesa,Condesa,direct,True
 CUAUHTEMOC,Cuauhtemoc,Cuauhtemoc,direct,True
 CUAUHTEMOC,Del Valle Norte,Del Valle Norte,cross_alcaldia,True
@@ -753,6 +774,7 @@ GUSTAVO A. MADERO,Aragon Inguaran,Aragon Inguaran,direct,True
 GUSTAVO A. MADERO,Aragon La Villa,Aragon La Villa,direct,True
 GUSTAVO A. MADERO,Aragón La Villa,Aragon La Villa,direct,True
 GUSTAVO A. MADERO,Arboledas,Arboledas,direct,True
+GUSTAVO A. MADERO,Arboledas De Cuautepec El Alto,,unmatched,False
 GUSTAVO A. MADERO,Arpto Int De La Cd De Mex-Equipamiento,Arpto Int De La Cd De Mex-Equipamiento,cross_alcaldia,True
 GUSTAVO A. MADERO,Barrio Candelaria Ticoman,Barrio Candelaria Ticoman,direct,True
 GUSTAVO A. MADERO,Barrio Candelaria Ticomán,Barrio Candelaria Ticoman,direct,True
@@ -792,6 +814,7 @@ GUSTAVO A. MADERO,Del Carmen,Del Carmen,direct,True
 GUSTAVO A. MADERO,Del Obrero,Del Obrero,direct,True
 GUSTAVO A. MADERO,Dinamita,Dinamita,direct,True
 GUSTAVO A. MADERO,D M Nacional,D M Nacional,direct,True
+GUSTAVO A. MADERO,Ejidos San Juan De Aragon 1a Seccion,,unmatched,False
 GUSTAVO A. MADERO,El Arbolillo,El Arbolillo,direct,True
 GUSTAVO A. MADERO,El Coyol,El Coyol,direct,True
 GUSTAVO A. MADERO,El Olivo,El Olivo,direct,True
@@ -833,6 +856,7 @@ GUSTAVO A. MADERO,Juventino Rosas,Juventino Rosas,direct,True
 GUSTAVO A. MADERO,La Casilda,La Casilda,direct,True
 GUSTAVO A. MADERO,La Cruz,La Cruz,direct,True
 GUSTAVO A. MADERO,La Esmeralda,La Esmeralda,direct,True
+GUSTAVO A. MADERO,La Forestal 2,,unmatched,False
 GUSTAVO A. MADERO,La Joya,La Joya,direct,True
 GUSTAVO A. MADERO,La Joyita,La Joyita,direct,True
 GUSTAVO A. MADERO,La Lengueta,La Lengueta,direct,True
@@ -842,6 +866,7 @@ GUSTAVO A. MADERO,La Pradera,La Pradera,direct,True
 GUSTAVO A. MADERO,La Pradera I,La Pradera,fuzzy_0.91,True
 GUSTAVO A. MADERO,La Raza,La Raza,cross_alcaldia,True
 GUSTAVO A. MADERO,Li Legislatura,Li Legislatura,direct,True
+GUSTAVO A. MADERO,Lindavista,,unmatched,False
 GUSTAVO A. MADERO,Lindavista Norte,Lindavista Norte,direct,True
 GUSTAVO A. MADERO,Lindavista Sur,Lindavista Sur,direct,True
 GUSTAVO A. MADERO,Lindavista Vallejo 1a Seccion,Lindavista Vallejo 1a Seccion,direct,True
@@ -849,6 +874,7 @@ GUSTAVO A. MADERO,Lindavista Vallejo 2a Seccion,Lindavista Vallejo 2a Seccion,di
 GUSTAVO A. MADERO,Lindavista Vallejo 3a Seccion,Lindavista Vallejo 3a Seccion,direct,True
 GUSTAVO A. MADERO,Loma La Palma,Loma La Palma,direct,True
 GUSTAVO A. MADERO,Lomas De Cuautepec,Lomas De Cuautepec,direct,True
+GUSTAVO A. MADERO,Lomas De San Juan Ixhuatepec 2a Sección,,unmatched,False
 GUSTAVO A. MADERO,Luis Donaldo Colosio,Luis Donaldo Colosio,direct,True
 GUSTAVO A. MADERO,Magdalena De Las Salinas,Magdalena De Las Salinas,direct,True
 GUSTAVO A. MADERO,Malacates,Malacates,direct,True
@@ -928,6 +954,7 @@ GUSTAVO A. MADERO,Valle Gomez,Valle Gomez,cross_alcaldia_ambiguous,True
 GUSTAVO A. MADERO,Vallejo,Vallejo,direct,True
 GUSTAVO A. MADERO,Vallejo Poniente,Vallejo Poniente,direct,True
 GUSTAVO A. MADERO,Vasco De Quiroga,Vasco De Quiroga,direct,True
+GUSTAVO A. MADERO,Veronica Castro,,unmatched,False
 GUSTAVO A. MADERO,Villa De Aragon,Villa De Aragon,direct,True
 GUSTAVO A. MADERO,Villa De Aragón,Villa De Aragon,direct,True
 GUSTAVO A. MADERO,Villa Gustavo A Madero,Villa Gustavo A Madero,direct,True
@@ -1035,6 +1062,7 @@ IZTAPALAPA,Ampliacion Sinatel,Ampliacion Sinatel,direct,True
 IZTAPALAPA,Ampliacion Veracruzana,Ampliacion Veracruzana,direct,True
 IZTAPALAPA,Año De Juarez,Año De Juarez,direct,True
 IZTAPALAPA,Apatlaco,Apatlaco,direct,True
+IZTAPALAPA,Area Federal Parque Ecologico El Salado,,unmatched,False
 IZTAPALAPA,Banjidal,Banjidal,direct,True
 IZTAPALAPA,Barranca De Guadalupe,Barranca De Guadalupe,direct,True
 IZTAPALAPA,Barrio Guadalupe,Barrio Guadalupe,direct,True
@@ -1132,6 +1160,7 @@ IZTAPALAPA,José López Portillo,Jose Lopez Portillo,direct,True
 IZTAPALAPA,Jose Maria Morelos Y Pavon,Jose Maria Morelos Y Pavon,direct,True
 IZTAPALAPA,Juan Escutia,Juan Escutia,direct,True
 IZTAPALAPA,Justo Sierra,Justo Sierra,direct,True
+IZTAPALAPA,La Colmena,,unmatched,False
 IZTAPALAPA,La Era,La Era,direct,True
 IZTAPALAPA,La Esperanza,La Esperanza,direct,True
 IZTAPALAPA,La Estacion,La Estacion,cross_alcaldia,True
@@ -1139,6 +1168,7 @@ IZTAPALAPA,La Planta,La Planta,direct,True
 IZTAPALAPA,La Regadera,La Regadera,direct,True
 IZTAPALAPA,Las Arboledas,Las Arboledas,cross_alcaldia,True
 IZTAPALAPA,Las Peñas,Las Peñas,direct,True
+IZTAPALAPA,La Valenciana,,unmatched,False
 IZTAPALAPA,Leyes De Reforma 1a Seccion,Leyes De Reforma 1a Seccion,direct,True
 IZTAPALAPA,Leyes De Reforma 2a Seccion,Leyes De Reforma 2a Seccion,direct,True
 IZTAPALAPA,Leyes De Reforma 3a Seccion,Leyes De Reforma 3a Seccion,direct,True
@@ -1148,6 +1178,7 @@ IZTAPALAPA,Lomas De Sta Cruz,Lomas De Sta Cruz,direct,True
 IZTAPALAPA,Lomas De Zaragoza,Lomas De Zaragoza,direct,True
 IZTAPALAPA,Lomas El Manto,Lomas El Manto,direct,True
 IZTAPALAPA,Lomas Estrella,Lomas Estrella,direct,True
+IZTAPALAPA,Lomas Estrella 2a Seccion,,unmatched,False
 IZTAPALAPA,Los Angeles,Los Angeles,direct,True
 IZTAPALAPA,Los Ángeles,Los Angeles,direct,True
 IZTAPALAPA,Los Angeles Apanoaya,Los Angeles Apanoaya,direct,True
@@ -1174,6 +1205,7 @@ IZTAPALAPA,Plan De Iguala,Plan De Iguala,direct,True
 IZTAPALAPA,Polvorilla,Polvorilla,direct,True
 IZTAPALAPA,Portales Oriente,Portales Oriente,cross_alcaldia,True
 IZTAPALAPA,Prado Churubusco,Prado Churubusco,cross_alcaldia,True
+IZTAPALAPA,Predio El Molino,,unmatched,False
 IZTAPALAPA,Presidentes De Mexico,Presidentes De Mexico,direct,True
 IZTAPALAPA,Progresista,Progresista,direct,True
 IZTAPALAPA,Progreso Del Sur,Progreso Del Sur,direct,True
@@ -1213,6 +1245,7 @@ IZTAPALAPA,San Juan Xalpa,San Juan Xalpa,direct,True
 IZTAPALAPA,San Lorenzo,Barrio San Lorenzo,loose_prefix,True
 IZTAPALAPA,San Lorenzo Xicotencatl,Pueblo San Lorenzo Xicotencatl,loose_prefix,True
 IZTAPALAPA,San Miguel 8va Ampliacion,San Miguel 8va Ampliacion,direct,True
+IZTAPALAPA,San Miguel Teotongo,,unmatched,False
 IZTAPALAPA,San Miguel Teotongo Secc Acorralado,San Miguel Teotongo Secc Acorralado,direct,True
 IZTAPALAPA,San Miguel Teotongo Secc Avisadero,San Miguel Teotongo Secc Avisadero,direct,True
 IZTAPALAPA,San Miguel Teotongo Secc Capilla,San Miguel Teotongo Secc Capilla,direct,True
@@ -1240,8 +1273,11 @@ IZTAPALAPA,Santiago Acahualtepec 2a Ampliacion,Santiago Acahualtepec 2a Ampliaci
 IZTAPALAPA,Sector Popular,Sector Popular,direct,True
 IZTAPALAPA,Sideral,Sideral,direct,True
 IZTAPALAPA,Sinatel,Sinatel,direct,True
+IZTAPALAPA,Siracusa 240,,unmatched,False
+IZTAPALAPA,Solidaridad,,unmatched,False
 IZTAPALAPA,Tenorios,Tenorios,direct,True
 IZTAPALAPA,Tepalcates,Tepalcates,direct,True
+IZTAPALAPA,Triangulo De Las Agujas,,unmatched,False
 IZTAPALAPA,Unidad Ejercito Constitucionalista,Unidad Ejercito Constitucionalista,direct,True
 IZTAPALAPA,Unidad Modelo,Unidad Modelo,direct,True
 IZTAPALAPA,Unidad Santa Cruz Meyehualco,Unidad Santa Cruz Meyehualco,direct,True
@@ -1266,6 +1302,7 @@ LA MAGDALENA CONTRERAS,Chichicaspatl,Chichicaspatl,cross_alcaldia,True
 LA MAGDALENA CONTRERAS,Crescencio Juarez Chavira,Crescencio Juarez Chavira,direct,True
 LA MAGDALENA CONTRERAS,Cuauhtemoc,Cuauhtemoc,direct,True
 LA MAGDALENA CONTRERAS,El Ermitaño,El Ermitaño,direct,True
+LA MAGDALENA CONTRERAS,El Gavillero,,unmatched,False
 LA MAGDALENA CONTRERAS,El Maestro,El Maestro,direct,True
 LA MAGDALENA CONTRERAS,El Ocotal,El Ocotal,direct,True
 LA MAGDALENA CONTRERAS,El Rosal,El Rosal,direct,True
@@ -1274,6 +1311,7 @@ LA MAGDALENA CONTRERAS,El Toro,El Toro,direct,True
 LA MAGDALENA CONTRERAS,Fuentes Del Pedregal,Fuentes Del Pedregal,cross_alcaldia,True
 LA MAGDALENA CONTRERAS,Heroes De Padierna,Heroes De Padierna,direct,True
 LA MAGDALENA CONTRERAS,Huayatla,Huayatla,direct,True
+LA MAGDALENA CONTRERAS,Ixtlahualtongo,,unmatched,False
 LA MAGDALENA CONTRERAS,Jardines Del Pedregal,Jardines Del Pedregal,cross_alcaldia,True
 LA MAGDALENA CONTRERAS,La Carbonera,La Carbonera,direct,True
 LA MAGDALENA CONTRERAS,La Concepcion,La Concepcion,direct,True
@@ -1312,6 +1350,7 @@ LA MAGDALENA CONTRERAS,San Jeronimo Lidice,San Jeronimo Lidice,direct,True
 LA MAGDALENA CONTRERAS,San Jerónimo Lídice,San Jeronimo Lidice,direct,True
 LA MAGDALENA CONTRERAS,San Nicolás Totolapan,Pueblo San Nicolas Totolapan,loose_prefix,True
 LA MAGDALENA CONTRERAS,Santa Teresa,Santa Teresa,direct,True
+LA MAGDALENA CONTRERAS,Tierra Colorada,,unmatched,False
 LA MAGDALENA CONTRERAS,Tierra Unida,Tierra Unida,direct,True
 LA MAGDALENA CONTRERAS,Torres De Potrero,Torres De Potrero,cross_alcaldia,True
 LA MAGDALENA CONTRERAS,Vista Hermosa,Vista Hermosa,direct,True
@@ -1386,6 +1425,7 @@ MIGUEL HIDALGO,Los Manzanos,Los Manzanos,direct,True
 MIGUEL HIDALGO,Manuel Avila Camacho,Manuel Avila Camacho,direct,True
 MIGUEL HIDALGO,Mariano Escobedo,Mariano Escobedo,direct,True
 MIGUEL HIDALGO,Mexico Nuevo,Mexico Nuevo,direct,True
+MIGUEL HIDALGO,Militar 1 K Lomas De Sotelo,,unmatched,False
 MIGUEL HIDALGO,Modelo Pensil,Modelo Pensil,direct,True
 MIGUEL HIDALGO,Molino Del Rey,Molino Del Rey,direct,True
 MIGUEL HIDALGO,Napoles,Napoles,cross_alcaldia,True
@@ -1393,6 +1433,7 @@ MIGUEL HIDALGO,Nextitla,Nextitla,direct,True
 MIGUEL HIDALGO,Nueva Santa Maria,Nueva Santa Maria,cross_alcaldia,True
 MIGUEL HIDALGO,Observatorio,Observatorio,direct,True
 MIGUEL HIDALGO,Panteon Civil De Dolores,Panteon Civil De Dolores,direct,True
+MIGUEL HIDALGO,Panteon Frances,,unmatched,False
 MIGUEL HIDALGO,Pensil Norte,Pensil Norte,direct,True
 MIGUEL HIDALGO,Pensil Sur,Pensil Sur,direct,True
 MIGUEL HIDALGO,Peralitos,Peralitos,direct,True
@@ -1460,11 +1501,26 @@ MILPA ALTA,Barrio Tenantitla,Barrio Tenantitla,direct,True
 MILPA ALTA,Barrio Tula,Barrio Tula,direct,True
 MILPA ALTA,Barrio Xaltipac,Barrio Xaltipac,direct,True
 MILPA ALTA,Barrio Xochitepetl,Barrio Xochitepetl,direct,True
+MILPA ALTA,Cruztitla (San Antonio Tecomitl),,unmatched,False
+MILPA ALTA,Emiliano Zapata 1a Seccion,,unmatched,False
+MILPA ALTA,Emiliano Zapata 2a Seccion,,unmatched,False
 MILPA ALTA,Jaime Torres Bodet,Jaime Torres Bodet,cross_alcaldia,True
+MILPA ALTA,La Concepción (Villa Milpa Alta),,unmatched,False
 MILPA ALTA,La Conchita,La Conchita,direct,True
 MILPA ALTA,La Guadalupita,Barrio La Guadalupita,cross_loose,True
+MILPA ALTA,La Luz (Villa Milpa Alta),,unmatched,False
+MILPA ALTA,Los Ángeles (Villa Milpa Alta),,unmatched,False
+MILPA ALTA,Malvinas Primero,,unmatched,False
+MILPA ALTA,Malvinas Segundo,,unmatched,False
+MILPA ALTA,Nochtla (San Pedro Atocpan),,unmatched,False
+MILPA ALTA,Noxcalco,,unmatched,False
+MILPA ALTA,Ocotitla (San Pedro Atocpan),,unmatched,False
+MILPA ALTA,Panchimalco (San Pedro Atocpan),,unmatched,False
 MILPA ALTA,Potrero Del Llano,Potrero Del Llano,cross_alcaldia_ambiguous,True
 MILPA ALTA,Pueblo San Agustin Ohtenco,Pueblo San Agustin Ohtenco,direct,True
+MILPA ALTA,Pueblo San Antonio Tecomitl Barrio Xochitepec,,unmatched,False
+MILPA ALTA,Pueblo San Antonio Tecomitl (Las Arboledas),,unmatched,False
+MILPA ALTA,Pueblo San Antonio Tecomitl (Las Joyas),,unmatched,False
 MILPA ALTA,Pueblo San Bartolome Xicomulco,Pueblo San Bartolome Xicomulco,direct,True
 MILPA ALTA,Pueblo San Francisco Tecoxpa,Pueblo San Francisco Tecoxpa,direct,True
 MILPA ALTA,Pueblo San Jeronimo Miacatlan,Pueblo San Jeronimo Miacatlan,direct,True
@@ -1472,15 +1528,36 @@ MILPA ALTA,Pueblo San Juan Tepenahuac,Pueblo San Juan Tepenahuac,direct,True
 MILPA ALTA,Pueblo San Lorenzo Tlacoyucan,Pueblo San Lorenzo Tlacoyucan,direct,True
 MILPA ALTA,Pueblo San Nicolas Tetelco,Pueblo San Nicolas Tetelco,cross_alcaldia,True
 MILPA ALTA,Pueblo San Salvador Cuauhtenco,Pueblo San Salvador Cuauhtenco,direct,True
+MILPA ALTA,San Agustin (Villa Milpa Alta),,unmatched,False
 MILPA ALTA,San Bartolomé Xicomulco,Pueblo San Bartolome Xicomulco,loose_prefix,True
 MILPA ALTA,San Francisco Tecoxpa,Pueblo San Francisco Tecoxpa,loose_prefix,True
+MILPA ALTA,San Isidro Cuatepec,,unmatched,False
 MILPA ALTA,San Jerónimo Miacatlán,Pueblo San Jeronimo Miacatlan,loose_prefix,True
+MILPA ALTA,San José (Santa Ana Tlacotenco),,unmatched,False
+MILPA ALTA,San Juan (San Pablo Oztotepec),,unmatched,False
 MILPA ALTA,San Juan Tepenahuac,Pueblo San Juan Tepenahuac,loose_prefix,True
+MILPA ALTA,San Juan Tepenahuac I,,unmatched,False
+MILPA ALTA,San Juan Tepenahuac Ii,,unmatched,False
 MILPA ALTA,San Lorenzo Tlacoyucan,Pueblo San Lorenzo Tlacoyucan,loose_prefix,True
+MILPA ALTA,San Marcos (Santa Ana Tlacotenco),,unmatched,False
+MILPA ALTA,San Mateo (Villa Milpa Alta),,unmatched,False
+MILPA ALTA,San Miguel (San Pablo Oztotepec),,unmatched,False
+MILPA ALTA,San Miguel (Santa Ana Tlacotenco),,unmatched,False
 MILPA ALTA,San Nicolás Tetelco,Pueblo San Nicolas Tetelco,cross_loose,True
+MILPA ALTA,San Salvador Cuauhtenco Seccion I,,unmatched,False
+MILPA ALTA,San Salvador Cuauhtenco Seccion Ii,,unmatched,False
+MILPA ALTA,San Salvador Cuauhtenco Seccion Iii,,unmatched,False
+MILPA ALTA,San Salvador Cuauhtenco Seccion Iv,,unmatched,False
 MILPA ALTA,Santa  Cecilia Tepetlapa,Pueblo Santa Cecilia Tepetlapa,cross_loose,True
 MILPA ALTA,Santa Cecilia Tepetlapa,Pueblo Santa Cecilia Tepetlapa,cross_loose,True
+MILPA ALTA,Santa Cruz (Villa Milpa Alta),,unmatched,False
+MILPA ALTA,Santa Martha (Villa Milpa Alta),,unmatched,False
+MILPA ALTA,Tecaxtitla (San Antonio Tecomitl),,unmatched,False
+MILPA ALTA,Tecoloxtitla,,unmatched,False
+MILPA ALTA,Tenantitla (San Antonio Tecomitl),,unmatched,False
+MILPA ALTA,Tula (San Pedro Atocpan),,unmatched,False
 MILPA ALTA,Villa Milpa Alta Centro,Villa Milpa Alta Centro,direct,True
+MILPA ALTA,Xaltipac (San Antonio Tecomitl),,unmatched,False
 TLAHUAC,3 De Mayo,Barrio 3 De Mayo,cross_loose,True
 TLAHUAC,Agricola Metropolitana,Agricola Metropolitana,direct,True
 TLAHUAC,Ampliacion Jose Lopez Portillo,Ampliacion Jose Lopez Portillo,direct,True
@@ -1525,20 +1602,27 @@ TLAHUAC,Campestre Potrero,Campestre Potrero,cross_alcaldia,True
 TLAHUAC,Celoalliotli,Celoalliotli,cross_alcaldia,True
 TLAHUAC,Cerrillos Segunda Seccion,Cerrillos Segunda Seccion,cross_alcaldia,True
 TLAHUAC,Chichilaula,Chichilaula,direct,True
+TLAHUAC,Conchita A,,unmatched,False
+TLAHUAC,Conchita B,,unmatched,False
 TLAHUAC,Coop Allapetlalli,Coop Allapetlalli,cross_alcaldia,True
 TLAHUAC,Degollado-Mexicatlalli,Degollado-Mexicatlalli,cross_alcaldia,True
 TLAHUAC,Del Mar,Del Mar,direct,True
+TLAHUAC,El Mirador - Santa Catarina,,unmatched,False
 TLAHUAC,El Rosario,El Rosario,direct,True
 TLAHUAC,El Triangulo,El Triangulo,direct,True
 TLAHUAC,El Triangulo Del Pblo. De Sn. Fco. Tlaltenco,El Triangulo Del Pblo. De Sn. Fco. Tlaltenco,direct,True
 TLAHUAC,Emiliano Zapata,Emiliano Zapata,cross_alcaldia_ambiguous,True
+TLAHUAC,Emiliano Zapata 1a Seccion,,unmatched,False
+TLAHUAC,Emiliano Zapata 2a Seccion,,unmatched,False
 TLAHUAC,Francisco Villa,Francisco Villa,direct,True
 TLAHUAC,Granjas Cabrera,Granjas Cabrera,direct,True
 TLAHUAC,Guadalupe Tlaltenco,Guadalupe Tlaltenco,direct,True
 TLAHUAC,Jaime Torres Bodet,Jaime Torres Bodet,direct,True
 TLAHUAC,Jardines Del Llano,Jardines Del Llano,direct,True
 TLAHUAC,La Asuncion,La Asuncion,direct,True
+TLAHUAC,La Asuncion - Barrio,,unmatched,False
 TLAHUAC,La Asuncion I,La Asuncion,fuzzy_0.92,True
+TLAHUAC,La Cienega,,unmatched,False
 TLAHUAC,La Concepcion,La Concepcion,direct,True
 TLAHUAC,La Conchita,Ampliacion La Conchita,loose_prefix,True
 TLAHUAC,La Conchita Zapotitlan,La Conchita Zapotitlan,direct,True
@@ -1548,20 +1632,25 @@ TLAHUAC,La Estacion,La Estacion,direct,True
 TLAHUAC,La Estación,La Estacion,direct,True
 TLAHUAC,La Guadalupe,Barrio La Guadalupe,loose_prefix,True
 TLAHUAC,La Habana,La Habana,direct,True
+TLAHUAC,La Loma,,unmatched,False
 TLAHUAC,La Lupita,La Lupita,direct,True
 TLAHUAC,La Meza,La Meza,direct,True
 TLAHUAC,La Nopalera,La Nopalera,direct,True
 TLAHUAC,La Planta,La Planta,cross_alcaldia,True
 TLAHUAC,Las Arboledas,Las Arboledas,direct,True
 TLAHUAC,Las Mesitas,Las Mesitas,cross_alcaldia,True
+TLAHUAC,La Soledad,,unmatched,False
+TLAHUAC,Las Puertas - Barrio,,unmatched,False
 TLAHUAC,La Turba,La Turba,direct,True
 TLAHUAC,Lopez Portillo Del Pueblo San Francisco Tlaltenco,Lopez Portillo Del Pueblo San Francisco Tlaltenco,direct,True
 TLAHUAC,Los Olivos,Los Olivos,direct,True
 TLAHUAC,Los Reyes,Barrio Los Reyes,loose_prefix,True
+TLAHUAC,Los Reyes (Del Pueblo De San Andrés Mixquic),,unmatched,False
 TLAHUAC,Miguel Hidalgo,Miguel Hidalgo,direct,True
 TLAHUAC,Nativitas,Nativitas,cross_alcaldia_ambiguous,True
 TLAHUAC,Nueva Tenochtitlán,Nueva Tenochtitlan,cross_alcaldia,True
 TLAHUAC,Ojo De Agua,Ojo De Agua,direct,True
+TLAHUAC,Paraiso Santa Catarina,,unmatched,False
 TLAHUAC,Peña Alta,Peña Alta,direct,True
 TLAHUAC,Polvorilla,Polvorilla,cross_alcaldia,True
 TLAHUAC,Potrero Del Llano,Potrero Del Llano,direct,True
@@ -1573,22 +1662,31 @@ TLAHUAC,Pueblo Tulyehualco,Pueblo Tulyehualco,direct,True
 TLAHUAC,Quiahuatla,Quiahuatla,direct,True
 TLAHUAC,San Agustin,Barrio San Agustin,loose_prefix,True
 TLAHUAC,San Andrés,Barrio San Andres,loose_prefix,True
+TLAHUAC,San Bartolomé (Del Pueblo De San Andrés Mixquic),,unmatched,False
 TLAHUAC,San Francisco Tlaltenco,Pueblo San Francisco Tlaltenco,loose_prefix,True
 TLAHUAC,San Gregorio Atlapulco,Pueblo San Gregorio Atlapulco,cross_loose,True
+TLAHUAC,San Ignacio De Loyola,,unmatched,False
 TLAHUAC,San Isidro,San Isidro,direct,True
+TLAHUAC,San Isidro Tulyehualco,,unmatched,False
 TLAHUAC,San José,Barrio San Jose,cross_loose,True
 TLAHUAC,San Jose Tlahuac Del Pueblo San Pedro Tlahuac,San Jose Tlahuac Del Pueblo San Pedro Tlahuac,direct,True
 TLAHUAC,San Juan,Barrio San Juan,loose_prefix,True
 TLAHUAC,San Miguel,Barrio San Miguel,loose_prefix,True
+TLAHUAC,San Miguel (Del Pueblo De San Andrés Mixquic),,unmatched,False
+TLAHUAC,San Miguel Zapotitla,,unmatched,False
 TLAHUAC,San Nicolás Tetelco,Pueblo San Nicolas Tetelco,loose_prefix,True
 TLAHUAC,San Sebastian Del Pueblo San Pedro Tlahuac,San Sebastian Del Pueblo San Pedro Tlahuac,direct,True
 TLAHUAC,Santa Ana,Barrio Santa Ana,loose_prefix,True
 TLAHUAC,Santa Ana Sur,Barrio Santa Ana Sur,loose_prefix,True
 TLAHUAC,Santa Cecilia,Santa Cecilia,direct,True
+TLAHUAC,Santa Cruz (Del Pueblo De San Andrés Mixquic),,unmatched,False
+TLAHUAC,Santa Maria De Los Olivos - Barrio,,unmatched,False
 TLAHUAC,Santiago,Barrio Santiago,loose_prefix,True
 TLAHUAC,Santiago Norte,Barrio Santiago Norte,cross_loose,True
 TLAHUAC,Santiago Sur,Barrio Santiago Sur,loose_prefix,True
 TLAHUAC,Selene,Selene,direct,True
+TLAHUAC,Selene 1a. Seccion,,unmatched,False
+TLAHUAC,Selene 2a. Seccion,,unmatched,False
 TLAHUAC,Selene Del Pueblo San Francisco Tlaltenco,Selene Del Pueblo San Francisco Tlaltenco,direct,True
 TLAHUAC,Tempiluli,Tempiluli,direct,True
 TLAHUAC,Teozoma,Teozoma,direct,True
@@ -1598,6 +1696,7 @@ TLAHUAC,Villa Centroamericana,Villa Centroamericana,direct,True
 TLAHUAC,Villa Centro Americana,Villa Centroamericana,fuzzy_0.98,True
 TLAHUAC,Zacatenco,Zacatenco,direct,True
 TLAHUAC,Zapotitla,Zapotitla,direct,True
+TLAHUAC,Zona De Reserva Ecologica,,unmatched,False
 TLALPAN,2 De Octubre,2 De Octubre,direct,True
 TLALPAN,Ampliacion Fuentes Del Pedregal,Ampliacion Fuentes Del Pedregal,direct,True
 TLALPAN,Ampliacion Isidro Fabela,Ampliacion Isidro Fabela,direct,True
@@ -1631,11 +1730,13 @@ TLALPAN,Colinas Del Bosque,Colinas Del Bosque,direct,True
 TLALPAN,Comuneros De Santa Ursula,Comuneros De Santa Ursula,direct,True
 TLALPAN,Cruz Del Farol,Cruz Del Farol,direct,True
 TLALPAN,Cuchilla De Padierna,Cuchilla De Padierna,direct,True
+TLALPAN,Cuchilla Tepeximilpa,,unmatched,False
 TLALPAN,Cultura Maya,Cultura Maya,direct,True
 TLALPAN,Cumbres De Tepetongo,Cumbres De Tepetongo,direct,True
 TLALPAN,Diamante,Diamante,direct,True
 TLALPAN,Divisadero,Divisadero,direct,True
 TLALPAN,Dolores Tlali,Dolores Tlali,direct,True
+TLALPAN,Dr. Ignacio Chávez Infonavit,,unmatched,False
 TLALPAN,Ejidos De San Pedro Martir,Ejidos De San Pedro Martir,direct,True
 TLALPAN,El Cantil,El Cantil,direct,True
 TLALPAN,El Charco,El Charco,direct,True
@@ -1651,6 +1752,7 @@ TLALPAN,Ex Ejido De  Santa Ursula Coapa,Ex Ejido De  Santa Ursula Coapa,cross_al
 TLALPAN,Ex Hacienda Coapa,Ex Hacienda Coapa,direct,True
 TLALPAN,Ex Hacienda San Juan De Dios,Ex Hacienda San Juan De Dios,direct,True
 TLALPAN,Floresta Coyoacan,Floresta Coyoacan,direct,True
+TLALPAN,Fovissste Periférico,,unmatched,False
 TLALPAN,Fuentes Brotantes,Fuentes Brotantes,direct,True
 TLALPAN,Fuentes Del Pedregal,Fuentes Del Pedregal,direct,True
 TLALPAN,Fuentes De Tepepan,Fuentes De Tepepan,direct,True
@@ -1684,7 +1786,9 @@ TLALPAN,Lomas Del Pedregal,Lomas Del Pedregal,direct,True
 TLALPAN,Lomas Del Pedregal Framboyanes,Lomas Del Pedregal Framboyanes,direct,True
 TLALPAN,Lomas De Padierna,Lomas De Padierna,direct,True
 TLALPAN,Lomas De Padierna Sur,Lomas De Padierna Sur,direct,True
+TLALPAN,Lomas De Tepemecatl,,unmatched,False
 TLALPAN,Lomas Hidalgo,Lomas Hidalgo,direct,True
+TLALPAN,Los Arcos,,unmatched,False
 TLALPAN,Los Cipreses,Los Cipreses,cross_alcaldia_ambiguous,True
 TLALPAN,Los Encinos,Los Encinos,direct,True
 TLALPAN,Los Girasoles,Los Girasoles,cross_alcaldia,True
@@ -1710,11 +1814,15 @@ TLALPAN,Movimiento Organizado De Tlalpan,Movimiento Organizado De Tlalpan,direct
 TLALPAN,Narciso Mendoza,Narciso Mendoza,direct,True
 TLALPAN,Nueva Oriental Coapa,Nueva Oriental Coapa,direct,True
 TLALPAN,Nuevo Renacimiento De Axalco,Nuevo Renacimiento De Axalco,direct,True
+TLALPAN,Ocotla - Ocotla Chico,,unmatched,False
 TLALPAN,Olimpica,Olimpica,cross_alcaldia,True
+TLALPAN,Otra,,unmatched,False
 TLALPAN,Paraje 38,Paraje 38,direct,True
+TLALPAN,Paraje Tetenco,,unmatched,False
 TLALPAN,Parque Del Pedregal,Parque Del Pedregal,direct,True
 TLALPAN,Parque Nacional Bosque Del Pedregal,Parque Nacional Bosque Del Pedregal,direct,True
 TLALPAN,Parres El Guarda,Pueblo Parres El Guarda,loose_prefix,True
+TLALPAN,Pedregal De Aminco,,unmatched,False
 TLALPAN,Pedregal De Carrasco,Pedregal De Carrasco,cross_alcaldia,True
 TLALPAN,Pedregal De Las Aguilas,Pedregal De Las Aguilas,direct,True
 TLALPAN,Pedregal De San Nicolas 1a Seccion,Pedregal De San Nicolas 1a Seccion,direct,True
@@ -1726,6 +1834,8 @@ TLALPAN,Pedregal De San Nicolás 4a Sección,Pedregal De San Nicolas 4a Seccion,
 TLALPAN,Pedregal De San Nicolas 5a Seccion,Pedregal De San Nicolas 5a Seccion,direct,True
 TLALPAN,Pedregal De Santa Ursula Xitla,Pedregal De Santa Ursula Xitla,direct,True
 TLALPAN,Peña Pobre,Peña Pobre,direct,True
+TLALPAN,Piedra Larga,,unmatched,False
+TLALPAN,Pista Olimpica Virgilio Uribe (Canal De Cuemanco),,unmatched,False
 TLALPAN,Plan De Ayala,Plan De Ayala,direct,True
 TLALPAN,Plazuela Del Pedregal,Plazuela Del Pedregal,cross_alcaldia,True
 TLALPAN,Popular Santa Teresa,Popular Santa Teresa,direct,True
@@ -1769,8 +1879,10 @@ TLALPAN,San Buenaventura,San Buenaventura,direct,True
 TLALPAN,San Juan Tepeximilpa,San Juan Tepeximilpa,direct,True
 TLALPAN,San Lorenzo La Cebada,San Lorenzo La Cebada,cross_alcaldia,True
 TLALPAN,San Miguel Ajusco,Pueblo San Miguel Ajusco,loose_prefix,True
+TLALPAN,San Miguel Tehuisco,,unmatched,False
 TLALPAN,San Miguel Topilejo,Pueblo San Miguel Topilejo,loose_prefix,True
 TLALPAN,San Miguel Xicalco,Pueblo San Miguel Xicalco,loose_prefix,True
+TLALPAN,San Nicolás 2,,unmatched,False
 TLALPAN,San Pedro Apostol,San Pedro Apostol,direct,True
 TLALPAN,San Pedro Mártir,Pueblo San Pedro Martir,loose_prefix,True
 TLALPAN,Santa Cecilia,Santa Cecilia,cross_alcaldia_ambiguous,True
@@ -1779,10 +1891,14 @@ TLALPAN,Santa Teresa,Santa Teresa,cross_alcaldia,True
 TLALPAN,Santisima Trinidad,Santisima Trinidad,direct,True
 TLALPAN,Santísima Trinidad,Santisima Trinidad,direct,True
 TLALPAN,Santo Tomas Ajusco,Pueblo Santo Tomas Ajusco,loose_prefix,True
+TLALPAN,Solidaridad,,unmatched,False
 TLALPAN,Tecorral,Tecorral,direct,True
 TLALPAN,Tenorios,Tenorios,direct,True
 TLALPAN,Tepetongo,Tepetongo,cross_alcaldia,True
+TLALPAN,Tepeximilpa Servimet,,unmatched,False
+TLALPAN,Tequimila,,unmatched,False
 TLALPAN,Texcaltenco,Texcaltenco,direct,True
+TLALPAN,Tezontitla,,unmatched,False
 TLALPAN,Tlalcoligia,Tlalcoligia,direct,True
 TLALPAN,Tlalmille,Tlalmille,direct,True
 TLALPAN,Tlalpan,Tlalpan,direct,True
@@ -1801,12 +1917,14 @@ TLALPAN,Vergel De Coyoacan,Vergel De Coyoacan,direct,True
 TLALPAN,Vergel Del Sur,Vergel Del Sur,direct,True
 TLALPAN,Viejo Ejido Santa Ursula Coapa,Viejo Ejido Santa Ursula Coapa,cross_alcaldia,True
 TLALPAN,Villa Coapa,Villa Coapa,direct,True
+TLALPAN,Villa Cuemanco Infonavit,,unmatched,False
 TLALPAN,Villa Lazaro Cardenas,Villa Lazaro Cardenas,direct,True
 TLALPAN,Villa Olimpica,Villa Olimpica,direct,True
 TLALPAN,Villa Quietud,Villa Quietud,cross_alcaldia,True
 TLALPAN,Villa Tlalpan,Villa Tlalpan,direct,True
 TLALPAN,Vistas Del Pedregal,Vistas Del Pedregal,direct,True
 TLALPAN,Viveros Coatectlan,Viveros Coatectlan,direct,True
+TLALPAN,Zacatón,,unmatched,False
 TLALPAN,Zacayucan Peña Pobre,Zacayucan Peña Pobre,direct,True
 VENUSTIANO CARRANZA,10 De Mayo,10 De Mayo,direct,True
 VENUSTIANO CARRANZA,1o De Mayo,1o De Mayo,direct,True
@@ -1821,8 +1939,10 @@ VENUSTIANO CARRANZA,Aaron Saenz,Aaron Saenz,direct,True
 VENUSTIANO CARRANZA,Adolfo Lopez Mateos,Adolfo Lopez Mateos,direct,True
 VENUSTIANO CARRANZA,Aeronautica Militar,Aeronautica Militar,direct,True
 VENUSTIANO CARRANZA,Aeronáutica Militar,Aeronautica Militar,direct,True
+VENUSTIANO CARRANZA,Aeropuerto Internacional Benito Juárez,,unmatched,False
 VENUSTIANO CARRANZA,Agricola Oriental,Agricola Oriental,cross_alcaldia,True
 VENUSTIANO CARRANZA,Agricola Pantitlan,Agricola Pantitlan,cross_alcaldia,True
+VENUSTIANO CARRANZA,Alameda Oriente,,unmatched,False
 VENUSTIANO CARRANZA,Alvaro Obregon,Alvaro Obregon,direct,True
 VENUSTIANO CARRANZA,Ampl. Asturias,Ampl. Asturias,cross_alcaldia,True
 VENUSTIANO CARRANZA,Ampliacion 20 De Noviembre,Ampliacion 20 De Noviembre,direct,True
@@ -1905,12 +2025,17 @@ VENUSTIANO CARRANZA,Valentín Gómez Farias,Valentin Gomez Farias,direct,True
 VENUSTIANO CARRANZA,Valle Gomez,Valle Gomez,direct,True
 VENUSTIANO CARRANZA,Venustiano Carranza,Venustiano Carranza,direct,True
 VENUSTIANO CARRANZA,Zona Centro,Zona Centro,direct,True
+XOCHIMILCO,Acoca,,unmatched,False
+XOCHIMILCO,Alcanfores,,unmatched,False
+XOCHIMILCO,Altos Tepetlica,,unmatched,False
 XOCHIMILCO,Ampliacion Nativitas,Ampliacion Nativitas,direct,True
 XOCHIMILCO,Ampliacion San Marcos Norte,Ampliacion San Marcos Norte,direct,True
 XOCHIMILCO,Ampliacion Tepepan,Ampliacion Tepepan,direct,True
 XOCHIMILCO,A M S A,A M S A,cross_alcaldia,True
+XOCHIMILCO,Anahuac,,unmatched,False
 XOCHIMILCO,Año De Juarez,Año De Juarez,direct,True
 XOCHIMILCO,Arenal Tepepan,Arenal Tepepan,cross_alcaldia,True
+XOCHIMILCO,Aztlan Los Apaches,,unmatched,False
 XOCHIMILCO,Barrio 18,Barrio 18,direct,True
 XOCHIMILCO,Barrio 3 De Mayo,Barrio 3 De Mayo,direct,True
 XOCHIMILCO,Barrio Ahualapa,Barrio Ahualapa,direct,True
@@ -1972,11 +2097,16 @@ XOCHIMILCO,Cristo Rey,Cristo Rey,direct,True
 XOCHIMILCO,Culhuacan Ctm Seccion Viii,Culhuacan Ctm Seccion Viii,cross_alcaldia,True
 XOCHIMILCO,Del Carmen,Del Carmen,direct,True
 XOCHIMILCO,Del Mar,Del Mar,cross_alcaldia,True
+XOCHIMILCO,División Del Norte Infonavit,,unmatched,False
 XOCHIMILCO,Dolores Tlali,Dolores Tlali,cross_alcaldia,True
+XOCHIMILCO,Dr. Ignacio Chávez Infonavit,,unmatched,False
+XOCHIMILCO,Duraznotitla,,unmatched,False
 XOCHIMILCO,El Arenal,El Arenal,direct,True
 XOCHIMILCO,El Jazmin,El Jazmin,direct,True
 XOCHIMILCO,El Mirador,El Mirador,direct,True
 XOCHIMILCO,El Mirador 2a Sección,El Mirador 2a Seccion,cross_alcaldia,True
+XOCHIMILCO,El Mirador I(San Lucas Xochimanca),,unmatched,False
+XOCHIMILCO,El Olivo (San Lorenzo),,unmatched,False
 XOCHIMILCO,El Sacrificio,El Sacrificio,direct,True
 XOCHIMILCO,El Vergel,El Vergel,cross_alcaldia,True
 XOCHIMILCO,Francisco Villa,Francisco Villa,cross_alcaldia_ambiguous,True
@@ -1989,6 +2119,7 @@ XOCHIMILCO,Huichapan,Huichapan,direct,True
 XOCHIMILCO,Jardines Del Sur,Jardines Del Sur,direct,True
 XOCHIMILCO,Jose Lopez Portillo,Jose Lopez Portillo,cross_alcaldia,True
 XOCHIMILCO,José López Portillo,Jose Lopez Portillo,cross_alcaldia,True
+XOCHIMILCO,Justicia Social,,unmatched,False
 XOCHIMILCO,La Cañada,La Cañada,direct,True
 XOCHIMILCO,La Concha,La Concha,direct,True
 XOCHIMILCO,La Joya,La Joya,cross_alcaldia_ambiguous,True
@@ -2000,14 +2131,21 @@ XOCHIMILCO,Las Peritas,Las Peritas,direct,True
 XOCHIMILCO,Lomas De Nativitas,Lomas De Nativitas,direct,True
 XOCHIMILCO,Lomas De Tonalco,Lomas De Tonalco,direct,True
 XOCHIMILCO,Lomas Estrella,Lomas Estrella,cross_alcaldia,True
+XOCHIMILCO,Lomas Estrella 2a Seccion,,unmatched,False
 XOCHIMILCO,Los Cipreses,Los Cipreses,cross_alcaldia_ambiguous,True
 XOCHIMILCO,Los Reyes,Barrio Los Reyes,loose_prefix,True
 XOCHIMILCO,Magisterial,Magisterial,cross_alcaldia,True
 XOCHIMILCO,Magisterial Coapa,Magisterial Coapa,cross_alcaldia,True
+XOCHIMILCO,Manantiales,,unmatched,False
 XOCHIMILCO,Narciso Mendoza,Narciso Mendoza,cross_alcaldia,True
 XOCHIMILCO,Nativitas,Nativitas,direct,True
+XOCHIMILCO,Nueva Tototitla,,unmatched,False
+XOCHIMILCO,Parque Ecologico De Xochimilco,,unmatched,False
 XOCHIMILCO,Paseos Del Sur,Paseos Del Sur,direct,True
+XOCHIMILCO,Pedregal De San Francisco,,unmatched,False
+XOCHIMILCO,Pista Olimpica Virgilio Uribe (Canal De Cuemanco),,unmatched,False
 XOCHIMILCO,Potrero San Bernardino,Potrero San Bernardino,direct,True
+XOCHIMILCO,Predio El Molino,,unmatched,False
 XOCHIMILCO,Pueblo Nativitas,Nativitas,loose_prefix,True
 XOCHIMILCO,Pueblo Ocotla,Pueblo Ocotla,cross_alcaldia,True
 XOCHIMILCO,Pueblo San Andres Ahuayucan,Pueblo San Andres Ahuayucan,direct,True
@@ -2036,10 +2174,12 @@ XOCHIMILCO,Rosario Tlali,Rosario Tlali,direct,True
 XOCHIMILCO,San Andrés Ahuayucan,Pueblo San Andres Ahuayucan,loose_prefix,True
 XOCHIMILCO,San Bartolo El Chico,San Bartolo El Chico,direct,True
 XOCHIMILCO,San Felipe,San Felipe,direct,True
+XOCHIMILCO,San Francisco Chiquimola,,unmatched,False
 XOCHIMILCO,San Francisco Tlalnepantla,Pueblo San Francisco Tlalnepantla,loose_prefix,True
 XOCHIMILCO,San Gregorio Atlapulco,Pueblo San Gregorio Atlapulco,loose_prefix,True
 XOCHIMILCO,San Isidro,San Isidro,direct,True
 XOCHIMILCO,San Jeronimo,San Jeronimo,direct,True
+XOCHIMILCO,San Jose Obrero,,unmatched,False
 XOCHIMILCO,San Juan Tepepan,San Juan Tepepan,direct,True
 XOCHIMILCO,San Lorenzo Atemoaya,Pueblo San Lorenzo Atemoaya,loose_prefix,True
 XOCHIMILCO,San Lorenzo La Cebada,San Lorenzo La Cebada,direct,True
@@ -2048,178 +2188,38 @@ XOCHIMILCO,San Lucas Xochimanca,Pueblo San Lucas Xochimanca,loose_prefix,True
 XOCHIMILCO,San Marcos Norte,Ampliacion San Marcos Norte,loose_prefix,True
 XOCHIMILCO,San Mateo Xalpa,Pueblo San Mateo Xalpa,loose_prefix,True
 XOCHIMILCO,San Miguel,San Miguel,cross_alcaldia,True
+XOCHIMILCO,San Salvador Cuauhtenco Seccion Iii,,unmatched,False
 XOCHIMILCO,San Sebastian Del Pueblo San Pedro Tlahuac,San Sebastian Del Pueblo San Pedro Tlahuac,cross_alcaldia,True
 XOCHIMILCO,Santa  Cecilia Tepetlapa,Pueblo Santa Cecilia Tepetlapa,loose_prefix,True
 XOCHIMILCO,Santa Cecilia Tepetlapa,Pueblo Santa Cecilia Tepetlapa,loose_prefix,True
+XOCHIMILCO,Santa Cruz Acalpixca - Pueblo,,unmatched,False
 XOCHIMILCO,Santa Cruz Chavarrieta,Santa Cruz Chavarrieta,direct,True
 XOCHIMILCO,Santa Cruz De Guadalupe,Santa Cruz De Guadalupe,direct,True
 XOCHIMILCO,Santa Cruz Xochitepec,Pueblo Santa Cruz Xochitepec,loose_prefix,True
 XOCHIMILCO,Santa Ines,Santa Ines,direct,True
+XOCHIMILCO,Santa Maria De Los Olivos - Barrio,,unmatched,False
 XOCHIMILCO,Santa María Tepepan,Pueblo Santa Maria Tepepan,loose_prefix,True
 XOCHIMILCO,Santiago Tepalcatlalpan,Pueblo Santiago Tepalcatlalpan,loose_prefix,True
 XOCHIMILCO,Santiaguito,Santiaguito,direct,True
 XOCHIMILCO,Tablas De San Lorenzo,Tablas De San Lorenzo,direct,True
+XOCHIMILCO,Tecacalanco,,unmatched,False
+XOCHIMILCO,Tehuixtitla,,unmatched,False
+XOCHIMILCO,Tejomulco El Alto,,unmatched,False
 XOCHIMILCO,Tepepan,Ampliacion Tepepan,loose_prefix,True
+XOCHIMILCO,Tepeyeca,,unmatched,False
 XOCHIMILCO,Texmic,Texmic,direct,True
 XOCHIMILCO,Tierra Nueva,Tierra Nueva,direct,True
+XOCHIMILCO,Toltenco,,unmatched,False
+XOCHIMILCO,Triangulo De Las Agujas,,unmatched,False
+XOCHIMILCO,Tula (San Pedro Atocpan),,unmatched,False
 XOCHIMILCO,Valle De San Lorenzo,Valle De San Lorenzo,cross_alcaldia,True
 XOCHIMILCO,Valle De Santa Maria,Valle De Santa Maria,direct,True
 XOCHIMILCO,Valle De Tepepan,Valle De Tepepan,cross_alcaldia_ambiguous,True
 XOCHIMILCO,Valle Escondido,Valle Escondido,cross_alcaldia,True
 XOCHIMILCO,Valle Verde,Valle Verde,cross_alcaldia,True
+XOCHIMILCO,Vaso De Regulacion,,unmatched,False
 XOCHIMILCO,Villa Centroamericana,Villa Centroamericana,cross_alcaldia,True
 XOCHIMILCO,Villa Quietud,Villa Quietud,cross_alcaldia,True
 XOCHIMILCO,Viveros Coatectlan,Viveros Coatectlan,cross_alcaldia,True
 XOCHIMILCO,Xochipilli,Xochipilli,direct,True
-ALVARO OBREGON,2a Ampliación Jalalpa Tepito,Jalalpa Tepito 2da Ampliacion,spatial,True
-GUSTAVO A. MADERO,Arboledas De Cuautepec El Alto,Arboledas,spatial,True
-IZTAPALAPA,San Miguel Teotongo,San Miguel Teotongo Secc Corrales,spatial,True
-IZTAPALAPA,Triangulo De Las Agujas,El Vergel,spatial,True
-MILPA ALTA,Emiliano Zapata 1a Seccion,La Conchita,spatial,True
-MILPA ALTA,Emiliano Zapata 2a Seccion,La Conchita,spatial,True
-MILPA ALTA,Panchimalco (San Pedro Atocpan),Barrio Panchimalco,spatial,True
-MILPA ALTA,Pueblo San Antonio Tecomitl Barrio Xochitepec,Barrio Xochitepetl,spatial,True
-MILPA ALTA,San Marcos (Santa Ana Tlacotenco),Barrio San Marcos,spatial,True
-MILPA ALTA,San Mateo (Villa Milpa Alta),Barrio San Mateo,spatial,True
-MILPA ALTA,San Miguel (San Pablo Oztotepec),Barrio San Miguel,spatial,True
-MILPA ALTA,San Salvador Cuauhtenco Seccion Iv,Pueblo San Salvador Cuauhtenco,spatial,True
-MILPA ALTA,Santa Martha (Villa Milpa Alta),Barrio Santa Martha,spatial,True
-TLAHUAC,Conchita A,Miguel Hidalgo,spatial,True
-TLAHUAC,La Asuncion - Barrio,La Asuncion,spatial,True
-TLAHUAC,La Soledad,Barrio La Soledad Del Pueblo  San Juan Ixtayopan,spatial,True
-TLAHUAC,Las Puertas - Barrio,Pueblo San Francisco Tlaltenco,spatial,True
-TLAHUAC,Los Reyes (Del Pueblo De San Andrés Mixquic),Barrio Los Reyes,spatial,True
-TLAHUAC,San Miguel (Del Pueblo De San Andrés Mixquic),Barrio San Miguel,spatial,True
-TLAHUAC,San Miguel Zapotitla,Barrio San Miguel,spatial,True
-TLAHUAC,Santa Cruz (Del Pueblo De San Andrés Mixquic),Barrio Santa Cruz,spatial,True
-TLALPAN,Lomas De Tepemecatl,Heroes De 1910,spatial,True
-XOCHIMILCO,División Del Norte Infonavit,Ampliacion San Marcos Norte,spatial,True
-XOCHIMILCO,Duraznotitla,Pueblo San Jose Zacatepec,spatial,True
-XOCHIMILCO,Santa Cruz Acalpixca - Pueblo,Barrio Apatlaco,spatial,True
-XOCHIMILCO,Zacatepec(San Mateo Xalpa),Pueblo San Mateo Xalpa,spatial,True
-ALVARO OBREGON,19 De Mayo,,no_points,False
-ALVARO OBREGON,2a. Ampliacion Jalalpa El Grande,,spatial_miss,False
-ALVARO OBREGON,2o Reacomodo Corpus Christi,,no_points,False
-ALVARO OBREGON,Campo De Tiro Los Gamitos,,spatial_miss,False
-ALVARO OBREGON,Desarrollo Urbano El Piru,,spatial_miss,False
-ALVARO OBREGON,El Arbol Ampliacion,,spatial_miss,False
-ALVARO OBREGON,Gamitos,,no_points,False
-ALVARO OBREGON,Jalalpa El Grande 1er. Reacomodo,,spatial_miss,False
-ALVARO OBREGON,La Loma,,spatial_miss,False
-ALVARO OBREGON,Paraje Del Caballito,,spatial_miss,False
-ALVARO OBREGON,Reserva Ecologica Torres De Potrero,,spatial_miss,False
-AZCAPOTZALCO,Las Armas,,no_points,False
-COYOACAN,Ampliacion San Francisco Culhuacan,,no_points,False
-COYOACAN,Unidad Obrero Hab. Ctm Culhuacan Zona 13,,spatial_miss,False
-COYOACAN,Universidad Nacional Autónoma De México,,no_points,False
-CUAJIMALPA DE MORELOS,Club De Golf Bosques,,spatial_miss,False
-CUAJIMALPA DE MORELOS,Cola De Pato - Pueblo,,spatial_miss,False
-CUAJIMALPA DE MORELOS,La Navidad,,spatial_miss,False
-CUAJIMALPA DE MORELOS,Lomas Del Chamizal,,spatial_miss,False
-CUAUHTEMOC,Centro (Área 1),,no_points,False
-GUSTAVO A. MADERO,Ejidos San Juan De Aragon 1a Seccion,,no_points,False
-GUSTAVO A. MADERO,La Forestal 2,,spatial_miss,False
-GUSTAVO A. MADERO,Lindavista,,no_points,False
-GUSTAVO A. MADERO,Lomas De San Juan Ixhuatepec 2a Sección,,spatial_miss,False
-GUSTAVO A. MADERO,Veronica Castro,,spatial_miss,False
-IZTAPALAPA,Area Federal Parque Ecologico El Salado,,no_points,False
-IZTAPALAPA,La Colmena,,spatial_miss,False
-IZTAPALAPA,La Valenciana,,no_points,False
-IZTAPALAPA,Lomas Estrella 2a Seccion,,spatial_miss,False
-IZTAPALAPA,Predio El Molino,,spatial_miss,False
-IZTAPALAPA,Siracusa 240,,no_points,False
-IZTAPALAPA,Solidaridad,,spatial_miss,False
-LA MAGDALENA CONTRERAS,El Gavillero,,no_points,False
-LA MAGDALENA CONTRERAS,Ixtlahualtongo,,no_points,False
-LA MAGDALENA CONTRERAS,Tierra Colorada,,spatial_miss,False
-MIGUEL HIDALGO,Militar 1 K Lomas De Sotelo,,spatial_miss,False
-MIGUEL HIDALGO,Panteon Frances,,no_points,False
-MILPA ALTA,Cruztitla (San Antonio Tecomitl),,spatial_miss,False
-MILPA ALTA,La Concepción (Villa Milpa Alta),,spatial_miss,False
-MILPA ALTA,La Luz (Villa Milpa Alta),,spatial_miss,False
-MILPA ALTA,Los Ángeles (Villa Milpa Alta),,spatial_miss,False
-MILPA ALTA,Malvinas Primero,,spatial_miss,False
-MILPA ALTA,Malvinas Segundo,,spatial_miss,False
-MILPA ALTA,Nochtla (San Pedro Atocpan),,spatial_miss,False
-MILPA ALTA,Noxcalco,,spatial_miss,False
-MILPA ALTA,Ocotitla (San Pedro Atocpan),,spatial_miss,False
-MILPA ALTA,Pueblo San Antonio Tecomitl (Las Arboledas),,spatial_miss,False
-MILPA ALTA,Pueblo San Antonio Tecomitl (Las Joyas),,spatial_miss,False
-MILPA ALTA,San Agustin (Villa Milpa Alta),,spatial_miss,False
-MILPA ALTA,San Isidro Cuatepec,,no_points,False
-MILPA ALTA,San José (Santa Ana Tlacotenco),,spatial_miss,False
-MILPA ALTA,San Juan (San Pablo Oztotepec),,spatial_miss,False
-MILPA ALTA,San Juan Tepenahuac I,,spatial_miss,False
-MILPA ALTA,San Juan Tepenahuac Ii,,spatial_miss,False
-MILPA ALTA,San Miguel (Santa Ana Tlacotenco),,spatial_miss,False
-MILPA ALTA,San Salvador Cuauhtenco Seccion I,,spatial_miss,False
-MILPA ALTA,San Salvador Cuauhtenco Seccion Ii,,spatial_miss,False
-MILPA ALTA,San Salvador Cuauhtenco Seccion Iii,,spatial_miss,False
-MILPA ALTA,Santa Cruz (Villa Milpa Alta),,spatial_miss,False
-MILPA ALTA,Tecaxtitla (San Antonio Tecomitl),,no_points,False
-MILPA ALTA,Tecoloxtitla,,spatial_miss,False
-MILPA ALTA,Tenantitla (San Antonio Tecomitl),,spatial_miss,False
-MILPA ALTA,Tula (San Pedro Atocpan),,spatial_miss,False
-MILPA ALTA,Xaltipac (San Antonio Tecomitl),,spatial_miss,False
-TLAHUAC,Conchita B,,no_points,False
-TLAHUAC,El Mirador - Santa Catarina,,no_points,False
-TLAHUAC,Emiliano Zapata 1a Seccion,,no_points,False
-TLAHUAC,Emiliano Zapata 2a Seccion,,no_points,False
-TLAHUAC,La Cienega,,no_points,False
-TLAHUAC,La Loma,,spatial_miss,False
-TLAHUAC,Paraiso Santa Catarina,,no_points,False
-TLAHUAC,San Bartolomé (Del Pueblo De San Andrés Mixquic),,no_points,False
-TLAHUAC,San Ignacio De Loyola,,no_points,False
-TLAHUAC,San Isidro Tulyehualco,,no_points,False
-TLAHUAC,Santa Maria De Los Olivos - Barrio,,spatial_miss,False
-TLAHUAC,Selene 1a. Seccion,,spatial_miss,False
-TLAHUAC,Selene 2a. Seccion,,spatial_miss,False
-TLAHUAC,Zona De Reserva Ecologica,,spatial_miss,False
-TLALPAN,Cuchilla Tepeximilpa,,spatial_miss,False
-TLALPAN,Dr. Ignacio Chávez Infonavit,,spatial_miss,False
-TLALPAN,Fovissste Periférico,,no_points,False
-TLALPAN,Los Arcos,,spatial_miss,False
-TLALPAN,Ocotla - Ocotla Chico,,no_points,False
-TLALPAN,Otra,,no_points,False
-TLALPAN,Paraje Tetenco,,spatial_miss,False
-TLALPAN,Pedregal De Aminco,,spatial_miss,False
-TLALPAN,Piedra Larga,,no_points,False
-TLALPAN,Pista Olimpica Virgilio Uribe (Canal De Cuemanco),,no_points,False
-TLALPAN,San Miguel Tehuisco,,no_points,False
-TLALPAN,San Nicolás 2,,spatial_miss,False
-TLALPAN,Solidaridad,,spatial_miss,False
-TLALPAN,Tepeximilpa Servimet,,no_points,False
-TLALPAN,Tequimila,,no_points,False
-TLALPAN,Tezontitla,,no_points,False
-TLALPAN,Villa Cuemanco Infonavit,,no_points,False
-TLALPAN,Zacatón,,spatial_miss,False
-VENUSTIANO CARRANZA,Aeropuerto Internacional Benito Juárez,,no_points,False
-VENUSTIANO CARRANZA,Alameda Oriente,,no_points,False
-XOCHIMILCO,Acoca,,spatial_miss,False
-XOCHIMILCO,Alcanfores,,spatial_miss,False
-XOCHIMILCO,Altos Tepetlica,,spatial_miss,False
-XOCHIMILCO,Anahuac,,no_points,False
-XOCHIMILCO,Aztlan Los Apaches,,spatial_miss,False
-XOCHIMILCO,Dr. Ignacio Chávez Infonavit,,no_points,False
-XOCHIMILCO,El Mirador I(San Lucas Xochimanca),,spatial_miss,False
-XOCHIMILCO,El Olivo (San Lorenzo),,no_points,False
-XOCHIMILCO,Justicia Social,,spatial_miss,False
-XOCHIMILCO,Lomas Estrella 2a Seccion,,no_points,False
-XOCHIMILCO,Manantiales,,no_points,False
-XOCHIMILCO,Nueva Tototitla,,spatial_miss,False
-XOCHIMILCO,Parque Ecologico De Xochimilco,,spatial_miss,False
-XOCHIMILCO,Pedregal De San Francisco,,spatial_miss,False
-XOCHIMILCO,Pista Olimpica Virgilio Uribe (Canal De Cuemanco),,spatial_miss,False
-XOCHIMILCO,Predio El Molino,,no_points,False
-XOCHIMILCO,San Francisco Chiquimola,,spatial_miss,False
-XOCHIMILCO,San Jose Obrero,,no_points,False
-XOCHIMILCO,San Salvador Cuauhtenco Seccion Iii,,no_points,False
-XOCHIMILCO,Santa Maria De Los Olivos - Barrio,,spatial_miss,False
-XOCHIMILCO,Tecacalanco,,spatial_miss,False
-XOCHIMILCO,Tehuixtitla,,spatial_miss,False
-XOCHIMILCO,Tejomulco El Alto,,spatial_miss,False
-XOCHIMILCO,Tepeyeca,,spatial_miss,False
-XOCHIMILCO,Toltenco,,spatial_miss,False
-XOCHIMILCO,Triangulo De Las Agujas,,no_points,False
-XOCHIMILCO,Tula (San Pedro Atocpan),,no_points,False
-XOCHIMILCO,Vaso De Regulacion,,spatial_miss,False
+XOCHIMILCO,Zacatepec(San Mateo Xalpa),,unmatched,False

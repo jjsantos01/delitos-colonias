@@ -206,7 +206,14 @@ def export_report(results):
     print(f"\nSaved to: {path}")
 
 def build_lookup_geojson(results, by_alc_col, by_col_only, by_alc_loose, by_col_loose):
-    """Build optimized GeoJSON with only matched features, keyed by crime colonia name."""
+    """Build optimized GeoJSON with only matched features, keyed by crime colonia name.
+    
+    NOTE: Cross-alcaldía matches are EXCLUDED. These entries have polygons
+    borrowed from a different alcaldía (wrong physical location), which
+    corrupts neighbor computation. Crime data is unaffected — SQL queries
+    use alcaldia_hecho directly, not the polygon lookup.
+    """
+    CROSS_TYPES = {'cross_alcaldia', 'cross_alcaldia_ambiguous', 'cross_loose'}
     
     def find_feature(alc, col):
         col_norm = normalize(col)
@@ -215,17 +222,19 @@ def build_lookup_geojson(results, by_alc_col, by_col_only, by_alc_loose, by_col_
             return by_alc_col[(alc, col_norm)]
         if (alc, col_loose) in by_alc_loose:
             return by_alc_loose[(alc, col_loose)]
-        if col_norm in by_col_only:
-            return by_col_only[col_norm][0]
-        if col_loose in by_col_loose:
-            return by_col_loose[col_loose][0]
+        # Do NOT fall back to cross-alcaldía lookups here
         return None
     
     geojson_out = {"type": "FeatureCollection", "features": []}
     seen = set()
+    skipped_cross = 0
     
     for r in results:
         if not r['matched']:
+            continue
+        # Skip cross-alcaldía matches — wrong polygon
+        if r['match_type'] in CROSS_TYPES:
+            skipped_cross += 1
             continue
         key = (r['alcaldia'], r['colonia_crime'])
         if key in seen:
@@ -250,6 +259,7 @@ def build_lookup_geojson(results, by_alc_col, by_col_only, by_alc_loose, by_col_
     
     size_mb = path.stat().st_size / (1024*1024)
     print(f"\nLookup GeoJSON: {len(geojson_out['features'])} features, {size_mb:.1f} MB")
+    print(f"  Skipped {skipped_cross} cross-alcaldia entries (wrong polygon)")
     print(f"Saved to: {path}")
 
 # ─── Main ──────────────────────────────────────────────────────────────────────
