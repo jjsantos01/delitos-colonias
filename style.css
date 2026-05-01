@@ -786,6 +786,34 @@ body.dark-theme {
     font-size: 0.85rem !important;
     line-height: 1.4 !important;
 }
+/* ========================================
+   COLONIA POLYGON LABELS (Leaflet tooltips)
+   ======================================== */
+.colonia-label {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    font-family: var(--font-main) !important;
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 6px #fff !important;
+    box-shadow: none !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+}
+
+.colonia-label::before {
+    display: none !important;
+}
+
+.colonia-label-selected {
+    color: #0c4a6e !important;
+}
+
+.colonia-label-neighbor {
+    color: #78350f !important;
+}
 
 /* ========================================
    ANIMATIONS

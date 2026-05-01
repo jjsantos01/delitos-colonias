@@ -877,23 +877,35 @@ async function initMap() {
     UI.coloniaPolygonLayer = L.geoJSON(null, {
         style: {
             color: '#38bdf8',
-            weight: 2.5,
-            opacity: 0.9,
+            weight: 3,
+            opacity: 1,
             fillColor: '#38bdf8',
-            fillOpacity: 0.08,
-            dashArray: '6 4'
+            fillOpacity: 0.12
+        },
+        onEachFeature: (feature, layer) => {
+            layer.bindTooltip(feature.properties.colonia, {
+                permanent: true,
+                direction: 'center',
+                className: 'colonia-label colonia-label-selected'
+            });
         }
     }).addTo(UI.map);
 
-    // Neighbor polygon layer (yellow, below selected colonia)
+    // Neighbor polygon layer (amber, below selected colonia)
     UI.neighborPolygonLayer = L.geoJSON(null, {
         style: {
-            color: '#fbbf24',
-            weight: 1.5,
-            opacity: 0.7,
+            color: '#f59e0b',
+            weight: 2,
+            opacity: 0.9,
             fillColor: '#fbbf24',
-            fillOpacity: 0.05,
-            dashArray: '4 3'
+            fillOpacity: 0.10
+        },
+        onEachFeature: (feature, layer) => {
+            layer.bindTooltip(feature.properties.colonia, {
+                permanent: true,
+                direction: 'center',
+                className: 'colonia-label colonia-label-neighbor'
+            });
         }
     }).addTo(UI.map);
 
@@ -942,8 +954,8 @@ function renderMap(preserveView = false) {
             const cat = CategoryMapper.classify(p.delito);
             const catConfig = CategoryMapper.CATEGORIES[cat];
             
-            // Custom dot marker
-            const markerHTML = `<div style="background-color: ${catConfig.color}; width: 10px; height: 10px; border-radius: 50%; border: 1px solid white;"></div>`;
+            // Custom dot marker with opacity
+            const markerHTML = `<div style="background-color: ${catConfig.color}; width: 10px; height: 10px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.6); opacity: 0.7;"></div>`;
             const icon = L.divIcon({ html: markerHTML, className: '', iconSize: [12, 12] });
 
             const dDate = new Date(p.fecha_hecho).toLocaleDateString('es-MX', {timeZone: 'UTC'});
