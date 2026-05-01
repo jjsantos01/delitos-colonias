@@ -76,6 +76,27 @@
             <details class="advanced-filters" id="advanced-filters">
                 <summary>⚙️ Filtros avanzados</summary>
                 <div class="advanced-filters-body">
+                    <!-- Neighbors toggle + panel -->
+                    <div class="control-group neighbors-control" id="neighbors-control" style="display: none;">
+                        <label class="neighbors-toggle-label">
+                            <input type="checkbox" id="toggle-neighbors-cb">
+                            <span>Incluir colonias vecinas</span>
+                        </label>
+                        <div id="neighbors-panel" class="neighbors-panel" style="display: none;">
+                            <div class="neighbors-header">
+                                <span class="neighbors-title">Vecinas (<span id="neighbors-count">0</span>)</span>
+                                <label class="toggle-all-label">
+                                    <input type="checkbox" id="toggle-all-neighbors" checked> Todas
+                                </label>
+                            </div>
+                            <div id="neighbors-checkboxes" class="neighbors-checkboxes">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="divider">
+
                     <div class="control-group categories-filter">
                         <div class="categories-header">
                             <label>Macro-Categorías</label>
@@ -107,7 +128,7 @@
                 <!-- KPI Cards -->
                 <section class="kpi-grid" id="section-kpis">
                     <div class="kpi-card glass-panel">
-                        <h3>Total Delitos (<span class="kpi-q-label">Q</span>)</h3>
+                        <h3>Total Delitos <span style="white-space: nowrap;">(<span class="kpi-q-label">Q</span>)</span></h3>
                         <div class="kpi-value" id="kpi-total">0</div>
                     </div>
                     <div class="kpi-card glass-panel">
@@ -129,7 +150,7 @@
 
                 <!-- KPI breakdown table per macro-category -->
                 <section class="kpi-table-section glass-panel" id="section-kpi-table">
-                    <h2 class="kpi-table-title">📋 Resumen por Macro-Categoría (<span class="kpi-q-label">Q</span>)</h2>
+                    <h2 class="kpi-table-title">📋 Resumen por Macro-Categoría <span style="white-space: nowrap;">(<span class="kpi-q-label">Q</span>)</span></h2>
                     <div class="kpi-table-scroll">
                         <table class="kpi-table" id="kpi-breakdown-table">
                             <thead>
@@ -161,17 +182,39 @@
                     <section class="map-container glass-panel" id="section-map">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                             <h2 style="margin-bottom: 0;">
-                                📍 Mapa de Incidentes (<span class="kpi-q-label">Q</span>)
+                                📍 Mapa de Incidentes <span style="white-space: nowrap;">(<span class="kpi-q-label">Q</span>)</span>
                                 <button class="map-info-btn" id="btn-map-info" title="Nota sobre la georreferenciación de los puntos" aria-label="Información sobre georreferenciación">ⓘ</button>
                             </h2>
-                            <label style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer;" title="Mostrar como mapa de calor">
-                                Mapa de calor
-                                <input type="checkbox" id="toggle-heatmap-cb" style="cursor: pointer; width: 16px; height: 16px; accent-color: var(--accent-cyan);">
-                            </label>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer;" title="Mostrar como mapa de calor">
+                                    Mapa de calor
+                                    <input type="checkbox" id="toggle-heatmap-cb" style="cursor: pointer; width: 16px; height: 16px; accent-color: var(--accent-cyan);">
+                                </label>
+                                <button class="map-fullscreen-btn" id="btn-map-fullscreen" title="Ver mapa en pantalla completa" aria-label="Pantalla completa">⛶</button>
+                            </div>
                         </div>
                         <div id="crimeMap"></div>
                     </section>
                 </div>
+
+        <!-- Map Fullscreen Modal (desktop only) -->
+        <div class="map-modal-overlay" id="map-modal-overlay">
+            <div class="map-modal" id="map-modal">
+                <div class="map-modal-header">
+                    <h2>📍 Mapa de Incidentes <span style="white-space: nowrap;">(<span class="kpi-q-label">Q</span>)</span></h2>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <label style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer;">
+                            Mapa de calor
+                            <input type="checkbox" id="toggle-heatmap-modal-cb" style="cursor: pointer; width: 16px; height: 16px; accent-color: var(--accent-cyan);">
+                        </label>
+                        <button class="map-modal-close" id="btn-map-modal-close" title="Cerrar" aria-label="Cerrar">✕</button>
+                    </div>
+                </div>
+                <div class="map-modal-body" id="map-modal-body">
+                    <!-- crimeMap will be moved here when fullscreen -->
+                </div>
+            </div>
+        </div>
 
                 <!-- ── Download bar ── -->
                 <div class="download-bar glass-panel" id="download-bar">
