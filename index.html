@@ -185,14 +185,36 @@
                                 📍 Mapa de Incidentes <span style="white-space: nowrap;">(<span class="kpi-q-label">Q</span>)</span>
                                 <button class="map-info-btn" id="btn-map-info" title="Nota sobre la georreferenciación de los puntos" aria-label="Información sobre georreferenciación">ⓘ</button>
                             </h2>
-                            <label style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer;" title="Mostrar como mapa de calor">
-                                Mapa de calor
-                                <input type="checkbox" id="toggle-heatmap-cb" style="cursor: pointer; width: 16px; height: 16px; accent-color: var(--accent-cyan);">
-                            </label>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer;" title="Mostrar como mapa de calor">
+                                    Mapa de calor
+                                    <input type="checkbox" id="toggle-heatmap-cb" style="cursor: pointer; width: 16px; height: 16px; accent-color: var(--accent-cyan);">
+                                </label>
+                                <button class="map-fullscreen-btn" id="btn-map-fullscreen" title="Ver mapa en pantalla completa" aria-label="Pantalla completa">⛶</button>
+                            </div>
                         </div>
                         <div id="crimeMap"></div>
                     </section>
                 </div>
+
+        <!-- Map Fullscreen Modal (desktop only) -->
+        <div class="map-modal-overlay" id="map-modal-overlay">
+            <div class="map-modal" id="map-modal">
+                <div class="map-modal-header">
+                    <h2>📍 Mapa de Incidentes <span style="white-space: nowrap;">(<span class="kpi-q-label">Q</span>)</span></h2>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <label style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer;">
+                            Mapa de calor
+                            <input type="checkbox" id="toggle-heatmap-modal-cb" style="cursor: pointer; width: 16px; height: 16px; accent-color: var(--accent-cyan);">
+                        </label>
+                        <button class="map-modal-close" id="btn-map-modal-close" title="Cerrar" aria-label="Cerrar">✕</button>
+                    </div>
+                </div>
+                <div class="map-modal-body" id="map-modal-body">
+                    <!-- crimeMap will be moved here when fullscreen -->
+                </div>
+            </div>
+        </div>
 
                 <!-- ── Download bar ── -->
                 <div class="download-bar glass-panel" id="download-bar">

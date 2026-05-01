@@ -248,6 +248,7 @@ async function init() {
         setupAdvancedFiltersToggle();
         setupHeatmapToggle();
         setupInfoModal();
+        setupMapFullscreen();
         setupDownloadCSV();
         
         // Load colonia polygons, neighbors, and catalog in parallel
@@ -1354,6 +1355,67 @@ function setupInfoModal() {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeModal();
     });
+}
+// ==========================================
+// Map Fullscreen Modal
+// ==========================================
+function setupMapFullscreen() {
+    const overlay   = document.getElementById('map-modal-overlay');
+    const modalBody = document.getElementById('map-modal-body');
+    const openBtn   = document.getElementById('btn-map-fullscreen');
+    const closeBtn  = document.getElementById('btn-map-modal-close');
+    const inlineCb  = document.getElementById('toggle-heatmap-cb');
+    const modalCb   = document.getElementById('toggle-heatmap-modal-cb');
+    const mapEl     = document.getElementById('crimeMap');
+    const inlineContainer = document.getElementById('section-map');
+
+    if (!overlay || !openBtn || !mapEl) return;
+
+    function openFullscreen() {
+        // Sync heatmap checkbox state
+        if (modalCb && inlineCb) modalCb.checked = inlineCb.checked;
+        // Move map into modal
+        modalBody.appendChild(mapEl);
+        overlay.classList.add('active');
+        // Let Leaflet recalculate dimensions
+        setTimeout(() => {
+            if (UI.map) UI.map.invalidateSize();
+        }, 50);
+    }
+
+    function closeFullscreen() {
+        // Sync heatmap checkbox state back
+        if (inlineCb && modalCb) inlineCb.checked = modalCb.checked;
+        // Move map back to inline container
+        inlineContainer.appendChild(mapEl);
+        overlay.classList.remove('active');
+        // Let Leaflet recalculate dimensions
+        setTimeout(() => {
+            if (UI.map) UI.map.invalidateSize();
+        }, 50);
+    }
+
+    openBtn.addEventListener('click', openFullscreen);
+    closeBtn.addEventListener('click', closeFullscreen);
+
+    // Click outside modal closes
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeFullscreen();
+    });
+
+    // Escape closes
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && overlay.classList.contains('active')) closeFullscreen();
+    });
+
+    // Modal heatmap toggle synced
+    if (modalCb) {
+        modalCb.addEventListener('change', (e) => {
+            State.heatmapMode = e.target.checked;
+            if (inlineCb) inlineCb.checked = e.target.checked;
+            renderMap(true);
+        });
+    }
 }
 
 // Start
