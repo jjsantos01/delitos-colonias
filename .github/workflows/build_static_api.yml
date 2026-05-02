@@ -1,0 +1,57 @@
+name: Build Static Data Lake API
+
+on:
+  schedule:
+    # Run on the 2nd of every month at 02:00 UTC
+    - cron: '0 2 2 * *'
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  build-data-lake:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          version: "latest"
+
+      - name: Fetch dataset URL from CKAN
+        id: fetch-url
+        run: |
+          RESOURCE_ID="48fcb848-220c-4af0-839b-4fd8ac812c0f"
+          CSV_URL=$(curl -s "https://datos.cdmx.gob.mx/api/3/action/resource_show?id=${RESOURCE_ID}" | jq -r '.result.url')
+          if [ "$CSV_URL" == "null" ] || [ -z "$CSV_URL" ]; then
+            echo "Failed to fetch CSV URL"
+            exit 1
+          fi
+          echo "CSV_URL=$CSV_URL" >> $GITHUB_ENV
+          echo "Found CSV URL: $CSV_URL"
+
+      - name: Download dataset
+        run: |
+          echo "Downloading $CSV_URL ..."
+          curl -L -o dataset.csv "$CSV_URL"
+
+      - name: Build static API JSONs
+        run: |
+          uv run --with pandas python scripts/build_static_api.py --csv dataset.csv --out data/
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          # Only commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No new data to commit."
+          else
+            git commit -m "chore: update static data lake API [skip ci]"
+            git push
+          fi
