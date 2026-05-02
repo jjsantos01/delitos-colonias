@@ -190,7 +190,6 @@ const UI = {
     contentWrapper: document.getElementById('content-wrapper'),
     
     // Selects (TomSelect instances later)
-    alcaldiaSelect: null,
     coloniaSelect: null,
     trimestreSelect: null,
     delitoSelect: null,
@@ -294,20 +293,17 @@ function loadInitialStateFromUrl() {
     
     if(qUrl) State.urlRequestedQ = qUrl;
 
-    if (alcaldiaUrl) {
-        // Find if alcaldia exists in TomSelect options
-        const match = Object.keys(UI.alcaldiaSelect.options).find(k => k === alcaldiaUrl);
-        if(match) {
-            UI.alcaldiaSelect.setValue(match); 
-            if (coloniaUrl) {
-                setTimeout(() => {
-                    // Case-insensitive match for backwards compatibility
-                    // Old URLs used UPPER CASE (colonia_hecho), new ones use Title Case (colonia_catalogo)
-                    const coloniaKey = Object.keys(UI.coloniaSelect.options)
-                        .find(k => k === coloniaUrl || k.toUpperCase() === coloniaUrl.toUpperCase());
-                    if (coloniaKey) UI.coloniaSelect.setValue(coloniaKey);
-                }, 100);
-            }
+    if (alcaldiaUrl && coloniaUrl) {
+        // Try to find exact match first, then fallback to case-insensitive colonia match
+        const exactKey = `${alcaldiaUrl}||${coloniaUrl}`;
+        if (UI.coloniaSelect.options[exactKey]) {
+            UI.coloniaSelect.setValue(exactKey);
+        } else {
+            const fallbackKey = Object.keys(UI.coloniaSelect.options).find(k => {
+                const [alc, col] = k.split('||');
+                return alc === alcaldiaUrl && (col === coloniaUrl || col.toUpperCase() === coloniaUrl.toUpperCase());
+            });
+            if (fallbackKey) UI.coloniaSelect.setValue(fallbackKey);
         }
     }
 }
@@ -483,16 +479,29 @@ function setupHeatmapToggle() {
 }
 
 function initSelects() {
-    const alcaldias = [...new Set(State.catalog.map(r => r.alcaldia_hecho))].filter(Boolean).sort();
-    
-    UI.alcaldiaSelect = new TomSelect('#alcaldia-select', {
-        options: alcaldias.map(a => ({value: a, text: a})),
-        onChange: onAlcaldiaChange
-    });
+    const coloniasOptions = State.catalog.map(r => {
+        const colName = r.colonia_catalogo || r.colonia_hecho;
+        return {
+            value: `${r.alcaldia_hecho}||${colName}`,
+            text: colName,
+            alcaldia: r.alcaldia_hecho
+        };
+    }).sort((a, b) => a.text.localeCompare(b.text));
 
     UI.coloniaSelect = new TomSelect('#colonia-select', {
-        valueField: 'value', labelField: 'text', searchField: 'text',
-        onChange: onColoniaChange
+        options: coloniasOptions,
+        valueField: 'value', 
+        labelField: 'text', 
+        searchField: ['text', 'alcaldia'],
+        onChange: onColoniaChange,
+        render: {
+            option: function(data, escape) {
+                return `<div>${escape(data.text)} <span style="font-size: 0.8em; opacity: 0.7;">(${escape(data.alcaldia)})</span></div>`;
+            },
+            item: function(data, escape) {
+                return `<div>${escape(data.text)} <span style="font-size: 0.8em; opacity: 0.7;">(${escape(data.alcaldia)})</span></div>`;
+            }
+        }
     });
 
     UI.trimestreSelect = new TomSelect('#trimestre-select', {
@@ -561,8 +570,8 @@ function setupNeighborsToggle() {
         const panel = document.getElementById('neighbors-panel');
         if (panel) panel.style.display = State.neighborsEnabled ? 'block' : 'none';
         // Re-fetch data with/without neighbors (this is the big toggle — API call justified)
-        if (State.selectedColonia) {
-            onColoniaChange(State.selectedColonia);
+        if (State.selectedColonia && State.selectedAlcaldia) {
+            onColoniaChange(`${State.selectedAlcaldia}||${State.selectedColonia}`);
         }
     });
 
@@ -699,29 +708,18 @@ function isRecordInActiveColonias(record) {
 // ==========================================
 // Event Handlers
 // ==========================================
-function onAlcaldiaChange(alcaldia) {
-    State.selectedAlcaldia = alcaldia;
-    UI.coloniaSelect.clear();
-    UI.coloniaSelect.clearOptions();
-    
-    if (alcaldia) {
-        const colonias = State.catalog
-            .filter(r => r.alcaldia_hecho === alcaldia)
-            .map(r => ({value: r.colonia_catalogo, text: r.colonia_catalogo}));
-        UI.coloniaSelect.addOption(colonias);
-        UI.coloniaSelect.enable();
-    } else {
-        UI.coloniaSelect.disable();
-    }
-}
-
-async function onColoniaChange(colonia) {
-    State.selectedColonia = colonia;
-    if (!colonia) {
+async function onColoniaChange(coloniaKey) {
+    if (!coloniaKey) {
+        State.selectedAlcaldia = null;
+        State.selectedColonia = null;
         UI.showContent(false);
         hideNeighborsControl();
         return;
     }
+    
+    const [alcaldia, colonia] = coloniaKey.split('||');
+    State.selectedAlcaldia = alcaldia;
+    State.selectedColonia = colonia;
 
     // Build neighbors panel (even if not enabled, so it's ready)
     buildNeighborPanel();
