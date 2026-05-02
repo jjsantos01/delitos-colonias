@@ -49,3 +49,43 @@ El dataset de FGJ tiene dos pares de campos geográficos:
 - **Colonia**: Se usa `colonia_catalogo` con fallback a `colonia_hecho` mediante `COALESCE(NULLIF(colonia_catalogo, ''), INITCAP(colonia_hecho))`. Se aplica `INITCAP` al fallback para normalizar a Title Case y evitar duplicados entre catálogo (Title Case) y hecho (MAYÚSCULAS). Esto ofrece mayor granularidad (ej: "NARVARTE" → "Narvarte Poniente" / "Narvarte Oriente") sin perder registros rurales que carecen de catálogo.
 
 **CRÍTICO**: No cambiar a `alcaldia_catalogo` — está vacío. No eliminar el fallback `COALESCE` para colonias — hay ~16K registros rurales que solo tienen `colonia_hecho`. No remover `INITCAP` del fallback — sin él se generan duplicados.
+
+## 7. Flujo de Actualización de Datos (Pipeline ETL y GIS)
+
+Si el usuario (u otro agente) necesita regenerar o actualizar la información del sistema desde cero, este es el orden y las herramientas a utilizar. Todos los scripts utilizan `uv` para manejar dependencias (principalmente `pandas` y `shapely`).
+
+### A. Actualización Mensual (Datos Core)
+Estos comandos están automatizados en GitHub Actions, pero pueden correrse manualmente:
+
+1. **Actualizar el Catálogo Base (`catalog.json`)**
+   Descarga de la API de CKAN la lista de Alcaldías y Colonias unificadas.
+   ```bash
+   uv run scripts/update_catalog.py
+   ```
+
+2. **Re-construir el Static Data Lake (`/data/*`)**
+   Descarga el CSV maestro (o usa uno local en la carpeta raíz/scripts si se modifica el código) y particiona toda la base de delitos en los archivos JSON pre-calculados por trimestre y colonia.
+   ```bash
+   uv run scripts/build_static_api.py
+   ```
+
+### B. Actualización Geoespacial (Polígonos y Vecinos)
+Solo se realiza si hay un cambio mayor en el trazado de las colonias de CDMX (rara vez). 
+
+1. **Mapeo de Geometrías (`colonias_geo.json`)**
+   Toma el archivo original (`catlogo-de-colonias.json`) y empareja (fuzzy match/direct match) los polígonos contra los nombres de colonias tal como los reporta la fiscalía en los delitos. Genera el `colonias_geo.json`.
+   ```bash
+   uv run scripts/match_colonias.py
+   ```
+
+2. **Optimización de Polígonos**
+   Comprime drásticamente el peso del archivo reduciendo los vértices de los polígonos utilizando el algoritmo de Douglas-Peucker.
+   ```bash
+   uv run scripts/optimize_geojson.py
+   ```
+
+3. **Cálculo de Adyacencia ("Vecinos" - `colonias_neighbors.json`)**
+   Calcula la intersección espacial de los polígonos (usando un STRtree index) para detectar qué colonias son fronterizas. Depende estrictamente de que `colonias_geo.json` ya esté optimizado y generado.
+   ```bash
+   uv run scripts/compute_neighbors.py
+   ```

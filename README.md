@@ -39,6 +39,38 @@ La aplicación sigue el patrón de una aplicación estática sin servidor, apoya
 - `catalog.json`: Lista curada de colonias válidas generada estáticamente.
 - `colonias_neighbors.json`: Mapa de adyacencia espacial para el análisis de colonias vecinas.
 
+## 🔄 Flujo de Actualización de Datos (Pipeline ETL y GIS)
+
+Si deseas regenerar o actualizar la información del sistema desde cero para reflejar un cambio drástico en los datos originales o re-trazos de polígonos, este es el orden de las herramientas a utilizar. Todos los scripts están construidos en Python y utilizan `uv` para manejar dependencias (`pandas`, `shapely`, etc.).
+
+### A. Actualización Mensual (Datos Core)
+Estos comandos están automatizados en GitHub Actions, pero pueden ejecutarse manualmente:
+
+1. **Catálogo Base (`catalog.json`)**: Descarga del API de CKAN la lista oficial de Alcaldías y Colonias unificadas.
+   ```bash
+   uv run scripts/update_catalog.py
+   ```
+2. **Static Data Lake (`/data/*`)**: Descarga el CSV maestro de la FGJ y particiona la base de delitos en archivos JSON ultraligeros pre-calculados por trimestre y colonia.
+   ```bash
+   uv run scripts/build_static_api.py
+   ```
+
+### B. Actualización Geoespacial (Polígonos y Vecinos)
+Este flujo solo se requiere si hay un cambio mayor en el trazado geográfico oficial de las colonias de la Ciudad de México.
+
+1. **Mapeo de Geometrías**: Toma el geojson base original y lo empareja de forma exacta o difusa (fuzzy) contra los nombres de colonias dictados por la fiscalía para generar `colonias_geo.json`.
+   ```bash
+   uv run scripts/match_colonias.py
+   ```
+2. **Optimización**: Reduce y comprime drásticamente los vértices de los polígonos utilizando el algoritmo de Douglas-Peucker.
+   ```bash
+   uv run scripts/optimize_geojson.py
+   ```
+3. **Cálculo de Adyacencia (Vecinos)**: Genera el mapa `colonias_neighbors.json` calculando la intersección espacial de fronteras utilizando un índice STRtree.
+   ```bash
+   uv run scripts/compute_neighbors.py
+   ```
+
 ## ⚙️ Uso Local
 
 No requiere pasos de compilación ni instalación de dependencias:
