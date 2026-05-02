@@ -2,15 +2,15 @@
 
 Si eres un modelo de lenguaje (LLM), asistente y agente de código trabajando sobre este repositorio a petición del usuario, por favor considera el siguiente contexto rígido **antes de manipular, refactorizar o alterar la lógica base del sistema**.
 
-## 1. Patrón Anti-saturación API
+## 1. Patrón Anti-saturación: Arquitectura Static Data Lake
 
-Dado que la colección CKAN es masiva (2.1M registros) y los recursos por IP no son ilimitados, la aplicación emplea una técnica muy cuidadosa en el modo en que extrae la información para ser gentil y optimizar la red:
+Dado que la colección de la Fiscalía es masiva (2.1M registros) y los recursos por IP en la API de CKAN no son ilimitados, la aplicación ha migrado de consultas dinámicas SQL a una **Arquitectura Static Data Lake**. 
 
-- **Query 1 (Arranque - `getCatalog`)**: Descarga el registro unificado únicamente una vez para hidratar el filtro lateral.
-- **Query 2 (Datos analíticos y KPIs - `getQuarterlyData`)**: Cuando el usuario selecciona una colonia, no descargamos los registros "raw" (no consolidados). Hacemos el recuento agrupándolo desde la misma declaración del script SQL (`SELECT ... GROUP BY anio_hecho, trimestre, delito`).
-- **Query 3 (Geoposicionamiento exclusivo temporal - `getMapPoints`)**: Al momento de requerir el mapa, SÓLO se solicita al JSON los puntos para LAT/LONG del **trimestre específico** seleccionado en curso, no del total de los 6 años previos.
+- **Query 1 (Catálogo Estático - `catalog.json`)**: Descarga el registro unificado en la carga inicial para hidratar los filtros laterales. Actualizado mensualmente vía GitHub Actions.
+- **Query 2 y 3 (Datos analíticos, KPIs y Geoposicionamiento)**: Ya no se realizan consultas a la API de CKAN. La aplicación hace `fetch` de archivos JSON estáticos altamente optimizados que se encuentran pre-calculados en `/data/{alcaldia}/{colonia}.json`.
+- El archivo maestro CSV de 600MB es procesado en background por `scripts/build_static_api.py` utilizando Pandas.
 
-**CRÍTICO**: Bajo NINGUNA circunstancia expulses de su esquema este filtro agrupador. NUNCA propongas "Traer la base completa cruda para manipularla en JS", ya que provocará enrutamientos masivos que superan el límite de transferencia de DataStore de CKAN y crashearán el navegador por problemas de RAM.
+**CRÍTICO**: Bajo NINGUNA circunstancia propongas revertir esta arquitectura a consultas dinámicas de SQL (`fetchSQL`). Esta estructura de archivos JSON garantiza cargas instantáneas y evita superar los límites de transferencia del navegador o de CKAN. La única excepción donde se utiliza SQL dinámico es en el botón de "Descargar CSV" crudo (`getQuarterDetails`).
 
 ## 2. Clasificaciones y Macro-categorías Locales
 
@@ -18,7 +18,7 @@ Las cinco (5) ramificaciones actuales llamadas `macro_cat` NO provienen de la AP
 Esto se hizo deliberadamente para romper el estancamiento de la categoría subyacente *'DELITO DE BAJO IMPACTO'*.
 
 Si el usuario solicita ajustar grupos, agregar nuevas categorías, segmentar violencias u homicidios aparte:
-1. No rearmes o integres el filtro lógico al query SQL original.
+1. No rearmes o integres el filtro lógico al pipeline ETL original, a menos que sea estrictamente necesario.
 2. Continúa añadiendo el caso al condicional `CategoryMapper.classify(delito)` en `app.js`.
 
 ## 3. Caché de Filtrados Internos JS

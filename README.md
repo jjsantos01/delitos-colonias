@@ -1,11 +1,11 @@
 # Dashboard de Delitos por Colonia — CDMX
 
-Este repositorio contiene un dashboard interactivo de una sola página (SPA), diseñado para la inteligencia ciudadana sobre el índice delictivo a nivel colonia en la Ciudad de México. La aplicación consume directamente la API **CKAN DataStore SQL** de la CDMX, permitiendo un análisis profundo sin dependencias de backend propias.
+Este repositorio contiene un dashboard interactivo diseñado para la inteligencia ciudadana sobre la evolución delictiva a nivel colonia en la Ciudad de México. La aplicación utiliza una **Arquitectura Static Data Lake**, consumiendo archivos JSON pre-procesados para ofrecer un análisis profundo con tiempos de carga instantáneos y sin dependencias de un backend propio ni riesgo de bloqueos por límites de API.
 
 ## 🚀 Funcionalidades Principales
 
 - **Análisis de Colonias Vecinas**: Única herramienta que permite expandir el análisis más allá de una sola colonia, incluyendo automáticamente sus vecindarios adyacentes (incluso si pertenecen a otra alcaldía) para entender dinámicas espaciales de seguridad.
-- **Consultas SQL**: Acceso al histórico oficial de >2.1M de registros mediante llamadas optimizadas, sin descargas masivas de datos en el cliente.
+- **Rendimiento Ultrarrápido**: Los datos históricos son construidos mediante una canalización (ETL) en GitHub Actions que extrae, optimiza y almacena >2.1M de registros en una colección estática servida desde el propio repositorio.
 - **Interactividad Geo-Espacial Avanzada**:
   - **Mapas de Calor (Heatmap)**: Visualización de densidad de incidentes mediante `Leaflet.heat`.
   - **Modo Pantalla Completa**: Interfaz de mapa expandible para análisis detallado.
@@ -20,16 +20,23 @@ Este repositorio contiene un dashboard interactivo de una sola página (SPA), di
   - **Reportes PDF**: Generación de reportes listos para imprimir o compartir.
   - **Enlaces Permanentes**: Estado de la aplicación (alcaldía, colonia, trimestre) persistido en la URL.
 
-## 🛠 Arquitectura Front-End
+## 🛠 Arquitectura y Pipeline de Datos
 
-El proyecto utiliza un patrón **Dark Mode Glassmorphism** y está construido exclusivamente con tecnologías web estándar (Vanilla JS), servido estáticamente.
+La aplicación sigue el patrón de una aplicación estática sin servidor, apoyada por procesos de integración continua para mantener la información siempre al día.
 
-### Stack Tecnológico:
+### Pipeline ETL (Static Data Lake)
+- Un flujo de **GitHub Actions** (`.github/workflows/build_static_api.yml`) corre automáticamente cada mes para descargar el último CSV del portal de datos de la CDMX.
+- Utiliza **Python y Pandas** para agrupar los millones de registros por alcaldía y colonia, comprimiéndolos en estructuras eficientes de JSON (arrays en lugar de objetos).
+- Estos archivos se inyectan dinámicamente en el repositorio dentro de la carpeta `data/`.
+
+### Front-End:
+- **Tecnologías Base**: Vanilla JavaScript con un patrón de diseño **Dark Mode Glassmorphism**.
 - **[TomSelect](https://tom-select.js.org/) (v2.3.1)**: Autocompletado y multiselect enriquecido.
 - **[Chart.js](https://www.chartjs.org/)**: Visualizaciones de series temporales.
 - **[Leaflet](https://leafletjs.com/) (v1.9.4)** + **[Leaflet.heat](https://github.com/Leaflet/Leaflet.heat)**: Motor cartográfico y capas de calor.
 
 ### Datos de Soporte:
+- `catalog.json`: Lista curada de colonias válidas generada estáticamente.
 - `colonias_neighbors.json`: Mapa de adyacencia espacial para el análisis de colonias vecinas.
 
 ## ⚙️ Uso Local
