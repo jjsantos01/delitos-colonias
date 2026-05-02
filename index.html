@@ -70,6 +70,13 @@
                     <label for="trimestre-select">Trimestre (KPIs y Mapa)</label>
                     <select id="trimestre-select" placeholder="Selecciona Trimestre..." disabled></select>
                 </div>
+
+                <div class="control-group neighbors-toggle-control" id="neighbors-toggle-control" style="display: none;">
+                    <label class="neighbors-toggle-label">
+                        <input type="checkbox" id="toggle-neighbors-cb">
+                        <span>Incluir colonias vecinas</span>
+                    </label>
+                </div>
             </div>
 
             <!-- Advanced Filters (collapsible on mobile, always open on desktop) -->
@@ -78,10 +85,6 @@
                 <div class="advanced-filters-body">
                     <!-- Neighbors toggle + panel -->
                     <div class="control-group neighbors-control" id="neighbors-control" style="display: none;">
-                        <label class="neighbors-toggle-label">
-                            <input type="checkbox" id="toggle-neighbors-cb">
-                            <span>Incluir colonias vecinas</span>
-                        </label>
                         <div id="neighbors-panel" class="neighbors-panel" style="display: none;">
                             <div class="neighbors-header">
                                 <span class="neighbors-title">Vecinas (<span id="neighbors-count">0</span>)</span>

@@ -594,11 +594,13 @@ function setupNeighborsToggle() {
 }
 
 function buildNeighborPanel() {
+    const toggleControl = document.getElementById('neighbors-toggle-control');
     const control = document.getElementById('neighbors-control');
     const container = document.getElementById('neighbors-checkboxes');
     const countEl = document.getElementById('neighbors-count');
     
-    if (!State.neighborsData || !control || !container) {
+    if (!State.neighborsData || !toggleControl || !control || !container) {
+        if (toggleControl) toggleControl.style.display = 'none';
         if (control) control.style.display = 'none';
         return;
     }
@@ -607,11 +609,13 @@ function buildNeighborPanel() {
     const neighborKeys = State.neighborsData[key] || [];
 
     if (neighborKeys.length === 0) {
+        toggleControl.style.display = 'none';
         control.style.display = 'none';
         return;
     }
 
     // Show the control
+    toggleControl.style.display = 'flex';
     control.style.display = 'flex';
     countEl.textContent = neighborKeys.length;
 
@@ -665,6 +669,8 @@ function updateNeighborsToggleAllState() {
 }
 
 function hideNeighborsControl() {
+    const toggleControl = document.getElementById('neighbors-toggle-control');
+    if (toggleControl) toggleControl.style.display = 'none';
     const control = document.getElementById('neighbors-control');
     if (control) control.style.display = 'none';
     State.activeNeighbors.clear();
