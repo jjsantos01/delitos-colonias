@@ -275,6 +275,9 @@ function updateUrlState() {
     if(State.selectedYear && State.selectedQuarter) {
         params.set('q', `${State.selectedYear}-Q${State.selectedQuarter}`);
     }
+    if (State.neighborsEnabled) {
+        params.set('vecinos', 'true');
+    }
     const newUrl = `${window.location.pathname}?${params.toString()}`;
     window.history.replaceState({}, '', newUrl);
     
@@ -290,8 +293,17 @@ function loadInitialStateFromUrl() {
     const alcaldiaUrl = params.get('alcaldia');
     const coloniaUrl = params.get('colonia');
     const qUrl = params.get('q'); 
+    const vecinosUrl = params.get('vecinos');
     
     if(qUrl) State.urlRequestedQ = qUrl;
+
+    if (vecinosUrl === 'true') {
+        State.neighborsEnabled = true;
+        const cb = document.getElementById('toggle-neighbors-cb');
+        if (cb) cb.checked = true;
+        const panel = document.getElementById('neighbors-panel');
+        if (panel) panel.style.display = 'block';
+    }
 
     if (alcaldiaUrl && coloniaUrl) {
         // Try to find exact match first, then fallback to case-insensitive colonia match
