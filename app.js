@@ -13,6 +13,46 @@ const HEATMAP_OPTIONS = {
 // 1. CKAN Client
 // ==========================================
 class CKANClient {
+    static async fetchColoniaData(alcaldia, colonia) {
+        const safeAlcaldia = alcaldia.replace(/\//g, '_').replace(/\\/g, '_');
+        const safeColonia = colonia.replace(/\//g, '_').replace(/\\/g, '_');
+        const url = `data/${encodeURIComponent(safeAlcaldia)}/${encodeURIComponent(safeColonia)}.json`;
+        try {
+            const response = await fetch(url);
+            if (!response.ok) return null;
+            return await response.json();
+        } catch(e) {
+            console.error("Static data fetch failed:", e);
+            return null;
+        }
+    }
+
+    static async getQuarterlyData(alcaldia, colonia) {
+        const data = await this.fetchColoniaData(alcaldia, colonia);
+        if (!data || !data.agregados) return [];
+        return data.agregados.map(a => ({
+            anio_hecho: a[0],
+            trimestre: a[1],
+            delito: a[2],
+            total: a[3]
+        }));
+    }
+
+    static async getMapPoints(alcaldia, colonia, year, quarter) {
+        const data = await this.fetchColoniaData(alcaldia, colonia);
+        if (!data || !data.puntos) return [];
+        return data.puntos
+            .filter(p => p[5] === year && p[6] === quarter)
+            .map(p => ({
+                latitud: p[0],
+                longitud: p[1],
+                delito: p[2],
+                fecha_hecho: p[3],
+                hora_hecho: p[4]
+            }));
+    }
+
+    // Keep fetchSQL and getQuarterDetails pointing to CKAN for explicit raw CSV downloads.
     static async fetchSQL(sql) {
         try {
             const response = await fetch(`${API_URL}?sql=${encodeURIComponent(sql)}`);
@@ -26,37 +66,6 @@ class CKANClient {
         }
     }
 
-    static getQuarterlyData(alcaldia, colonia) {
-        return this.fetchSQL(`
-            SELECT anio_hecho,
-                   EXTRACT(QUARTER FROM fecha_hecho)::int AS trimestre,
-                   delito,
-                   COUNT(*) AS total
-            FROM "${RESOURCE_ID}"
-            WHERE alcaldia_hecho = '${alcaldia.replace(/'/g, "''")}'
-              AND COALESCE(NULLIF(colonia_catalogo, ''), INITCAP(colonia_hecho)) = '${colonia.replace(/'/g, "''")}'
-              AND anio_hecho >= 2019
-            GROUP BY anio_hecho, trimestre, delito
-            ORDER BY anio_hecho, trimestre
-        `);
-    }
-
-    static getMapPoints(alcaldia, colonia, year, quarter) {
-        return this.fetchSQL(`
-            SELECT latitud, longitud, delito, fecha_hecho, hora_hecho
-            FROM "${RESOURCE_ID}"
-            WHERE alcaldia_hecho = '${alcaldia.replace(/'/g, "''")}'
-              AND COALESCE(NULLIF(colonia_catalogo, ''), INITCAP(colonia_hecho)) = '${colonia.replace(/'/g, "''")}'
-              AND anio_hecho = ${year}
-              AND EXTRACT(QUARTER FROM fecha_hecho) = ${quarter}
-              AND latitud IS NOT NULL
-              AND longitud IS NOT NULL
-            LIMIT 32000
-        `);
-    }
-
-    // Query 4 — Usuario solicita descarga explícita de datos crudos del Q seleccionado.
-    // Acotado a una colonia + trimestre específico, nunca la base completa.
     static getQuarterDetails(alcaldia, colonia, year, quarter) {
         return this.fetchSQL(`
             SELECT anio_inicio, mes_inicio, fecha_inicio, hora_inicio,
@@ -76,45 +85,41 @@ class CKANClient {
         `);
     }
 
-    // ── Multi-colonia variants (for neighbors feature) ───────────────────
-    // Uses OR compound to support cross-alcaldía neighbors
-    static _buildMultiWhere(coloniaList) {
-        return coloniaList.map(c =>
-            `(alcaldia_hecho = '${c.alcaldia.replace(/'/g, "''")}' AND COALESCE(NULLIF(colonia_catalogo, ''), INITCAP(colonia_hecho)) = '${c.colonia.replace(/'/g, "''")}')`
-        ).join(' OR ');
+    static async getQuarterlyDataMulti(coloniaList) {
+        const promises = coloniaList.map(async c => {
+            const data = await this.fetchColoniaData(c.alcaldia, c.colonia);
+            if (!data || !data.agregados) return [];
+            return data.agregados.map(a => ({
+                alcaldia_hecho: c.alcaldia,
+                colonia_key: c.colonia,
+                anio_hecho: a[0],
+                trimestre: a[1],
+                delito: a[2],
+                total: a[3]
+            }));
+        });
+        const results = await Promise.all(promises);
+        return results.flat();
     }
 
-    static getQuarterlyDataMulti(coloniaList) {
-        const where = this._buildMultiWhere(coloniaList);
-        return this.fetchSQL(`
-            SELECT alcaldia_hecho,
-                   COALESCE(NULLIF(colonia_catalogo, ''), INITCAP(colonia_hecho)) AS colonia_key,
-                   anio_hecho,
-                   EXTRACT(QUARTER FROM fecha_hecho)::int AS trimestre,
-                   delito,
-                   COUNT(*) AS total
-            FROM "${RESOURCE_ID}"
-            WHERE (${where})
-              AND anio_hecho >= 2019
-            GROUP BY alcaldia_hecho, colonia_key, anio_hecho, trimestre, delito
-            ORDER BY anio_hecho, trimestre
-        `);
-    }
-
-    static getMapPointsMulti(coloniaList, year, quarter) {
-        const where = this._buildMultiWhere(coloniaList);
-        return this.fetchSQL(`
-            SELECT alcaldia_hecho,
-                   COALESCE(NULLIF(colonia_catalogo, ''), INITCAP(colonia_hecho)) AS colonia_key,
-                   latitud, longitud, delito, fecha_hecho, hora_hecho
-            FROM "${RESOURCE_ID}"
-            WHERE (${where})
-              AND anio_hecho = ${year}
-              AND EXTRACT(QUARTER FROM fecha_hecho) = ${quarter}
-              AND latitud IS NOT NULL
-              AND longitud IS NOT NULL
-            LIMIT 32000
-        `);
+    static async getMapPointsMulti(coloniaList, year, quarter) {
+        const promises = coloniaList.map(async c => {
+            const data = await this.fetchColoniaData(c.alcaldia, c.colonia);
+            if (!data || !data.puntos) return [];
+            return data.puntos
+                .filter(p => p[5] === year && p[6] === quarter)
+                .map(p => ({
+                    alcaldia_hecho: c.alcaldia,
+                    colonia_key: c.colonia,
+                    latitud: p[0],
+                    longitud: p[1],
+                    delito: p[2],
+                    fecha_hecho: p[3],
+                    hora_hecho: p[4]
+                }));
+        });
+        const results = await Promise.all(promises);
+        return results.flat();
     }
 }
 
