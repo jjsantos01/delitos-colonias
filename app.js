@@ -26,19 +26,6 @@ class CKANClient {
         }
     }
 
-    static getCatalog() {
-        return this.fetchSQL(`
-            SELECT DISTINCT alcaldia_hecho,
-                   COALESCE(NULLIF(colonia_catalogo, ''), INITCAP(colonia_hecho)) AS colonia_catalogo
-            FROM "${RESOURCE_ID}"
-            WHERE alcaldia_hecho IS NOT NULL
-              AND alcaldia_hecho != 'nan'
-              AND COALESCE(NULLIF(colonia_catalogo, ''), INITCAP(colonia_hecho)) IS NOT NULL
-              AND COALESCE(NULLIF(colonia_catalogo, ''), INITCAP(colonia_hecho)) != ''
-            ORDER BY alcaldia_hecho, colonia_catalogo
-        `);
-    }
-
     static getQuarterlyData(alcaldia, colonia) {
         return this.fetchSQL(`
             SELECT anio_hecho,
@@ -253,7 +240,7 @@ async function init() {
         
         // Load colonia polygons, neighbors, and catalog in parallel
         const [catalog, geoResp, neighborsResp] = await Promise.all([
-            CKANClient.getCatalog(),
+            fetch('catalog.json').then(r => r.json()),
             fetch('colonias_geo.json').then(r => r.ok ? r.json() : null).catch(() => null),
             fetch('colonias_neighbors.json').then(r => r.ok ? r.json() : null).catch(() => null)
         ]);
