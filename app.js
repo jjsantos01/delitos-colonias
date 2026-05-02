@@ -1102,6 +1102,11 @@ function renderChart() {
     // Easiest is just ensuring points render.
     
     UI.chart.update();
+    
+    // Invalidate size after layout to prevent empty chart on first load
+    setTimeout(() => {
+        if (UI.chart) UI.chart.resize();
+    }, 100);
 }
 
 // ==========================================
