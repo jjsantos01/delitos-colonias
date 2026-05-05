@@ -277,6 +277,7 @@ function setupRateModeToggle() {
         renderKPIs();
         renderKPITable();
         renderChart();
+        renderNeighborsTable();
     });
 }
 
@@ -903,6 +904,7 @@ function applyFiltersAndRender() {
     renderChart();
     renderKPIs();
     renderKPITable();
+    renderNeighborsTable();
 }
 
 // ==========================================
@@ -1303,6 +1305,77 @@ function renderKPITable() {
             <td class="col-num">${formatMetricValue(prevYQ, population)} ${badge(pct(cur, prevYQ))}</td>
             <td class="col-num">${formatMetricValue(curYTD, population)} / ${formatMetricValue(prevYTD, population)} ${badge(pct(curYTD, prevYTD))}</td>
         `;
+        tbody.appendChild(tr);
+    });
+}
+
+// ==========================================
+// Neighbors Breakdown Table
+// ==========================================
+function renderNeighborsTable() {
+    const section = document.getElementById('section-neighbors-table');
+    const thead = document.getElementById('neighbors-table-head');
+    const tbody = document.getElementById('neighbors-table-body');
+    
+    if (!section || !thead || !tbody) return;
+
+    if (!State.neighborsEnabled || State.activeNeighbors.size === 0) {
+        section.style.display = 'none';
+        return;
+    }
+
+    section.style.display = 'block';
+
+    const y  = State.selectedYear;
+    const q  = State.selectedQuarter;
+    const currentQKey = `${y}-Q${q}`;
+
+    // Columns: Colonia, Total, [Active Cats]
+    const activeCats = Object.entries(CategoryMapper.CATEGORIES)
+        .filter(([id]) => State.activeCategories.has(id))
+        .map(([id, cat]) => ({ id, label: cat.label, color: cat.color }));
+
+    let theadHtml = `<tr><th class="col-cat">Colonia</th><th class="col-num">Total</th>`;
+    activeCats.forEach(cat => {
+        theadHtml += `<th class="col-num">${cat.label}</th>`;
+    });
+    theadHtml += `</tr>`;
+    thead.innerHTML = theadHtml;
+
+    // Helper: sum Q for a specific colonia string key
+    function sumForColonia(data, qKey, catId, coloniaStr) {
+        return data
+            .filter(r => r.q_key === qKey && 
+                         (catId === '__ALL__' || r.macro_cat === catId) &&
+                         `${r.alcaldia_hecho}||${r.colonia_key}` === coloniaStr)
+            .reduce((s, r) => s + parseInt(r.total), 0);
+    }
+
+    // List of all colonias to show (main + active neighbors)
+    const allColonias = [
+        `${State.selectedAlcaldia}||${State.selectedColonia}`,
+        ...Array.from(State.activeNeighbors)
+    ];
+
+    tbody.innerHTML = '';
+
+    allColonias.forEach(colKey => {
+        const [, colName] = colKey.split('||');
+        // Get population just for this colonia
+        const pop = parseInt(State.populationByColonia?.[colKey]?.population || 0, 10);
+        
+        const totalVal = sumForColonia(State.filteredData, currentQKey, '__ALL__', colKey);
+        
+        const tr = document.createElement('tr');
+        let trHtml = `<td><div class="kpi-table-cat"><span>${colName}</span></div></td>`;
+        trHtml += `<td class="col-num"><strong>${formatMetricValue(totalVal, pop)}</strong></td>`;
+        
+        activeCats.forEach(cat => {
+            const catVal = sumForColonia(State.filteredData, currentQKey, cat.id, colKey);
+            trHtml += `<td class="col-num" style="color: rgba(255,255,255,0.7);">${formatMetricValue(catVal, pop)}</td>`;
+        });
+        
+        tr.innerHTML = trHtml;
         tbody.appendChild(tr);
     });
 }

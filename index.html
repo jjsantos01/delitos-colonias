@@ -173,6 +173,21 @@
                     </div>
                 </section>
 
+                <!-- Neighbors breakdown table -->
+                <section class="kpi-table-section glass-panel" id="section-neighbors-table" style="display: none;">
+                    <h2 class="kpi-table-title">🏘️ Desglose por Colonia <span style="white-space: nowrap;">(<span class="kpi-q-label">Q</span>)</span></h2>
+                    <div class="kpi-table-scroll">
+                        <table class="kpi-table" id="neighbors-breakdown-table">
+                            <thead id="neighbors-table-head">
+                                <!-- Populated by JS -->
+                            </thead>
+                            <tbody id="neighbors-table-body">
+                                <!-- Populated by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
                 <div class="charts-map-grid" id="section-charts">
                     <!-- Line Chart -->
                     <section class="chart-container glass-panel" id="section-chart-historical">
@@ -334,7 +349,7 @@
                 <!-- Sección 4: Población y Tasas -->
                 <div class="modal-section">
                     <h3 class="modal-section-title">👥 Población y Tasas</h3>
-                    <p>La opción de visualizar tasas por cada 10,000 habitantes utiliza los datos de población a nivel colonia publicados por el <strong>Instituto Electoral de la Ciudad de México (IECM) para el año 2022</strong>.</p>
+                    <p>La opción de visualizar tasas por cada 10,000 habitantes utiliza los datos de población a nivel colonia publicados por el <strong><a href="https://datos.cdmx.gob.mx/dataset/colonias-del-iecm-2022" target="_blank" rel="noopener" class="modal-link">Instituto Electoral de la Ciudad de México (IECM) para el año 2022</a></strong>.</p>
                     <p class="modal-note">Dado que los nombres de las colonias de la Fiscalía no siempre coinciden exactamente con los del padrón del IECM, se realizó un proceso computacional de emparejamiento (matching) por similitud de texto y cruce espacial. Esta estimación poblacional es aproximada y podría presentar un margen de error en colonias irregulares o de reciente creación.</p>
                 </div>
 
