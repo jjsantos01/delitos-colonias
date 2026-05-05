@@ -327,6 +327,20 @@ body.dark-theme {
     gap: 12px;
 }
 
+.kpi-mode-toggle {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+.kpi-mode-toggle label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
 .kpi-card {
     padding: 14px 16px;
     display: flex;
@@ -1820,4 +1834,3 @@ body.dark-theme {
         font-size: 0.9rem;
     }
 }
-

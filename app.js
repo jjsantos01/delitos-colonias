@@ -181,7 +181,9 @@ const State = {
     selectedDelitos: [],  // Empty means all
     heatmapMode: false,
     neighborsEnabled: false,
-    activeNeighbors: new Set()   // Set of "ALCALDIA||colonia" keys
+    activeNeighbors: new Set(),   // Set of "ALCALDIA||colonia" keys
+    populationByColonia: {},
+    rateMode: false
 };
 
 const UI = {
@@ -241,6 +243,7 @@ async function init() {
         setupInfoModal();
         setupMapFullscreen();
         setupDownloadCSV();
+        setupRateModeToggle();
         
         // Load colonia polygons, neighbors, and catalog in parallel
         const [catalog, geoResp, neighborsResp] = await Promise.all([
@@ -253,6 +256,7 @@ async function init() {
         State.neighborsData = neighborsResp;
         if (!geoResp) console.warn('colonias_geo.json not found — polygon outlines disabled');
         if (!neighborsResp) console.warn('colonias_neighbors.json not found — neighbors feature disabled');
+        State.populationByColonia = await fetch('data/colonia_population.json').then(r => r.ok ? r.json() : ({})).catch(() => ({}));
 
         initSelects();
         setupNeighborsToggle();
@@ -262,6 +266,36 @@ async function init() {
     } finally {
         UI.showLoading(false);
     }
+}
+
+function setupRateModeToggle() {
+    const cb = document.getElementById('toggle-rate-mode');
+    if (!cb) return;
+    cb.checked = State.rateMode;
+    cb.addEventListener('change', (e) => {
+        State.rateMode = e.target.checked;
+        renderKPIs();
+        renderKPITable();
+    });
+}
+
+function getActivePopulation() {
+    if (!State.selectedAlcaldia || !State.selectedColonia) return 0;
+    const keys = new Set([`${State.selectedAlcaldia}||${State.selectedColonia}`]);
+    if (State.neighborsEnabled) {
+        State.activeNeighbors.forEach(k => keys.add(k));
+    }
+    let total = 0;
+    keys.forEach(k => {
+        total += parseInt(State.populationByColonia?.[k]?.population || 0, 10);
+    });
+    return total;
+}
+
+function formatMetricValue(value, population) {
+    if (!State.rateMode) return Math.round(value).toLocaleString('es-MX');
+    if (!population || population <= 0) return 'N/A';
+    return ((value / population) * 100000).toFixed(1);
 }
 
 // ==========================================
@@ -1161,20 +1195,21 @@ function renderKPIs() {
     document.getElementById('lbl-ytd-q').textContent = `(${y-1})`;
 
     // Render DOM
-    document.getElementById('kpi-total').textContent = curVal.toLocaleString();
+    const population = getActivePopulation();
+    document.getElementById('kpi-total').textContent = formatMetricValue(curVal, population);
     
-    document.getElementById('kpi-prev-total').textContent = prevQVal.toLocaleString();
+    document.getElementById('kpi-prev-total').textContent = formatMetricValue(prevQVal, population);
     const bdgQoQ = document.getElementById('kpi-qoq-badge');
     bdgQoQ.textContent = formatPct(qoqPct);
     bdgQoQ.className = `kpi-badge ${getBadgeClass(qoqPct)}`;
 
-    document.getElementById('kpi-yoy-total').textContent = prevYQVal.toLocaleString();
+    document.getElementById('kpi-yoy-total').textContent = formatMetricValue(prevYQVal, population);
     const bdgYoY = document.getElementById('kpi-yoy-badge');
     bdgYoY.textContent = formatPct(yoyPct);
     bdgYoY.className = `kpi-badge ${getBadgeClass(yoyPct)}`;
 
-    document.getElementById('kpi-ytd-total').textContent = curYTD.toLocaleString();
-    document.getElementById('kpi-ytd-prev-total').textContent = prevYTD.toLocaleString();
+    document.getElementById('kpi-ytd-total').textContent = formatMetricValue(curYTD, population);
+    document.getElementById('kpi-ytd-prev-total').textContent = formatMetricValue(prevYTD, population);
     const bdgYTD = document.getElementById('kpi-ytd-badge');
     bdgYTD.textContent = formatPct(ytdPct);
     bdgYTD.className = `kpi-badge ${getBadgeClass(ytdPct)}`;
@@ -1231,6 +1266,7 @@ function renderKPITable() {
 
     tbody.innerHTML = '';
 
+    const population = getActivePopulation();
     rows.forEach(row => {
         const cur    = sumQ(State.filteredData, currentQKey, row.id);
         const prevQ  = sumQ(State.filteredData, prevQKey,    row.id);
@@ -1247,10 +1283,10 @@ function renderKPITable() {
 
         tr.innerHTML = `
             <td><div class="kpi-table-cat">${dotHtml}<span>${row.label}</span></div></td>
-            <td class="col-num">${cur.toLocaleString('es-MX')}</td>
-            <td class="col-num">${prevQ.toLocaleString('es-MX')} ${badge(pct(cur, prevQ))}</td>
-            <td class="col-num">${prevYQ.toLocaleString('es-MX')} ${badge(pct(cur, prevYQ))}</td>
-            <td class="col-num">${curYTD.toLocaleString('es-MX')} / ${prevYTD.toLocaleString('es-MX')} ${badge(pct(curYTD, prevYTD))}</td>
+            <td class="col-num">${formatMetricValue(cur, population)}</td>
+            <td class="col-num">${formatMetricValue(prevQ, population)} ${badge(pct(cur, prevQ))}</td>
+            <td class="col-num">${formatMetricValue(prevYQ, population)} ${badge(pct(cur, prevYQ))}</td>
+            <td class="col-num">${formatMetricValue(curYTD, population)} / ${formatMetricValue(prevYTD, population)} ${badge(pct(curYTD, prevYTD))}</td>
         `;
         tbody.appendChild(tr);
     });
