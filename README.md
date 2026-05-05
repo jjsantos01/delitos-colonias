@@ -12,6 +12,7 @@ Este repositorio contiene un dashboard interactivo diseñado para la inteligenci
 - **KPIs y Comparativas de Alto Nivel**:
   - **Cuadro de Mando Trimestral**: Comparativas QoQ (Trimestre anterior), YoY (Año anterior) y YTD (Acumulado anual).
   - **Tabla de Desglose por Categoría**: Matriz interactiva que detalla el rendimiento de cada macro-categoría de delito.
+  - **Tasa por 10k Habitantes**: Alterna entre número absoluto de delitos y tasa ajustada por población (usando datos del IECM 2022).
 - **Transparencia Metodológica**:
   - **Macro-Categorías**: Re-clasificación de más de 350 tipos penales en 5 grupos legibles (Robos, Violencia, Patrimoniales, Sexuales, Otros).
   - **Contexto Diego Valle-Jones**: Incorporación de notas técnicas sobre la aleatorización de puntos (buffer de 200m) para preservar la privacidad.

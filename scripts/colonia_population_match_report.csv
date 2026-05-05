@@ -1,0 +1,1652 @@
+alcaldia,colonia,matched_pop,match_type
+ALVARO OBREGON,1ra Ampliacion Presidentes,2314,spatial_centroid
+ALVARO OBREGON,1ra Seccion Cañada,3309,spatial_centroid
+ALVARO OBREGON,1ra Victoria,2111,exact_key
+ALVARO OBREGON,2da Ampliacion Presidentes,5977,spatial_centroid
+ALVARO OBREGON,2da Del Moral Del Pueblo Tetelpan,4306,spatial_centroid
+ALVARO OBREGON,2da Seccion Cañada,3309,spatial_centroid
+ALVARO OBREGON,2do Reacomodo Tlacuitlapa,4315,spatial_centroid
+ALVARO OBREGON,8 De Agosto,2025,spatial_centroid
+ALVARO OBREGON,Abraham M Gonzalez,459,fuzzy_94
+ALVARO OBREGON,Acueducto,3188,exact_key
+ALVARO OBREGON,Acuilotla,1927,exact_key
+ALVARO OBREGON,Alcantarilla,855,exact_key
+ALVARO OBREGON,Alfonso Xiii,9645,exact_key
+ALVARO OBREGON,Altavista,1724,spatial_centroid
+ALVARO OBREGON,Ampliacion Acueducto,3188,spatial_centroid
+ALVARO OBREGON,Ampliacion Alpes,2649,spatial_centroid
+ALVARO OBREGON,Ampliacion El Capulin,615,spatial_centroid
+ALVARO OBREGON,Ampliacion Estado De Hidalgo,1774,spatial_centroid
+ALVARO OBREGON,Ampliacion Jalalpa,3932,spatial_centroid
+ALVARO OBREGON,Ampliación Jalalpa,3932,spatial_centroid
+ALVARO OBREGON,Ampliacion La Cebada,1113,spatial_centroid
+ALVARO OBREGON,Ampliación La Cebada,1113,spatial_centroid
+ALVARO OBREGON,Ampliacion La Mexicana,6335,spatial_centroid
+ALVARO OBREGON,Ampliacion Las Aguilas,8745,spatial_centroid
+ALVARO OBREGON,Ampliacion Lomas De San Bernabe,8074,spatial_centroid
+ALVARO OBREGON,Ampliacion Los Pirules,2988,spatial_centroid
+ALVARO OBREGON,Ampliacion Piloto Adolfo Lopez Mateos,8331,spatial_centroid
+ALVARO OBREGON,Ampliacion Tepeaca,1280,spatial_centroid
+ALVARO OBREGON,Ampliacion Tlacuitlapa,2503,spatial_centroid
+ALVARO OBREGON,Arcos Centenario,218,spatial_centroid
+ALVARO OBREGON,Arturo Martinez,1707,exact_key
+ALVARO OBREGON,Arvide,702,exact_key
+ALVARO OBREGON,Atlamaya,1347,exact_key
+ALVARO OBREGON,Ave Real,1376,exact_key
+ALVARO OBREGON,Balcones De Cehuayo,973,exact_key
+ALVARO OBREGON,Barrio Alfalfar,1903,spatial_centroid
+ALVARO OBREGON,Barrio La Otra Banda,743,spatial_centroid
+ALVARO OBREGON,Barrio Loreto,881,spatial_centroid
+ALVARO OBREGON,Barrio Norte,13917,exact_key
+ALVARO OBREGON,Barrio Santa Maria Nonoalco,4247,spatial_centroid
+ALVARO OBREGON,Bejero Del Pueblo Santa Fe,1752,spatial_centroid
+ALVARO OBREGON,Belem De Las Flores,2438,fuzzy_94
+ALVARO OBREGON,Bellavista,9020,fuzzy_95
+ALVARO OBREGON,Bonanza,1480,exact_key
+ALVARO OBREGON,Bosque,792,spatial_centroid
+ALVARO OBREGON,Calzada Jalalpa,4985,exact_key
+ALVARO OBREGON,Campestre,2494,spatial_centroid
+ALVARO OBREGON,Canutillo,1138,spatial_centroid
+ALVARO OBREGON,Canutillo 2da Seccion,3791,spatial_centroid
+ALVARO OBREGON,Canutillo 3ra Seccion,3791,exact_key
+ALVARO OBREGON,Carlos A Madrazo,919,spatial_centroid
+ALVARO OBREGON,Carola,8360,spatial_centroid
+ALVARO OBREGON,Cehuaya,1294,spatial_centroid
+ALVARO OBREGON,Chimalistac,999,exact_key
+ALVARO OBREGON,Colina Del Sur,10875,fuzzy_96
+ALVARO OBREGON,Colinas De Tarango,601,exact_key
+ALVARO OBREGON,Cooperativa Union Olivos,703,spatial_centroid
+ALVARO OBREGON,Corpus Christy,9125,exact_key
+ALVARO OBREGON,Cove,3936,exact_key
+ALVARO OBREGON,Cristo Rey,890,exact_key
+ALVARO OBREGON,Cuevitas,3495,spatial_centroid
+ALVARO OBREGON,Desarrollo Urbano,5135,exact_key
+ALVARO OBREGON,Dos Rios Del Pueblo De Santa Lucia,1195,spatial_centroid
+ALVARO OBREGON,Ejido San Mateo,5565,spatial_centroid
+ALVARO OBREGON,El Arbol,881,exact_key
+ALVARO OBREGON,El Bosque 2a Secc,441,spatial_centroid
+ALVARO OBREGON,El Capulin,1500,exact_key
+ALVARO OBREGON,El Cuernito,2392,spatial_centroid
+ALVARO OBREGON,El Encino Del Pueblo Tetelpan,7240,spatial_centroid
+ALVARO OBREGON,El Mirador Del Pueblo Tetelpan,817,spatial_centroid
+ALVARO OBREGON,El Piru 2da Ampliacion,1043,spatial_centroid
+ALVARO OBREGON,El Pirul,1574,exact_key
+ALVARO OBREGON,El Piru Santa Fe,1574,spatial_centroid
+ALVARO OBREGON,El Pocito,1096,exact_key
+ALVARO OBREGON,El Politoco,507,spatial_centroid
+ALVARO OBREGON,El Rincon,955,spatial_centroid
+ALVARO OBREGON,El Rodeo,284,exact_key
+ALVARO OBREGON,El Ruedo,136,exact_key
+ALVARO OBREGON,El Tejocote,919,spatial_centroid
+ALVARO OBREGON,Ermita Tizapan,8976,spatial_centroid
+ALVARO OBREGON,Estado De Hidalgo,1394,exact_key
+ALVARO OBREGON,Ex-Hacienda De Guadalupe Chimalistac,1257,fuzzy_95
+ALVARO OBREGON,Ex Hacienda De Tarango,2525,spatial_centroid
+ALVARO OBREGON,Flor De Maria,1004,exact_key
+ALVARO OBREGON,Florida,6267,exact_key
+ALVARO OBREGON,Francisco Villa,3505,exact_key
+ALVARO OBREGON,Galeana,611,exact_key
+ALVARO OBREGON,Garcimarrero,3019,exact_key
+ALVARO OBREGON,Golondrinas,4009,exact_key
+ALVARO OBREGON,Golondrinas 1ra Seccion,2427,exact_key
+ALVARO OBREGON,Golondrinas 2da Seccion,2876,exact_key
+ALVARO OBREGON,Guadalupe Inn,4103,exact_key
+ALVARO OBREGON,Heron Proal,2634,exact_key
+ALVARO OBREGON,Hidalgo,1394,spatial_centroid
+ALVARO OBREGON,Hogar Y Redencion,3162,exact_key
+ALVARO OBREGON,Hueytlale,3791,spatial_centroid
+ALVARO OBREGON,Isidro Fabela,1868,exact_key
+ALVARO OBREGON,Jalalpa,5281,exact_key
+ALVARO OBREGON,Jalalpa El Grande,11555,exact_key
+ALVARO OBREGON,Jalalpa Tepito,3932,exact_key
+ALVARO OBREGON,Jalalpa Tepito 2da Ampliacion,4789,spatial_centroid
+ALVARO OBREGON,Jardines Del Pedregal,15200,exact_key
+ALVARO OBREGON,Jose Maria Pino Suarez,6061,exact_key
+ALVARO OBREGON,La Angostura,2966,exact_key
+ALVARO OBREGON,La Araña,942,exact_key
+ALVARO OBREGON,La Cascada,2187,exact_key
+ALVARO OBREGON,La Conchita,3160,exact_key
+ALVARO OBREGON,Ladera,421,spatial_centroid
+ALVARO OBREGON,La Estrella,3495,spatial_centroid
+ALVARO OBREGON,La Herradura Del Pueblo Tetelpan,3887,spatial_centroid
+ALVARO OBREGON,La Huerta,492,exact_key
+ALVARO OBREGON,La Joya,2546,exact_key
+ALVARO OBREGON,La Joyita Del Pueblo Tetelpan,7240,spatial_centroid
+ALVARO OBREGON,La Martinica,2525,exact_key
+ALVARO OBREGON,La Mexicana,6335,exact_key
+ALVARO OBREGON,La Mexicana 2da Ampliacion,6335,spatial_centroid
+ALVARO OBREGON,La Milagrosa,669,exact_key
+ALVARO OBREGON,La Otra Banda,743,exact_key
+ALVARO OBREGON,La Palmita,1580,exact_key
+ALVARO OBREGON,La Peñita Del Pueblo Tetelpan,7240,spatial_centroid
+ALVARO OBREGON,La Presa,992,exact_key
+ALVARO OBREGON,Las Aguilas,6773,exact_key
+ALVARO OBREGON,Las Aguilas 1ra Seccion,8745,spatial_centroid
+ALVARO OBREGON,Las Aguilas 2do Parque,1557,spatial_centroid
+ALVARO OBREGON,Las Aguilas 3er Parque,3832,spatial_centroid
+ALVARO OBREGON,Las Americas,1394,spatial_centroid
+ALVARO OBREGON,Liberacion Proletaria,2034,exact_key
+ALVARO OBREGON,Liberales De 1857,5553,exact_key
+ALVARO OBREGON,Llano Redondo,955,exact_key
+ALVARO OBREGON,Lomas Axomiatla,1821,spatial_centroid
+ALVARO OBREGON,Lomas De Becerra,9731,exact_key
+ALVARO OBREGON,Lomas De Capula,5219,exact_key
+ALVARO OBREGON,Lomas De Chamontoya,6577,exact_key
+ALVARO OBREGON,Lomas De Guadalupe,1846,exact_key
+ALVARO OBREGON,Lomas De La Era,14983,exact_key
+ALVARO OBREGON,Lomas De Las Aguilas,2977,exact_key
+ALVARO OBREGON,Lomas De Los Angeles Pueblo Tetelpan,3887,spatial_centroid
+ALVARO OBREGON,Lomas De Los Cedros,4593,exact_key
+ALVARO OBREGON,Lomas De Nuevo Mexico,1469,exact_key
+ALVARO OBREGON,Lomas De Plateros,8692,spatial_centroid
+ALVARO OBREGON,Lomas De Puerta Grande,3569,exact_key
+ALVARO OBREGON,Lomas De San Angel Inn,2475,exact_key
+ALVARO OBREGON,Lomas De San Bernabe,8074,spatial_centroid
+ALVARO OBREGON,Lomas De Santa Fe,326,exact_key
+ALVARO OBREGON,Lomas De Tarango,3168,exact_key
+ALVARO OBREGON,Los Alpes,4187,spatial_centroid
+ALVARO OBREGON,Los Cedros,908,exact_key
+ALVARO OBREGON,Los Gamitos,725,exact_key
+ALVARO OBREGON,Los Juristas,618,spatial_centroid
+ALVARO OBREGON,Margarita Maza De Juarez,938,fuzzy_93
+ALVARO OBREGON,Maria G De Garcia Ruiz,2840,exact_key
+ALVARO OBREGON,Martires De Tacubaya,622,exact_key
+ALVARO OBREGON,Merced Gomez,6446,exact_key
+ALVARO OBREGON,Miguel Gaona Armenta,2225,exact_key
+ALVARO OBREGON,Miguel Hidalgo,1705,exact_key
+ALVARO OBREGON,Minas Cristo Rey,3509,spatial_centroid
+ALVARO OBREGON,Molino De Rosas,6812,exact_key
+ALVARO OBREGON,Molino De Santo Domingo,4754,exact_key
+ALVARO OBREGON,Ocotillos Del Pueblo Tetelpan,930,spatial_centroid
+ALVARO OBREGON,Olivar Del Conde 1ra Seccion,7144,fuzzy_96
+ALVARO OBREGON,Olivar Del Conde 2da Seccion,7854,fuzzy_96
+ALVARO OBREGON,Olivar De Los Padres,12754,exact_key
+ALVARO OBREGON,Palmas,3204,exact_key
+ALVARO OBREGON,Palmas Axotitla,2250,exact_key
+ALVARO OBREGON,Paraiso,4489,spatial_centroid
+ALVARO OBREGON,Paseo De Las Lomas,3707,spatial_centroid
+ALVARO OBREGON,Piloto Adolfo Lopez Mateos,5324,exact_key
+ALVARO OBREGON,Piru Santa Lucia,2988,spatial_centroid
+ALVARO OBREGON,Polvora,1968,exact_key
+ALVARO OBREGON,Ponciano Arriaga,1557,exact_key
+ALVARO OBREGON,Preconcreto,7818,spatial_centroid
+ALVARO OBREGON,Presidentes,4944,exact_key
+ALVARO OBREGON,Profesor J Arturo Lopez Martinez,2568,spatial_centroid
+ALVARO OBREGON,Progreso Tizapan,8685,exact_key
+ALVARO OBREGON,Pueblo Axotla,2350,spatial_centroid
+ALVARO OBREGON,Pueblo Nuevo,1085,exact_key
+ALVARO OBREGON,Pueblo San Bartolo Ameyalco,24667,spatial_centroid
+ALVARO OBREGON,Pueblo Santa Fe,7166,spatial_centroid
+ALVARO OBREGON,Pueblo Santa Lucia,6655,spatial_centroid
+ALVARO OBREGON,Pueblo Santa Lucia Chantepec,2405,spatial_centroid
+ALVARO OBREGON,Pueblo Santa Rosa Xochiac,17642,spatial_centroid
+ALVARO OBREGON,Pueblo Tetelpan,7240,spatial_centroid
+ALVARO OBREGON,Pueblo Tizapan,8976,spatial_centroid
+ALVARO OBREGON,Pueblo Tlacopac,2494,spatial_centroid
+ALVARO OBREGON,Puente Colorado,2741,exact_key
+ALVARO OBREGON,Puerta Grande,3569,spatial_centroid
+ALVARO OBREGON,Punta De Ceguaya,2258,spatial_centroid
+ALVARO OBREGON,Rancho Del Carmen Del Pueblo San Bartolo Ameyalco,12754,spatial_centroid
+ALVARO OBREGON,Rancho San Francisco Del Pblo San Bartolo Ameyalco,24667,spatial_centroid
+ALVARO OBREGON,Reacomodo El Cuernito,2878,exact_key
+ALVARO OBREGON,Reacomodo Pino Suarez,836,exact_key
+ALVARO OBREGON,Reacomodo Valentin Gomez Farias,1635,spatial_centroid
+ALVARO OBREGON,Real Del Monte,1185,exact_key
+ALVARO OBREGON,Rinconada De Tarango,81,spatial_centroid
+ALVARO OBREGON,Rinconada Las Cuevitas,1994,spatial_centroid
+ALVARO OBREGON,Rincon De La Bolsa,1827,exact_key
+ALVARO OBREGON,Sacramento,3509,spatial_centroid
+ALVARO OBREGON,San Agustin Del Pueblo Tetelpan,3885,spatial_centroid
+ALVARO OBREGON,San Angel,2257,exact_key
+ALVARO OBREGON,San Angel Inn,1724,exact_key
+ALVARO OBREGON,San Bartolo Ameyalco,24667,spatial_centroid
+ALVARO OBREGON,San Clemente Norte,9041,spatial_centroid
+ALVARO OBREGON,San Clemente Sur,9041,spatial_centroid
+ALVARO OBREGON,San Gabriel,155,exact_key
+ALVARO OBREGON,San Jeronimo Aculco,15200,spatial_centroid
+ALVARO OBREGON,San Jose Del Olivar,12754,spatial_centroid
+ALVARO OBREGON,San Pedro De Los Pinos,145,exact_key
+ALVARO OBREGON,Santa Fe,7166,exact_key
+ALVARO OBREGON,Santa Fe Centro Ciudad,3073,spatial_centroid
+ALVARO OBREGON,Santa Fe La Loma,6403,spatial_centroid
+ALVARO OBREGON,Santa Fe Peña Blanca,3073,spatial_centroid
+ALVARO OBREGON,Santa Fe Tlayapaca,3073,spatial_centroid
+ALVARO OBREGON,Santa Lucia,6655,exact_key
+ALVARO OBREGON,Santa Lucia Chantepec,884,spatial_centroid
+ALVARO OBREGON,Santa Maria Nonoalco,4247,exact_key
+ALVARO OBREGON,Santa Rosa Xochiac,17642,spatial_centroid
+ALVARO OBREGON,Tarango,5565,spatial_centroid
+ALVARO OBREGON,Tecalcapa Del Pueblo Tetelpan,817,spatial_centroid
+ALVARO OBREGON,Tecolalco,1278,exact_key
+ALVARO OBREGON,Tepeaca,1295,exact_key
+ALVARO OBREGON,Tepopotla,670,exact_key
+ALVARO OBREGON,Tizampampano Del Pueblo Tetelpan,1026,spatial_centroid
+ALVARO OBREGON,Tizapan,8976,spatial_centroid
+ALVARO OBREGON,Tlacoyaque,1517,exact_key
+ALVARO OBREGON,Tlacuitlapa,2503,exact_key
+ALVARO OBREGON,Tlapechico,3605,exact_key
+ALVARO OBREGON,Tolteca,922,exact_key
+ALVARO OBREGON,Torres De Potrero,12966,exact_key
+ALVARO OBREGON,Villa Progresista,2515,exact_key
+ALVARO OBREGON,Villa Solidaridad,889,exact_key
+ALVARO OBREGON,Villa Verdun,3647,exact_key
+ALVARO OBREGON,Zenon Delgado,2202,exact_key
+ALVARO OBREGON,Zona Federal,3168,spatial_centroid
+AZCAPOTZALCO,Aguilera,1957,exact_key
+AZCAPOTZALCO,Aldana,3515,exact_key
+AZCAPOTZALCO,Ampliacion Cosmopolita,1006,spatial_centroid
+AZCAPOTZALCO,Ampliacion Del Gas,6325,spatial_centroid
+AZCAPOTZALCO,Ampliacion Petrolera,1830,spatial_centroid
+AZCAPOTZALCO,Ampliacion San Pedro Xalpa,11365,spatial_centroid
+AZCAPOTZALCO,Ampliación San Pedro Xalpa,11365,spatial_centroid
+AZCAPOTZALCO,Angel Zimbron,2330,exact_key
+AZCAPOTZALCO,Arenal,4306,exact_key
+AZCAPOTZALCO,Barrio Coltongo,3648,spatial_centroid
+AZCAPOTZALCO,Barrio Huautla De Las Salinas,164,spatial_centroid
+AZCAPOTZALCO,Barrio Los Reyes,3529,spatial_centroid
+AZCAPOTZALCO,Barrio Nextengo,2222,spatial_centroid
+AZCAPOTZALCO,Barrio San Andres,6781,spatial_centroid
+AZCAPOTZALCO,Barrio San Bernabe,671,spatial_centroid
+AZCAPOTZALCO,Barrio San Marcos,5908,spatial_centroid
+AZCAPOTZALCO,Barrio San Mateo,3094,spatial_centroid
+AZCAPOTZALCO,Barrio Santa Apolonia,4172,spatial_centroid
+AZCAPOTZALCO,Barrio Santa Lucia,1797,spatial_centroid
+AZCAPOTZALCO,Centro De Azcapotzalco,3164,exact_key
+AZCAPOTZALCO,Claveria,9353,exact_key
+AZCAPOTZALCO,Coltongo,3648,exact_key
+AZCAPOTZALCO,Cosmopolita,2792,exact_key
+AZCAPOTZALCO,Del Gas,7803,exact_key
+AZCAPOTZALCO,Del Maestro,654,exact_key
+AZCAPOTZALCO,Del Recreo,9563,exact_key
+AZCAPOTZALCO,El Jaguey,498,spatial_centroid
+AZCAPOTZALCO,El Rosario,9629,spatial_centroid
+AZCAPOTZALCO,Estacion Pantaco,2461,spatial_centroid
+AZCAPOTZALCO,Euzkadi,3999,exact_key
+AZCAPOTZALCO,Ex-Hacienda El Rosario,2071,exact_key
+AZCAPOTZALCO,Ferreria,3486,exact_key
+AZCAPOTZALCO,Ferrería,3486,exact_key
+AZCAPOTZALCO,Ignacio Allende,1419,exact_key
+AZCAPOTZALCO,Industrial San Antonio,1797,spatial_centroid
+AZCAPOTZALCO,Industrial Vallejo,401,spatial_centroid
+AZCAPOTZALCO,Jardin Azpeitia,2000,exact_key
+AZCAPOTZALCO,La Preciosa,3543,exact_key
+AZCAPOTZALCO,La Raza,2249,exact_key
+AZCAPOTZALCO,Las Salinas,929,exact_key
+AZCAPOTZALCO,Liberacion,2578,exact_key
+AZCAPOTZALCO,Libertad,1415,exact_key
+AZCAPOTZALCO,Monte Alto,1011,exact_key
+AZCAPOTZALCO,Nueva El Rosario,377,exact_key
+AZCAPOTZALCO,Nueva España,1714,exact_key
+AZCAPOTZALCO,Nueva Santa Maria,9466,exact_key
+AZCAPOTZALCO,Nuevo Barrio San Rafael,2550,spatial_centroid
+AZCAPOTZALCO,Obrero Popular,5072,exact_key
+AZCAPOTZALCO,Pasteros,7178,exact_key
+AZCAPOTZALCO,Patrimonio Familiar,928,exact_key
+AZCAPOTZALCO,Petrolera,2831,exact_key
+AZCAPOTZALCO,Plenitud,3887,exact_key
+AZCAPOTZALCO,Porvenir,3213,exact_key
+AZCAPOTZALCO,Potrero Del Llano,1146,exact_key
+AZCAPOTZALCO,Prados Del Rosario,2047,exact_key
+AZCAPOTZALCO,Pro Hogar,5535,spatial_centroid
+AZCAPOTZALCO,Providencia,8067,exact_key
+AZCAPOTZALCO,Pueblo San Andres,6284,spatial_centroid
+AZCAPOTZALCO,Pueblo San Andres De Las Salinas,283,spatial_centroid
+AZCAPOTZALCO,Pueblo San Bartolo Cahualtongo,3136,spatial_centroid
+AZCAPOTZALCO,Pueblo San Francisco Tetecala,3603,spatial_centroid
+AZCAPOTZALCO,Pueblo San Francisco Xocotitla,1977,spatial_centroid
+AZCAPOTZALCO,Pueblo San Juan Tlihuaca,11598,spatial_centroid
+AZCAPOTZALCO,Pueblo San Martin Xochinahuac,9243,spatial_centroid
+AZCAPOTZALCO,Pueblo San Miguel Amantla,7874,spatial_centroid
+AZCAPOTZALCO,Pueblo San Pedro Xalpa,9529,spatial_centroid
+AZCAPOTZALCO,Pueblo Santa Barbara,6652,spatial_centroid
+AZCAPOTZALCO,Pueblo Santa Catarina,4403,spatial_centroid
+AZCAPOTZALCO,Pueblo Santa Cruz Acayucan,1643,spatial_centroid
+AZCAPOTZALCO,Pueblo Santa Maria Malinalco,7369,spatial_centroid
+AZCAPOTZALCO,Pueblo Santiago Ahuizotla,11625,spatial_centroid
+AZCAPOTZALCO,Pueblo Santo Domingo,4587,spatial_centroid
+AZCAPOTZALCO,Reynosa Tamaulipas,7252,exact_key
+AZCAPOTZALCO,San Alvaro,7314,exact_key
+AZCAPOTZALCO,San Antonio,4047,spatial_centroid
+AZCAPOTZALCO,San Martín Xochinahuac,9243,spatial_centroid
+AZCAPOTZALCO,San Miguel Amantla,7874,spatial_centroid
+AZCAPOTZALCO,San Rafael,2193,exact_key
+AZCAPOTZALCO,San Salvador Xochimanca,931,exact_key
+AZCAPOTZALCO,San Sebastian,5838,exact_key
+AZCAPOTZALCO,Santa Cruz De Las Salinas,374,exact_key
+AZCAPOTZALCO,Santa Ines,3671,exact_key
+AZCAPOTZALCO,Santiago Ahuizotla,11625,spatial_centroid
+AZCAPOTZALCO,Santo Domingo,4587,spatial_centroid
+AZCAPOTZALCO,Santo Tomas,3636,exact_key
+AZCAPOTZALCO,Sector Naval,425,exact_key
+AZCAPOTZALCO,Sindicato Mexicano De Electricistas,4042,exact_key
+AZCAPOTZALCO,Tezozomoc,9415,exact_key
+AZCAPOTZALCO,Tierra Nueva,3049,exact_key
+AZCAPOTZALCO,Tlatilco,4015,exact_key
+AZCAPOTZALCO,Trabajadores De Hierro,2863,fuzzy_97
+AZCAPOTZALCO,Un Hogar Para Cada Trabajador,1542,exact_key
+AZCAPOTZALCO,Unidad Cuitlahuac,4142,spatial_centroid
+AZCAPOTZALCO,Victoria De Las Democracias,3649,exact_key
+BENITO JUAREZ,8 De Agosto,3568,spatial_centroid
+BENITO JUAREZ,Acacias,6376,exact_key
+BENITO JUAREZ,Actipan,4380,exact_key
+BENITO JUAREZ,Alamos,11278,spatial_centroid
+BENITO JUAREZ,Albert,4078,exact_key
+BENITO JUAREZ,Americas Unidas,4642,spatial_centroid
+BENITO JUAREZ,Ampliacion Napoles,4197,spatial_centroid
+BENITO JUAREZ,Atenor Salas,1981,exact_key
+BENITO JUAREZ,Barrio Santa Maria Nonoalco,10414,spatial_centroid
+BENITO JUAREZ,Ciudad De Los Deportes,4957,exact_key
+BENITO JUAREZ,Credito Constructor,810,exact_key
+BENITO JUAREZ,Del Carmen,3479,spatial_centroid
+BENITO JUAREZ,Del Lago,4642,spatial_centroid
+BENITO JUAREZ,Del Valle Centro,8911,spatial_centroid
+BENITO JUAREZ,Del Valle Norte,11283,spatial_centroid
+BENITO JUAREZ,Del Valle Sur,8406,spatial_centroid
+BENITO JUAREZ,Ermita,1465,exact_key
+BENITO JUAREZ,Extremadura Insurgentes,1978,exact_key
+BENITO JUAREZ,General Pedro Ma Anaya,6521,fuzzy_93
+BENITO JUAREZ,Independencia,10735,exact_key
+BENITO JUAREZ,Insurgentes Mixcoac,6024,exact_key
+BENITO JUAREZ,Insurgentes San Borja,699,exact_key
+BENITO JUAREZ,Iztaccihuatl,2766,exact_key
+BENITO JUAREZ,Josefa Ortiz De Dominguez,1574,exact_key
+BENITO JUAREZ,Letran Valle,11021,exact_key
+BENITO JUAREZ,Merced Gomez,2240,exact_key
+BENITO JUAREZ,Miguel Aleman,936,exact_key
+BENITO JUAREZ,Miravalle,1950,exact_key
+BENITO JUAREZ,Mixcoac,4904,exact_key
+BENITO JUAREZ,Moderna,9797,exact_key
+BENITO JUAREZ,Napoles,17008,exact_key
+BENITO JUAREZ,Narvarte Oriente,10468,spatial_centroid
+BENITO JUAREZ,Narvarte Poniente,8040,spatial_centroid
+BENITO JUAREZ,Nativitas,9489,exact_key
+BENITO JUAREZ,Niños Heroes,13172,spatial_centroid
+BENITO JUAREZ,Noche Buena,2921,exact_key
+BENITO JUAREZ,Periodista,930,spatial_centroid
+BENITO JUAREZ,Piedad Narvarte,4748,exact_key
+BENITO JUAREZ,Portales Norte,13416,spatial_centroid
+BENITO JUAREZ,Portales Oriente,6408,exact_key
+BENITO JUAREZ,Portales Sur,11559,spatial_centroid
+BENITO JUAREZ,Postal,3577,exact_key
+BENITO JUAREZ,Residencial Emperadores,1295,exact_key
+BENITO JUAREZ,San Jose Insurgentes,6670,exact_key
+BENITO JUAREZ,San Juan,3444,exact_key
+BENITO JUAREZ,San Pedro De Los Pinos,13955,exact_key
+BENITO JUAREZ,San Simon Ticumac,12134,exact_key
+BENITO JUAREZ,Santa Cruz Atoyac,10106,fuzzy_93
+BENITO JUAREZ,Santa Maria Nonoalco,10414,spatial_centroid
+BENITO JUAREZ,Tlacoquemecatl,7363,spatial_centroid
+BENITO JUAREZ,Vertiz Narvarte,7210,exact_key
+BENITO JUAREZ,Villa De Cortes,2543,exact_key
+BENITO JUAREZ,Xoco,5860,exact_key
+BENITO JUAREZ,Zacahuitzco,2718,exact_key
+COYOACAN,Adolfo Ruiz Cortinez,7624,spatial_centroid
+COYOACAN,Ajusco,11561,spatial_centroid
+COYOACAN,Alianza Popular Revolucionaria,4973,spatial_centroid
+COYOACAN,Atlantida,1096,exact_key
+COYOACAN,Avante,9179,exact_key
+COYOACAN,Barrio Del Niño Jesus,2398,spatial_centroid
+COYOACAN,Barrio La Concepcion,1262,spatial_centroid
+COYOACAN,Barrio La Otra Banda,326,spatial_centroid
+COYOACAN,Barrio Oxtopulco Universidad,2271,exact_key
+COYOACAN,Barrio San Lucas,4335,spatial_centroid
+COYOACAN,Barrio Santa Catarina,3166,spatial_centroid
+COYOACAN,Bosques De Tetlameya,2057,spatial_centroid
+COYOACAN,Cafetales,1305,spatial_centroid
+COYOACAN,Campestre Churubusco,11537,exact_key
+COYOACAN,Campestre Coyoacan,2238,spatial_centroid
+COYOACAN,Cantil Del Pedregal,420,exact_key
+COYOACAN,Carmen Serdan,7824,exact_key
+COYOACAN,Churubusco Country Club,2825,spatial_centroid
+COYOACAN,Ciudad Jardin,2869,exact_key
+COYOACAN,Ciudad Universitaria,326,exact_key
+COYOACAN,Copilco El Alto,3076,exact_key
+COYOACAN,Copilco El Bajo,1717,exact_key
+COYOACAN,Copilco Universidad,1694,fuzzy_95
+COYOACAN,Cuadrante De San Francisco,3493,exact_key
+COYOACAN,Culhuacan Ctm Canal Nacional,7892,spatial_centroid
+COYOACAN,Culhuacan Ctm Croc,3090,spatial_centroid
+COYOACAN,Culhuacan C.t.m. Secciën X,5301,spatial_centroid
+COYOACAN,Culhuacan Ctm Seccion  I,901,spatial_centroid
+COYOACAN,Culhuacan Ctm Seccion  Ii,1975,spatial_centroid
+COYOACAN,Culhuacan Ctm Seccion Iii,1739,spatial_centroid
+COYOACAN,Culhuacan Ctm Seccion Ix-A,3037,spatial_centroid
+COYOACAN,Culhuacan Ctm Seccion Ix-B,3953,spatial_centroid
+COYOACAN,Culhuacan Ctm Seccion Piloto,2908,spatial_centroid
+COYOACAN,Culhuacan Ctm Seccion V,6532,spatial_centroid
+COYOACAN,Culhuacan Ctm Seccion Vi,15311,spatial_centroid
+COYOACAN,Culhuacan Ctm Seccion Vii,7892,spatial_centroid
+COYOACAN,Culhuacan Ctm Seccion Viii,4302,spatial_centroid
+COYOACAN,Culhuacan Ctm Seccion X-A,15311,spatial_centroid
+COYOACAN,Del Carmen,9563,exact_key
+COYOACAN,Educacion,7817,exact_key
+COYOACAN,El Caracol,2757,exact_key
+COYOACAN,El Centinela,1936,exact_key
+COYOACAN,El Mirador,2576,exact_key
+COYOACAN,El Parque De Coyoacan,1331,spatial_centroid
+COYOACAN,El Reloj,3289,exact_key
+COYOACAN,El Rosario,494,spatial_centroid
+COYOACAN,El Rosedal,1813,spatial_centroid
+COYOACAN,Emiliano Zapata,1325,exact_key
+COYOACAN,Emiliano Zapata Fraccionamiento Popular,6044,spatial_centroid
+COYOACAN,Espartaco,4747,exact_key
+COYOACAN,Ex-Ejido De San Francisco Culhuacan,3899,spatial_centroid
+COYOACAN,Ex Ejido De  Santa Ursula Coapa,1663,spatial_centroid
+COYOACAN,Ex Ejido San Pablo Tepetlapa,3324,spatial_centroid
+COYOACAN,Ex Hacienda Coapa,1663,exact_key
+COYOACAN,Haciendas De Coyoacan,1788,spatial_centroid
+COYOACAN,Hermosillo,1632,exact_key
+COYOACAN,Huayamilpas,4905,spatial_centroid
+COYOACAN,Insurgentes Cuicuilco,4326,exact_key
+COYOACAN,Jardines De Coyoacan,2291,spatial_centroid
+COYOACAN,Jardines Del Pedregal De San Angel,1554,spatial_centroid
+COYOACAN,Joyas Del Pedregal,2057,spatial_centroid
+COYOACAN,La Otra Banda,326,spatial_centroid
+COYOACAN,Las Campanas,694,exact_key
+COYOACAN,Los Cedros,874,spatial_centroid
+COYOACAN,Los Cipreses,1572,exact_key
+COYOACAN,Los Girasoles,694,spatial_centroid
+COYOACAN,Los Olivos,1141,spatial_centroid
+COYOACAN,Los Sauces,716,spatial_centroid
+COYOACAN,Nueva Diaz Ordaz,2179,exact_key
+COYOACAN,Olimpica,1292,exact_key
+COYOACAN,Parque San Andres,5476,exact_key
+COYOACAN,Paseos De Taxqueña,7651,fuzzy_94
+COYOACAN,Pedregal De Carrasco,1292,spatial_centroid
+COYOACAN,Pedregal De Santa Ursula,10236,fuzzy_96
+COYOACAN,Pedregal De Santo Domingo,10263,spatial_centroid
+COYOACAN,Pedregal De Sn Francisco,2398,spatial_centroid
+COYOACAN,Petrolera Taxqueña,1215,exact_key
+COYOACAN,Prado Churubusco,10523,exact_key
+COYOACAN,Prados De Coyoacan,1465,fuzzy_94
+COYOACAN,Presidentes Ejidales 1a Seccion,3413,spatial_centroid
+COYOACAN,Presidentes Ejidales 2a Seccion,3090,spatial_centroid
+COYOACAN,Pueblo De Los Reyes,17069,spatial_centroid
+COYOACAN,Pueblo De Santa Ursula Coapa,12680,fuzzy_94
+COYOACAN,Pueblo La Candelaria,9289,spatial_centroid
+COYOACAN,Pueblo San Pablo Tepetlapa,6449,spatial_centroid
+COYOACAN,Romero De Terreros,1967,exact_key
+COYOACAN,San Diego Churubusco,1460,exact_key
+COYOACAN,San Francisco Culhuacan Barrio De La Magdalena,11329,spatial_centroid
+COYOACAN,San Francisco Culhuacan Barrio De San Francisco,12747,spatial_centroid
+COYOACAN,San Francisco Culhuacan Barrio De San Juan,11329,spatial_centroid
+COYOACAN,San Francisco Culhuacan Barrio De Santa Ana,12747,spatial_centroid
+COYOACAN,San Mateo,3407,spatial_centroid
+COYOACAN,Santa Cecilia,2549,spatial_centroid
+COYOACAN,Viejo Ejido Santa Ursula Coapa,8349,exact_key
+COYOACAN,Villa Coyoacan,2586,exact_key
+COYOACAN,Villa Quietud,3021,spatial_centroid
+COYOACAN,Xotepingo,1458,exact_key
+CUAJIMALPA DE MORELOS,1ro De Mayo,490,fuzzy_95
+CUAJIMALPA DE MORELOS,Abdias Garcia Soto,2388,exact_key
+CUAJIMALPA DE MORELOS,Adolfo Lopez Mateos,1982,exact_key
+CUAJIMALPA DE MORELOS,Agua Bendita,4616,exact_key
+CUAJIMALPA DE MORELOS,Ahuatenco,5087,exact_key
+CUAJIMALPA DE MORELOS,Amado Nervo,407,exact_key
+CUAJIMALPA DE MORELOS,Ampliacion El Yaqui,1683,spatial_centroid
+CUAJIMALPA DE MORELOS,Ampliacion Memetla,5153,spatial_centroid
+CUAJIMALPA DE MORELOS,Bosques De Las Lomas,14856,exact_key
+CUAJIMALPA DE MORELOS,Campestre Palo Alto,3231,spatial_centroid
+CUAJIMALPA DE MORELOS,Contadero,8305,spatial_centroid
+CUAJIMALPA DE MORELOS,Cooperativa Palo Alto,3231,spatial_centroid
+CUAJIMALPA DE MORELOS,Cruz Blanca,2411,exact_key
+CUAJIMALPA DE MORELOS,Cuajimalpa,21092,spatial_centroid
+CUAJIMALPA DE MORELOS,El Ebano,2626,spatial_centroid
+CUAJIMALPA DE MORELOS,El Ébano,2626,spatial_centroid
+CUAJIMALPA DE MORELOS,El Molinito,343,exact_key
+CUAJIMALPA DE MORELOS,El Molino,1481,exact_key
+CUAJIMALPA DE MORELOS,El Tianguillo,1868,exact_key
+CUAJIMALPA DE MORELOS,El Yaqui,1683,exact_key
+CUAJIMALPA DE MORELOS,Granjas Navidad,9475,spatial_centroid
+CUAJIMALPA DE MORELOS,Granjas Palo Alto,3231,spatial_centroid
+CUAJIMALPA DE MORELOS,Jesus Del Monte,1806,exact_key
+CUAJIMALPA DE MORELOS,La Manzanita,21092,spatial_centroid
+CUAJIMALPA DE MORELOS,La Pila,5082,exact_key
+CUAJIMALPA DE MORELOS,Las Lajas,2451,exact_key
+CUAJIMALPA DE MORELOS,Las Maromas,2451,spatial_centroid
+CUAJIMALPA DE MORELOS,Las Tinajas,2255,exact_key
+CUAJIMALPA DE MORELOS,La Venta,486,exact_key
+CUAJIMALPA DE MORELOS,Locaxco,5153,spatial_centroid
+CUAJIMALPA DE MORELOS,Loma Del Padre,4401,exact_key
+CUAJIMALPA DE MORELOS,Lomas De Memetla,5153,exact_key
+CUAJIMALPA DE MORELOS,Lomas De Sn Pedro,5153,spatial_centroid
+CUAJIMALPA DE MORELOS,Lomas De Vista Hermosa,9152,exact_key
+CUAJIMALPA DE MORELOS,Manzanastitla,4355,exact_key
+CUAJIMALPA DE MORELOS,Memetla,716,exact_key
+CUAJIMALPA DE MORELOS,Pueblo San Lorenzo Acopilco,9058,spatial_centroid
+CUAJIMALPA DE MORELOS,Pueblo San Mateo Tlaltenango,23623,spatial_centroid
+CUAJIMALPA DE MORELOS,Pueblo San Pablo Chimalpa,8790,spatial_centroid
+CUAJIMALPA DE MORELOS,San Jose De Los Cedros,6818,fuzzy_95
+CUAJIMALPA DE MORELOS,San Lorenzo Acopilco,9058,spatial_centroid
+CUAJIMALPA DE MORELOS,San Mateo Tlaltenango,23623,spatial_centroid
+CUAJIMALPA DE MORELOS,San Pablo Chimalpa,8790,spatial_centroid
+CUAJIMALPA DE MORELOS,San Pedro,21092,spatial_centroid
+CUAJIMALPA DE MORELOS,Santa Fe Cuajimalpa,13079,spatial_centroid
+CUAJIMALPA DE MORELOS,Tepetongo,3539,exact_key
+CUAJIMALPA DE MORELOS,Xalpa,3097,exact_key
+CUAJIMALPA DE MORELOS,Zacamulpa,8790,spatial_centroid
+CUAJIMALPA DE MORELOS,Zentlapatl,4181,exact_key
+CUAUHTEMOC,Algarin,6019,exact_key
+CUAUHTEMOC,Ampl. Asturias,5740,spatial_centroid
+CUAUHTEMOC,Asturias,4594,exact_key
+CUAUHTEMOC,Atlampa,12490,exact_key
+CUAUHTEMOC,Buenavista,7710,spatial_centroid
+CUAUHTEMOC,Buenos Aires,8002,exact_key
+CUAUHTEMOC,Centro,6994,spatial_centroid
+CUAUHTEMOC,Condesa,8872,exact_key
+CUAUHTEMOC,Cuauhtemoc,11558,exact_key
+CUAUHTEMOC,Doctores,13178,spatial_centroid
+CUAUHTEMOC,Esperanza,5572,exact_key
+CUAUHTEMOC,Ex Hipodromo De Peralvillo,10844,exact_key
+CUAUHTEMOC,Felipe Pescador,2739,exact_key
+CUAUHTEMOC,Guerrero,8668,spatial_centroid
+CUAUHTEMOC,Hipodromo,5574,spatial_centroid
+CUAUHTEMOC,Hipodromo Condesa,3293,exact_key
+CUAUHTEMOC,Hipódromo Condesa,3293,exact_key
+CUAUHTEMOC,Juarez,8542,exact_key
+CUAUHTEMOC,Maza,2568,exact_key
+CUAUHTEMOC,Morelos,11821,spatial_centroid
+CUAUHTEMOC,Nonoalco Tlatelolco,7873,spatial_centroid
+CUAUHTEMOC,Obrera,9332,spatial_centroid
+CUAUHTEMOC,Paulino Navarro,4939,exact_key
+CUAUHTEMOC,Peralvillo,10476,spatial_centroid
+CUAUHTEMOC,Roma Norte,7239,spatial_centroid
+CUAUHTEMOC,Roma Sur,8054,spatial_centroid
+CUAUHTEMOC,San Rafael,15585,spatial_centroid
+CUAUHTEMOC,San Simon Tolnahuac,11138,exact_key
+CUAUHTEMOC,Santa Maria Insurgentes,1351,exact_key
+CUAUHTEMOC,Santa Maria La Ribera,15645,fuzzy_95
+CUAUHTEMOC,Tabacalera,3250,exact_key
+CUAUHTEMOC,Transito,11146,exact_key
+CUAUHTEMOC,Valle Gomez,7229,exact_key
+CUAUHTEMOC,Valle Gómez,7229,exact_key
+CUAUHTEMOC,Vista Alegre,2982,exact_key
+GUSTAVO A. MADERO,15 De Agosto,3707,exact_key
+GUSTAVO A. MADERO,25 De Julio,3429,exact_key
+GUSTAVO A. MADERO,6 De Junio,2717,exact_key
+GUSTAVO A. MADERO,7 De Noviembre,3692,exact_key
+GUSTAVO A. MADERO,Acueducto De Guadalupe,10946,spatial_centroid
+GUSTAVO A. MADERO,Ahuehuetes,4138,exact_key
+GUSTAVO A. MADERO,Ampliacion Arboledas,1617,spatial_centroid
+GUSTAVO A. MADERO,Ampliacion Benito Juarez,2961,spatial_centroid
+GUSTAVO A. MADERO,Ampliación Benito Juárez,2961,spatial_centroid
+GUSTAVO A. MADERO,Ampliacion Casas Aleman,10824,spatial_centroid
+GUSTAVO A. MADERO,Ampliacion Castillo Grande,4074,spatial_centroid
+GUSTAVO A. MADERO,Ampliacion Chalma De Guadalupe,11894,spatial_centroid
+GUSTAVO A. MADERO,Ampliacion Cocoyotes,1438,spatial_centroid
+GUSTAVO A. MADERO,Ampliacion Emiliano Zapata,1314,spatial_centroid
+GUSTAVO A. MADERO,Ampliacion Gabriel Hernandez,7266,spatial_centroid
+GUSTAVO A. MADERO,Ampliacion Guadalupe Proletaria,3772,spatial_centroid
+GUSTAVO A. MADERO,Ampliacion Malacates,7326,spatial_centroid
+GUSTAVO A. MADERO,Ampliacion Martires De Rio Blanco,1109,spatial_centroid
+GUSTAVO A. MADERO,Ampliacion Panamericana,1297,spatial_centroid
+GUSTAVO A. MADERO,Ampliacion Progreso Nacional,5587,spatial_centroid
+GUSTAVO A. MADERO,Ampliación Progreso Nacional,5587,spatial_centroid
+GUSTAVO A. MADERO,Ampliacion Providencia,7094,spatial_centroid
+GUSTAVO A. MADERO,Ampliacion San Juan De Aragon,2365,spatial_centroid
+GUSTAVO A. MADERO,Aragon Inguaran,2999,exact_key
+GUSTAVO A. MADERO,Aragon La Villa,4251,spatial_centroid
+GUSTAVO A. MADERO,Aragón La Villa,4251,spatial_centroid
+GUSTAVO A. MADERO,Arboledas,7641,spatial_centroid
+GUSTAVO A. MADERO,Barrio Candelaria Ticoman,9168,spatial_centroid
+GUSTAVO A. MADERO,Barrio Candelaria Ticomán,9168,spatial_centroid
+GUSTAVO A. MADERO,Barrio Guadalupe Ticoman,8150,spatial_centroid
+GUSTAVO A. MADERO,Barrio La Laguna Ticoman,7881,spatial_centroid
+GUSTAVO A. MADERO,Barrio La Purisima Ticoman,6345,spatial_centroid
+GUSTAVO A. MADERO,Barrio San Juan Y Guadalupe Ticoman,8150,spatial_centroid
+GUSTAVO A. MADERO,Barrio San Rafael Ticoman,1516,spatial_centroid
+GUSTAVO A. MADERO,Belisario Dominguez,1237,exact_key
+GUSTAVO A. MADERO,Benito Juarez,6141,exact_key
+GUSTAVO A. MADERO,Bondojito,4799,exact_key
+GUSTAVO A. MADERO,Campestre Aragon,11240,fuzzy_94
+GUSTAVO A. MADERO,Capultitlan,3790,exact_key
+GUSTAVO A. MADERO,Castillo Chico,4691,exact_key
+GUSTAVO A. MADERO,Castillo Grande,4074,exact_key
+GUSTAVO A. MADERO,Cerro Del Guerrero,14490,spatial_centroid
+GUSTAVO A. MADERO,Cerro Los Gachupines,1195,spatial_centroid
+GUSTAVO A. MADERO,Chalma De Guadalupe,11894,fuzzy_95
+GUSTAVO A. MADERO,Churubusco Tepeyac,1666,exact_key
+GUSTAVO A. MADERO,Cocoyotes,5241,exact_key
+GUSTAVO A. MADERO,Compositores Mexicanos,11985,exact_key
+GUSTAVO A. MADERO,Constitucion De La Republica,12569,exact_key
+GUSTAVO A. MADERO,C T M Aragon,6145,spatial_centroid
+GUSTAVO A. MADERO,C T M Atzacoalco,8575,spatial_centroid
+GUSTAVO A. MADERO,C T M El Risco,8818,spatial_centroid
+GUSTAVO A. MADERO,Cuautepec Barrio Alto,5900,spatial_centroid
+GUSTAVO A. MADERO,Cuautepec De Madero,8867,exact_key
+GUSTAVO A. MADERO,Cuchilla Del Tesoro,11550,exact_key
+GUSTAVO A. MADERO,Cuchilla La Joya,2302,exact_key
+GUSTAVO A. MADERO,Defensores De La Republica,4045,exact_key
+GUSTAVO A. MADERO,Del Bosque,5698,exact_key
+GUSTAVO A. MADERO,Del Carmen,7927,fuzzy_94
+GUSTAVO A. MADERO,Del Obrero,4094,exact_key
+GUSTAVO A. MADERO,Dinamita,8683,spatial_centroid
+GUSTAVO A. MADERO,D M Nacional,7362,fuzzy_95
+GUSTAVO A. MADERO,El Arbolillo,1246,exact_key
+GUSTAVO A. MADERO,El Coyol,2421,spatial_centroid
+GUSTAVO A. MADERO,El Olivo,1905,exact_key
+GUSTAVO A. MADERO,El Tepetatal,3119,spatial_centroid
+GUSTAVO A. MADERO,Emiliano Zapata,4552,exact_key
+GUSTAVO A. MADERO,Estanzuela,3572,exact_key
+GUSTAVO A. MADERO,Estrella,8729,exact_key
+GUSTAVO A. MADERO,Ex Ejido San Juan De Aragon Sector 32,999,spatial_centroid
+GUSTAVO A. MADERO,Ex Ejido San Juan De Aragon Sector 33,3200,spatial_centroid
+GUSTAVO A. MADERO,Ex Escuela De Tiro,2021,exact_key
+GUSTAVO A. MADERO,Faja De Oro,1726,exact_key
+GUSTAVO A. MADERO,Fernando Casas Aleman,1448,exact_key
+GUSTAVO A. MADERO,Ferrocarrilera,235,spatial_centroid
+GUSTAVO A. MADERO,Forestal,6326,spatial_centroid
+GUSTAVO A. MADERO,Forestal I,502,spatial_centroid
+GUSTAVO A. MADERO,Forestal Ii,4765,spatial_centroid
+GUSTAVO A. MADERO,Gabriel Hernandez,12756,exact_key
+GUSTAVO A. MADERO,General Felipe Berriozabal,5297,exact_key
+GUSTAVO A. MADERO,Gertrudis Sanchez 1a Seccion,3815,exact_key
+GUSTAVO A. MADERO,Gertrudis Sanchez 2a Seccion,7425,exact_key
+GUSTAVO A. MADERO,Gertrudis Sanchez 3a Seccion,7894,exact_key
+GUSTAVO A. MADERO,Granjas Modernas,2365,spatial_centroid
+GUSTAVO A. MADERO,Guadalupe Insurgentes,4128,exact_key
+GUSTAVO A. MADERO,Guadalupe Proletaria,7994,exact_key
+GUSTAVO A. MADERO,Guadalupe Tepeyac,7723,exact_key
+GUSTAVO A. MADERO,Guadalupe Victoria,1348,exact_key
+GUSTAVO A. MADERO,Guadalupe Victoria Cuautepec,1348,spatial_centroid
+GUSTAVO A. MADERO,Heroe De Nacozari,2341,exact_key
+GUSTAVO A. MADERO,Heroes De Cerro Prieto,4391,spatial_centroid
+GUSTAVO A. MADERO,Heroes De Chapultepec,1342,exact_key
+GUSTAVO A. MADERO,Indeco,2005,spatial_centroid
+GUSTAVO A. MADERO,Industrial,8852,spatial_centroid
+GUSTAVO A. MADERO,Jorge Negrete,9080,exact_key
+GUSTAVO A. MADERO,Juan Gonzalez Romero,7864,exact_key
+GUSTAVO A. MADERO,Juan González Romero,7864,exact_key
+GUSTAVO A. MADERO,Juventino Rosas,1163,exact_key
+GUSTAVO A. MADERO,La Casilda,8206,exact_key
+GUSTAVO A. MADERO,La Cruz,2814,spatial_centroid
+GUSTAVO A. MADERO,La Esmeralda,1619,spatial_centroid
+GUSTAVO A. MADERO,La Joya,6914,exact_key
+GUSTAVO A. MADERO,La Joyita,1758,exact_key
+GUSTAVO A. MADERO,La Lengueta,3471,spatial_centroid
+GUSTAVO A. MADERO,La Malinche,4344,exact_key
+GUSTAVO A. MADERO,La Pastora,10058,exact_key
+GUSTAVO A. MADERO,La Pradera,8894,exact_key
+GUSTAVO A. MADERO,Li Legislatura,608,spatial_centroid
+GUSTAVO A. MADERO,Lindavista Norte,9396,spatial_centroid
+GUSTAVO A. MADERO,Lindavista Sur,9379,spatial_centroid
+GUSTAVO A. MADERO,Lindavista Vallejo 1a Seccion,9619,spatial_centroid
+GUSTAVO A. MADERO,Lindavista Vallejo 2a Seccion,9619,spatial_centroid
+GUSTAVO A. MADERO,Lindavista Vallejo 3a Seccion,9619,spatial_centroid
+GUSTAVO A. MADERO,Loma La Palma,4418,spatial_centroid
+GUSTAVO A. MADERO,Lomas De Cuautepec,10763,exact_key
+GUSTAVO A. MADERO,Luis Donaldo Colosio,5878,exact_key
+GUSTAVO A. MADERO,Magdalena De Las Salinas,3303,exact_key
+GUSTAVO A. MADERO,Malacates,6933,exact_key
+GUSTAVO A. MADERO,Martin Carrera,9724,fuzzy_93
+GUSTAVO A. MADERO,Martires De Rio Blanco,5430,exact_key
+GUSTAVO A. MADERO,Maximino Avila Camacho,2030,exact_key
+GUSTAVO A. MADERO,Montevideo,9379,spatial_centroid
+GUSTAVO A. MADERO,Narciso Bassols,4719,spatial_centroid
+GUSTAVO A. MADERO,Nueva Atzacoalco,10391,fuzzy_94
+GUSTAVO A. MADERO,Nueva Industrial Vallejo,9396,spatial_centroid
+GUSTAVO A. MADERO,Nueva Tenochtitlan,8005,exact_key
+GUSTAVO A. MADERO,Nueva Vallejo,3536,exact_key
+GUSTAVO A. MADERO,Palmatitla,11362,exact_key
+GUSTAVO A. MADERO,Panamericana,5665,exact_key
+GUSTAVO A. MADERO,Parque Metropolitano,3344,exact_key
+GUSTAVO A. MADERO,Planetario Lindavista,677,exact_key
+GUSTAVO A. MADERO,Pradera 2a Seccion,1998,spatial_centroid
+GUSTAVO A. MADERO,Prados De Cuautepec,541,exact_key
+GUSTAVO A. MADERO,Progreso Nacional,6229,fuzzy_94
+GUSTAVO A. MADERO,Providencia,8586,spatial_centroid
+GUSTAVO A. MADERO,Pueblo De Santiago Atzacoalco,5401,spatial_centroid
+GUSTAVO A. MADERO,Pueblo San Juan De Aragon,12316,spatial_centroid
+GUSTAVO A. MADERO,Residencial Acueducto De Guadalupe,5682,spatial_centroid
+GUSTAVO A. MADERO,Residencial La Escalera,2156,spatial_centroid
+GUSTAVO A. MADERO,Residencial Zacatenco,4794,exact_key
+GUSTAVO A. MADERO,Rosas Del Tepeyac,1195,exact_key
+GUSTAVO A. MADERO,Salvador Diaz Miron,7775,exact_key
+GUSTAVO A. MADERO,San Antonio,553,exact_key
+GUSTAVO A. MADERO,San Bartolo Atepehuacan,6887,spatial_centroid
+GUSTAVO A. MADERO,San Felipe De Jesus,11275,fuzzy_95
+GUSTAVO A. MADERO,San Felipe De Jesús,11275,fuzzy_95
+GUSTAVO A. MADERO,San Jose De La Escalera,4038,exact_key
+GUSTAVO A. MADERO,San José De La Escalera,4038,exact_key
+GUSTAVO A. MADERO,San Jose Ticoman,3300,exact_key
+GUSTAVO A. MADERO,San Juan De Aragon,6201,spatial_centroid
+GUSTAVO A. MADERO,San Juan De Aragon Iii Seccion,5363,spatial_centroid
+GUSTAVO A. MADERO,San Juan De Aragon Ii Seccion,7336,spatial_centroid
+GUSTAVO A. MADERO,San Juan De Aragon I Seccion,8202,spatial_centroid
+GUSTAVO A. MADERO,San Juan De Aragón I Sección,8202,spatial_centroid
+GUSTAVO A. MADERO,San Juan De Aragon Iv Seccion,7057,spatial_centroid
+GUSTAVO A. MADERO,San Juan De Aragón Iv Sección,7057,spatial_centroid
+GUSTAVO A. MADERO,San Juan De Aragon Vii Seccion,6052,spatial_centroid
+GUSTAVO A. MADERO,San Juan De Aragon Vi Seccion,4345,spatial_centroid
+GUSTAVO A. MADERO,San Juan De Aragon V Seccion,1535,spatial_centroid
+GUSTAVO A. MADERO,San Juan Y Guadalupe Ticomán,8150,spatial_centroid
+GUSTAVO A. MADERO,San Miguel,1063,spatial_centroid
+GUSTAVO A. MADERO,San Pedro El Chico,4913,exact_key
+GUSTAVO A. MADERO,San Pedro Zacatenco,9019,spatial_centroid
+GUSTAVO A. MADERO,San Rafael Ticomán,1516,spatial_centroid
+GUSTAVO A. MADERO,Santa Isabel Tola,14490,spatial_centroid
+GUSTAVO A. MADERO,Santa Maria Ticoman,7881,spatial_centroid
+GUSTAVO A. MADERO,Santa Rosa,8097,exact_key
+GUSTAVO A. MADERO,Santiago Atepetlac,4085,exact_key
+GUSTAVO A. MADERO,Siete Maravillas,1600,exact_key
+GUSTAVO A. MADERO,Solidaridad Nacional,2091,exact_key
+GUSTAVO A. MADERO,Tablas De San Agustin,4848,exact_key
+GUSTAVO A. MADERO,Tepetates,1195,spatial_centroid
+GUSTAVO A. MADERO,Tepeyac Insurgentes,7706,exact_key
+GUSTAVO A. MADERO,Tlacaelel,4418,exact_key
+GUSTAVO A. MADERO,Tlacamaca,1620,exact_key
+GUSTAVO A. MADERO,Tlalpexco,12805,exact_key
+GUSTAVO A. MADERO,Torres Lindavista,3489,spatial_centroid
+GUSTAVO A. MADERO,Tres Estrellas,4541,exact_key
+GUSTAVO A. MADERO,Triunfo De La Republica,2860,exact_key
+GUSTAVO A. MADERO,U.habit. Cuchilla Del Tesoro,11550,spatial_centroid
+GUSTAVO A. MADERO,Valle Del Tepeyac,2156,exact_key
+GUSTAVO A. MADERO,Valle De Madero,4032,exact_key
+GUSTAVO A. MADERO,Vallejo,9194,spatial_centroid
+GUSTAVO A. MADERO,Vallejo Poniente,2238,exact_key
+GUSTAVO A. MADERO,Vasco De Quiroga,9456,exact_key
+GUSTAVO A. MADERO,Villa De Aragon,763,exact_key
+GUSTAVO A. MADERO,Villa De Aragón,763,exact_key
+GUSTAVO A. MADERO,Villa Gustavo A Madero,3860,exact_key
+GUSTAVO A. MADERO,Villa Gustavo A. Madero,3860,exact_key
+GUSTAVO A. MADERO,Villa Hermosa,2045,exact_key
+GUSTAVO A. MADERO,Vista Hermosa,2141,exact_key
+GUSTAVO A. MADERO,Zona Escolar,6814,spatial_centroid
+GUSTAVO A. MADERO,Zona Escolar Oriente,3001,exact_key
+IZTACALCO,Agricola Oriental,16453,fuzzy_94
+IZTACALCO,Agrícola Oriental,16453,fuzzy_94
+IZTACALCO,Agricola Pantitlan,17952,spatial_centroid
+IZTACALCO,Agrícola Pantitlan,17952,spatial_centroid
+IZTACALCO,Ampliacion Gabriel Ramos Millan,8844,spatial_centroid
+IZTACALCO,Barrio La Asuncion,2605,spatial_centroid
+IZTACALCO,Barrio Los Reyes,7268,spatial_centroid
+IZTACALCO,Barrio San Francisco Xicaltongo,3050,spatial_centroid
+IZTACALCO,Barrio San Miguel,6291,spatial_centroid
+IZTACALCO,Barrio San Pedro,5200,spatial_centroid
+IZTACALCO,Barrio Santa Cruz,1955,spatial_centroid
+IZTACALCO,Barrio Santiago Norte,4306,spatial_centroid
+IZTACALCO,Barrio Santiago Sur,7787,spatial_centroid
+IZTACALCO,Barrio Zapotla,3617,spatial_centroid
+IZTACALCO,Campamento 2 De Octubre,11350,fuzzy_95
+IZTACALCO,Carlos Zapata Vela,9472,exact_key
+IZTACALCO,Cuchilla Agricola Oriental,2473,exact_key
+IZTACALCO,El Rodeo,5841,exact_key
+IZTACALCO,Ex-Ejido La Magdalena Mixhuca,1631,spatial_centroid
+IZTACALCO,Fraccionamiento Coyuya,1955,spatial_centroid
+IZTACALCO,Gabriel Ramos Millan,7415,exact_key
+IZTACALCO,Gabriel Ramos Millán,7415,exact_key
+IZTACALCO,Gabriel Ramos Millan Seccion Bramadero,7995,spatial_centroid
+IZTACALCO,Gabriel Ramos Millán Sección Bramadero,7995,spatial_centroid
+IZTACALCO,Gabriel Ramos Millan Seccion Cuchilla,5245,spatial_centroid
+IZTACALCO,Gabriel Ramos Millan Secc Tlacotal,7909,spatial_centroid
+IZTACALCO,Granjas Mexico,9859,fuzzy_93
+IZTACALCO,Granjas México,9859,fuzzy_93
+IZTACALCO,Infonavit Iztacalco,8353,spatial_centroid
+IZTACALCO,Inpi Picos,2675,exact_key
+IZTACALCO,Jardines Tecma,1783,exact_key
+IZTACALCO,Juventino Rosas,7715,fuzzy_93
+IZTACALCO,La Cruz,3952,exact_key
+IZTACALCO,Los Picos De Iztacalco Seccion 1 A,2032,spatial_centroid
+IZTACALCO,Los Picos De Iztacalco Seccion 1 B,1593,spatial_centroid
+IZTACALCO,Los Picos De Iztacalco Seccion 2 A,2126,spatial_centroid
+IZTACALCO,Militar Marte,6926,exact_key
+IZTACALCO,Nueva Santa Anita,2465,fuzzy_93
+IZTACALCO,Reforma Iztaccihuatl Norte,5687,exact_key
+IZTACALCO,Reforma Iztaccihuatl Sur,3376,exact_key
+IZTACALCO,Santa Anita,11136,exact_key
+IZTACALCO,Tlazintla,2680,exact_key
+IZTACALCO,Viaducto Piedad,10649,exact_key
+IZTAPALAPA,12 De Diciembre,3254,exact_key
+IZTAPALAPA,Albarrada,9544,spatial_centroid
+IZTAPALAPA,Alvaro Obregon,4005,exact_key
+IZTAPALAPA,Ampliacion Bellavista,4374,spatial_centroid
+IZTAPALAPA,Ampliacion El Santuario,4252,spatial_centroid
+IZTAPALAPA,Ampliacion El Triunfo,5770,spatial_centroid
+IZTAPALAPA,Ampliacion Emiliano Zapata,9872,spatial_centroid
+IZTAPALAPA,Ampliación Emiliano Zapata,9872,spatial_centroid
+IZTAPALAPA,Ampliacion Los Reyes,7523,spatial_centroid
+IZTAPALAPA,Ampliacion Paraje San Juan,3558,spatial_centroid
+IZTAPALAPA,Ampliacion Ricardo Flores Magon,2748,spatial_centroid
+IZTAPALAPA,Ampliacion San Miguel,8945,spatial_centroid
+IZTAPALAPA,Ampliacion Santa Maria Aztahuacan,14214,spatial_centroid
+IZTAPALAPA,Ampliacion Sinatel,2678,spatial_centroid
+IZTAPALAPA,Ampliacion Veracruzana,1220,spatial_centroid
+IZTAPALAPA,Año De Juarez,3188,exact_key
+IZTAPALAPA,Apatlaco,9388,exact_key
+IZTAPALAPA,Banjidal,3284,exact_key
+IZTAPALAPA,Barranca De Guadalupe,1018,fuzzy_97
+IZTAPALAPA,Barrio Guadalupe,2302,spatial_centroid
+IZTAPALAPA,Barrio La Asuncion,4719,spatial_centroid
+IZTAPALAPA,Barrio San Antonio,14710,spatial_centroid
+IZTAPALAPA,Barrio San Antonio Culhuacan,6414,spatial_centroid
+IZTAPALAPA,Barrio San Ignacio,8911,spatial_centroid
+IZTAPALAPA,Barrio San Jose,3607,spatial_centroid
+IZTAPALAPA,Barrio San Lorenzo,3604,spatial_centroid
+IZTAPALAPA,Barrio San Lucas,7266,spatial_centroid
+IZTAPALAPA,Barrio San Miguel,20369,spatial_centroid
+IZTAPALAPA,Barrio San Pablo,4489,spatial_centroid
+IZTAPALAPA,Barrio San Pedro,5372,spatial_centroid
+IZTAPALAPA,Barrio San Simon Culhuacan,5363,spatial_centroid
+IZTAPALAPA,Barrio Santa Barbara,12290,spatial_centroid
+IZTAPALAPA,Barrio Tula,888,spatial_centroid
+IZTAPALAPA,Bellavista,4374,spatial_centroid
+IZTAPALAPA,Benito Juarez,1139,exact_key
+IZTAPALAPA,Buenavista,14716,spatial_centroid
+IZTAPALAPA,Cacama,1759,exact_key
+IZTAPALAPA,Campestre Potrero,16423,exact_key
+IZTAPALAPA,Cananea,5597,spatial_centroid
+IZTAPALAPA,Carlos Hank Gonzalez,12134,exact_key
+IZTAPALAPA,Carlos Jonguitud Barrios,12607,spatial_centroid
+IZTAPALAPA,Casa Blanca,4151,exact_key
+IZTAPALAPA,Celoalliotli,1970,spatial_centroid
+IZTAPALAPA,Central De Abasto,11204,spatial_centroid
+IZTAPALAPA,Cerro De La Estrella,11433,fuzzy_95
+IZTAPALAPA,Chinampac De Juarez,4156,fuzzy_95
+IZTAPALAPA,Citlalli,14152,exact_key
+IZTAPALAPA,Colonial Iztapalapa,4574,spatial_centroid
+IZTAPALAPA,Consejo Agrarista Mexicano,16036,fuzzy_96
+IZTAPALAPA,Constitucion De 1917,8945,fuzzy_95
+IZTAPALAPA,Coop Allapetlalli,2348,spatial_centroid
+IZTAPALAPA,Cuchilla Del Moral,3426,spatial_centroid
+IZTAPALAPA,Degollado,2997,exact_key
+IZTAPALAPA,Degollado-Mexicatlalli,8054,spatial_centroid
+IZTAPALAPA,Desarrollo Urbano Quetzalcoatl,16096,fuzzy_96
+IZTAPALAPA,Dr Alfonso Ortiz Tirado,3965,exact_key
+IZTAPALAPA,Ejercito De Agua Prieta,8285,exact_key
+IZTAPALAPA,Ejercito De Oriente,7622,spatial_centroid
+IZTAPALAPA,Ejercito De Oriente Zona Peñon,9001,spatial_centroid
+IZTAPALAPA,El Eden,1398,exact_key
+IZTAPALAPA,El Manto,11919,exact_key
+IZTAPALAPA,El Mirador,5402,exact_key
+IZTAPALAPA,El Molino,6879,exact_key
+IZTAPALAPA,El Molino Tezonco,6879,spatial_centroid
+IZTAPALAPA,El Paraiso,5111,spatial_centroid
+IZTAPALAPA,El Prado,2112,exact_key
+IZTAPALAPA,El Retoño,7598,exact_key
+IZTAPALAPA,El Rodeo,2811,exact_key
+IZTAPALAPA,El Rosario,5980,exact_key
+IZTAPALAPA,El Santuario,6026,exact_key
+IZTAPALAPA,El Sifon,9840,exact_key
+IZTAPALAPA,El Sifón,9840,exact_key
+IZTAPALAPA,El Triangulo,7651,exact_key
+IZTAPALAPA,El Triunfo,3012,exact_key
+IZTAPALAPA,El Vergel,5093,exact_key
+IZTAPALAPA,Emiliano Zapata,9872,spatial_centroid
+IZTAPALAPA,Ermita Zaragoza,11905,spatial_centroid
+IZTAPALAPA,Escuadron 201,13214,exact_key
+IZTAPALAPA,Estado De Veracruz,803,exact_key
+IZTAPALAPA,Estrella Culhuacan,2182,exact_key
+IZTAPALAPA,Estrella Del Sur,8646,exact_key
+IZTAPALAPA,Eva Samano De Lopez Mateos,9544,spatial_centroid
+IZTAPALAPA,Francisco Villa,10250,exact_key
+IZTAPALAPA,Fuego Nuevo,12775,exact_key
+IZTAPALAPA,Granjas De San Antonio,3265,spatial_centroid
+IZTAPALAPA,Granjas Esmeralda,2146,exact_key
+IZTAPALAPA,Granjas Estrella,6085,fuzzy_94
+IZTAPALAPA,Guadalupe,2302,spatial_centroid
+IZTAPALAPA,Guadalupe Del Moral,10137,exact_key
+IZTAPALAPA,Heroes De Churubusco,6336,exact_key
+IZTAPALAPA,Insurgentes,5820,exact_key
+IZTAPALAPA,Ixtlahuacan,17052,exact_key
+IZTAPALAPA,Jacarandas,8353,exact_key
+IZTAPALAPA,Jardines De Churubusco,1698,exact_key
+IZTAPALAPA,Jardines De San Lorenzo Tezonco,7198,spatial_centroid
+IZTAPALAPA,Jose Lopez Portillo,11184,fuzzy_95
+IZTAPALAPA,José López Portillo,11184,fuzzy_95
+IZTAPALAPA,Jose Maria Morelos Y Pavon,1815,spatial_centroid
+IZTAPALAPA,Juan Escutia,6748,spatial_centroid
+IZTAPALAPA,Justo Sierra,1028,exact_key
+IZTAPALAPA,La Era,6934,exact_key
+IZTAPALAPA,La Esperanza,1298,exact_key
+IZTAPALAPA,La Planta,6175,exact_key
+IZTAPALAPA,La Regadera,652,exact_key
+IZTAPALAPA,Las Peñas,11943,spatial_centroid
+IZTAPALAPA,Leyes De Reforma 1a Seccion,7274,exact_key
+IZTAPALAPA,Leyes De Reforma 2a Seccion,5179,exact_key
+IZTAPALAPA,Leyes De Reforma 3a Seccion,16825,fuzzy_96
+IZTAPALAPA,Lomas De La Estancia,7764,fuzzy_95
+IZTAPALAPA,Lomas De San Lorenzo,14070,fuzzy_95
+IZTAPALAPA,Lomas De Sta Cruz,6079,spatial_centroid
+IZTAPALAPA,Lomas De Zaragoza,17722,exact_key
+IZTAPALAPA,Lomas El Manto,1245,exact_key
+IZTAPALAPA,Lomas Estrella,12607,spatial_centroid
+IZTAPALAPA,Los Angeles,13375,exact_key
+IZTAPALAPA,Los Ángeles,13375,exact_key
+IZTAPALAPA,Los Angeles Apanoaya,4326,exact_key
+IZTAPALAPA,Los Cipreses,2382,exact_key
+IZTAPALAPA,Los Picos,3075,spatial_centroid
+IZTAPALAPA,Los Reyes Culhuacán,6419,spatial_centroid
+IZTAPALAPA,Miguel De La Madrid Hurtado,15775,exact_key
+IZTAPALAPA,Minerva,1485,exact_key
+IZTAPALAPA,Miravalles,13959,fuzzy_94
+IZTAPALAPA,Mixcoatl,6759,exact_key
+IZTAPALAPA,Monte Alban,1452,exact_key
+IZTAPALAPA,Nueva Rosita,3904,spatial_centroid
+IZTAPALAPA,Palmitas,10381,exact_key
+IZTAPALAPA,Paraje San Juan,10564,exact_key
+IZTAPALAPA,Paraje San Juan Cerro,5133,spatial_centroid
+IZTAPALAPA,Paraje Zacatepec,10084,exact_key
+IZTAPALAPA,Parque Nacional Cerro De La Estrella,4252,spatial_centroid
+IZTAPALAPA,Paseos De Churubusco,11204,exact_key
+IZTAPALAPA,Plan De Iguala,1940,spatial_centroid
+IZTAPALAPA,Polvorilla,5965,spatial_centroid
+IZTAPALAPA,Presidentes De Mexico,15406,exact_key
+IZTAPALAPA,Progresista,9544,exact_key
+IZTAPALAPA,Progreso Del Sur,2017,exact_key
+IZTAPALAPA,Pueblo Aculco,5818,spatial_centroid
+IZTAPALAPA,Pueblo Culhuacan,4460,spatial_centroid
+IZTAPALAPA,Pueblo Los Reyes Culhuacan,6419,spatial_centroid
+IZTAPALAPA,Pueblo Magdalena Atlazolpa,6241,spatial_centroid
+IZTAPALAPA,Pueblo Mexicaltzingo,1080,spatial_centroid
+IZTAPALAPA,Pueblo San Andres Tomatlan,4908,spatial_centroid
+IZTAPALAPA,Pueblo San Juanico Nextipac,2955,spatial_centroid
+IZTAPALAPA,Pueblo San Lorenzo Tezonco,8455,spatial_centroid
+IZTAPALAPA,Pueblo San Lorenzo Xicotencatl,4441,spatial_centroid
+IZTAPALAPA,Pueblo San Sebastian Tecoloxtitla,9155,spatial_centroid
+IZTAPALAPA,Pueblo Santa Maria Aztahuacan,13427,spatial_centroid
+IZTAPALAPA,Pueblo Santa Maria Tomatlan,2277,spatial_centroid
+IZTAPALAPA,Pueblo Santa Martha Acatitla,14373,spatial_centroid
+IZTAPALAPA,Pueblo Santiago Acahualtepec,7369,spatial_centroid
+IZTAPALAPA,Pueblo Sta Cruz Meyehualco,13272,spatial_centroid
+IZTAPALAPA,Puente Blanco,8373,exact_key
+IZTAPALAPA,Purisima Atlazolpa,2330,exact_key
+IZTAPALAPA,Real Del Moral,3701,spatial_centroid
+IZTAPALAPA,Reforma Politica,6219,fuzzy_94
+IZTAPALAPA,Renovacion,14346,exact_key
+IZTAPALAPA,Ricardo Flores Magon,1734,exact_key
+IZTAPALAPA,San Andres Tetepilco,13018,spatial_centroid
+IZTAPALAPA,San Andrés Tetepilco,13018,spatial_centroid
+IZTAPALAPA,San Antonio Culhuacan,5363,spatial_centroid
+IZTAPALAPA,San Jose Aculco,8954,exact_key
+IZTAPALAPA,San Jose Buenavista,4972,exact_key
+IZTAPALAPA,San José Buenavista,4972,exact_key
+IZTAPALAPA,San Juan Estrella,5744,spatial_centroid
+IZTAPALAPA,San Juan Joya,3911,spatial_centroid
+IZTAPALAPA,San Juan Xalpa,13174,fuzzy_93
+IZTAPALAPA,San Lorenzo,3604,spatial_centroid
+IZTAPALAPA,San Lorenzo Xicotencatl,4441,spatial_centroid
+IZTAPALAPA,San Miguel 8va Ampliacion,1752,spatial_centroid
+IZTAPALAPA,San Miguel Teotongo Secc Acorralado,17597,spatial_centroid
+IZTAPALAPA,San Miguel Teotongo Secc Avisadero,9239,spatial_centroid
+IZTAPALAPA,San Miguel Teotongo Secc Capilla,17597,spatial_centroid
+IZTAPALAPA,San Miguel Teotongo Secc Corrales,9239,spatial_centroid
+IZTAPALAPA,San Miguel Teotongo Secc Guadalupe,14455,spatial_centroid
+IZTAPALAPA,San Miguel Teotongo Seccion Iztlahuaca,17597,spatial_centroid
+IZTAPALAPA,San Miguel Teotongo Secc Jardines,17597,spatial_centroid
+IZTAPALAPA,San Miguel Teotongo (Secc La Cruz),14455,spatial_centroid
+IZTAPALAPA,San Miguel Teotongo (Secc Las Torres),13122,spatial_centroid
+IZTAPALAPA,San Miguel Teotongo Secc Loma Alta,14455,spatial_centroid
+IZTAPALAPA,San Miguel Teotongo Secc Mercedes,13122,spatial_centroid
+IZTAPALAPA,San Miguel Teotongo Secc Palmitas,17597,spatial_centroid
+IZTAPALAPA,San Miguel Teotongo Secc Puente,13122,spatial_centroid
+IZTAPALAPA,San Miguel Teotongo Secc Ranchito,17597,spatial_centroid
+IZTAPALAPA,San Miguel Teotongo Secc Rancho Bajo,9239,spatial_centroid
+IZTAPALAPA,San Nicolas Tolentino,5744,fuzzy_95
+IZTAPALAPA,San Pablo,6852,spatial_centroid
+IZTAPALAPA,Santa Isabel Industrial,582,fuzzy_95
+IZTAPALAPA,Santa Maria Aztahuacan,16753,spatial_centroid
+IZTAPALAPA,Santa Maria Del Monte,1391,exact_key
+IZTAPALAPA,Santa Martha Acatitla Norte,8591,spatial_centroid
+IZTAPALAPA,Santa Martha Acatitla Sur,13722,spatial_centroid
+IZTAPALAPA,Santiago Acahualtepec 1a Ampliaciën,7035,spatial_centroid
+IZTAPALAPA,Santiago Acahualtepec 2a Ampliacion,14889,spatial_centroid
+IZTAPALAPA,Sector Popular,9974,exact_key
+IZTAPALAPA,Sideral,2434,exact_key
+IZTAPALAPA,Sinatel,2320,exact_key
+IZTAPALAPA,Tenorios,12888,exact_key
+IZTAPALAPA,Tepalcates,11056,spatial_centroid
+IZTAPALAPA,Unidad Ejercito Constitucionalista,5837,spatial_centroid
+IZTAPALAPA,Unidad Modelo,5815,spatial_centroid
+IZTAPALAPA,Unidad Santa Cruz Meyehualco,7873,spatial_centroid
+IZTAPALAPA,Unidad Vicente Guerrero,6550,spatial_centroid
+IZTAPALAPA,Uscovi,5597,spatial_centroid
+IZTAPALAPA,Valle Del Sur,6487,exact_key
+IZTAPALAPA,Valle De Luces,8138,fuzzy_93
+IZTAPALAPA,Valle De San Lorenzo,8747,fuzzy_95
+IZTAPALAPA,Xalpa,12738,spatial_centroid
+IZTAPALAPA,Zacahuitzco,4221,exact_key
+LA MAGDALENA CONTRERAS,Ampliacion Lomas De San Bernabe,6270,spatial_centroid
+LA MAGDALENA CONTRERAS,Ampliación Lomas De San Bernabé,6270,spatial_centroid
+LA MAGDALENA CONTRERAS,Ampliacion Potrerillo,1951,spatial_centroid
+LA MAGDALENA CONTRERAS,Atacaxco,1679,exact_key
+LA MAGDALENA CONTRERAS,Barranca Seca,4957,exact_key
+LA MAGDALENA CONTRERAS,Barrio Las Calles,342,spatial_centroid
+LA MAGDALENA CONTRERAS,Barrio San Francisco,3649,spatial_centroid
+LA MAGDALENA CONTRERAS,Barros Sierra,4542,exact_key
+LA MAGDALENA CONTRERAS,Cerro Del Judio - Av,10840,spatial_centroid
+LA MAGDALENA CONTRERAS,Crescencio Juarez Chavira,10081,spatial_centroid
+LA MAGDALENA CONTRERAS,Cuauhtemoc,6196,exact_key
+LA MAGDALENA CONTRERAS,El Ermitaño,5125,exact_key
+LA MAGDALENA CONTRERAS,El Maestro,993,spatial_centroid
+LA MAGDALENA CONTRERAS,El Ocotal,10081,exact_key
+LA MAGDALENA CONTRERAS,El Rosal,7372,exact_key
+LA MAGDALENA CONTRERAS,El Tanque,10960,exact_key
+LA MAGDALENA CONTRERAS,El Toro,3934,exact_key
+LA MAGDALENA CONTRERAS,Heroes De Padierna,5072,exact_key
+LA MAGDALENA CONTRERAS,Huayatla,4550,exact_key
+LA MAGDALENA CONTRERAS,La Carbonera,6014,exact_key
+LA MAGDALENA CONTRERAS,La Concepcion,1839,exact_key
+LA MAGDALENA CONTRERAS,La Cruz,4654,exact_key
+LA MAGDALENA CONTRERAS,La Guadalupe,1549,exact_key
+LA MAGDALENA CONTRERAS,La Magdalena,3413,spatial_centroid
+LA MAGDALENA CONTRERAS,La Malinche,10175,exact_key
+LA MAGDALENA CONTRERAS,Las Cruces,10840,exact_key
+LA MAGDALENA CONTRERAS,Las Huertas,698,exact_key
+LA MAGDALENA CONTRERAS,Lomas De San Bernabe,8074,exact_key
+LA MAGDALENA CONTRERAS,Lomas Quebradas,4613,exact_key
+LA MAGDALENA CONTRERAS,Los Padres,6946,exact_key
+LA MAGDALENA CONTRERAS,Palmas,2883,spatial_centroid
+LA MAGDALENA CONTRERAS,Plazuela Del Pedregal,580,exact_key
+LA MAGDALENA CONTRERAS,Potrerillo,3247,exact_key
+LA MAGDALENA CONTRERAS,Pueblo La Magdalena,3413,spatial_centroid
+LA MAGDALENA CONTRERAS,Pueblo Nuevo Alto,6311,exact_key
+LA MAGDALENA CONTRERAS,Pueblo Nuevo Bajo,3955,exact_key
+LA MAGDALENA CONTRERAS,Pueblo San Bernabe Ocotepec,12456,spatial_centroid
+LA MAGDALENA CONTRERAS,Pueblo San Nicolas Totolapan,13675,spatial_centroid
+LA MAGDALENA CONTRERAS,San Bartolo Ameyalco,4664,exact_key
+LA MAGDALENA CONTRERAS,San Francisco,3649,exact_key
+LA MAGDALENA CONTRERAS,San Jeronimo Aculco,23423,spatial_centroid
+LA MAGDALENA CONTRERAS,San Jeronimo Lidice,23423,spatial_centroid
+LA MAGDALENA CONTRERAS,San Jerónimo Lídice,23423,spatial_centroid
+LA MAGDALENA CONTRERAS,San Nicolás Totolapan,2937,exact_key
+LA MAGDALENA CONTRERAS,Santa Teresa,2336,exact_key
+LA MAGDALENA CONTRERAS,Tierra Unida,3769,exact_key
+LA MAGDALENA CONTRERAS,Vista Hermosa,1988,exact_key
+MIGUEL HIDALGO,10 De Abril,350,exact_key
+MIGUEL HIDALGO,16 De Septiembre,2315,exact_key
+MIGUEL HIDALGO,5 De Mayo,3593,exact_key
+MIGUEL HIDALGO,Agricultura,4475,exact_key
+MIGUEL HIDALGO,Ahuehuetes Anahuac,1917,exact_key
+MIGUEL HIDALGO,America,4900,exact_key
+MIGUEL HIDALGO,Ampliacion Daniel Garza,6258,spatial_centroid
+MIGUEL HIDALGO,Ampliacion Granada,17540,spatial_centroid
+MIGUEL HIDALGO,Ampliacion Popo,559,spatial_centroid
+MIGUEL HIDALGO,Ampliacion Torre Blanca,2588,spatial_centroid
+MIGUEL HIDALGO,Anahuac Ii Seccion,18835,spatial_centroid
+MIGUEL HIDALGO,Anahuac I Seccion,2533,spatial_centroid
+MIGUEL HIDALGO,Anzures,6029,exact_key
+MIGUEL HIDALGO,Argentina Antigua,7166,exact_key
+MIGUEL HIDALGO,Argentina Poniente,5681,spatial_centroid
+MIGUEL HIDALGO,Bosque De Chapultepec Iii Seccion,3348,spatial_centroid
+MIGUEL HIDALGO,Bosque De Chapultepec Ii Seccion,540,spatial_centroid
+MIGUEL HIDALGO,Bosque De Chapultepec I Seccion,3683,spatial_centroid
+MIGUEL HIDALGO,Bosque De Las Lomas,4308,spatial_centroid
+MIGUEL HIDALGO,Cuauhtemoc Pensil,13722,exact_key
+MIGUEL HIDALGO,Daniel Garza,5476,exact_key
+MIGUEL HIDALGO,Deportivo Pensil,2965,fuzzy_93
+MIGUEL HIDALGO,Dos Lagos,1321,spatial_centroid
+MIGUEL HIDALGO,Escandon Ii Seccion,8898,spatial_centroid
+MIGUEL HIDALGO,Escandon I Seccion,8209,spatial_centroid
+MIGUEL HIDALGO,Escandón I Sección,8209,spatial_centroid
+MIGUEL HIDALGO,Francisco I Madero,1461,exact_key
+MIGUEL HIDALGO,Granada,8788,exact_key
+MIGUEL HIDALGO,Huichapan,1824,exact_key
+MIGUEL HIDALGO,Ignacio Manuel Altamirano,1241,exact_key
+MIGUEL HIDALGO,Irrigacion,5265,exact_key
+MIGUEL HIDALGO,Lago Norte,1138,spatial_centroid
+MIGUEL HIDALGO,Lago Sur,1783,spatial_centroid
+MIGUEL HIDALGO,Legaria,6650,exact_key
+MIGUEL HIDALGO,Loma Hermosa,3662,spatial_centroid
+MIGUEL HIDALGO,Lomas Altas,1742,exact_key
+MIGUEL HIDALGO,Lomas De Bezares,3667,fuzzy_94
+MIGUEL HIDALGO,Lomas De Chapultepec Iii Seccion,5483,spatial_centroid
+MIGUEL HIDALGO,Lomas De Chapultepec Ii Seccion,3388,spatial_centroid
+MIGUEL HIDALGO,Lomas De Chapultepec I Seccion,1564,spatial_centroid
+MIGUEL HIDALGO,Lomas De Chapultepec I Sección,1564,spatial_centroid
+MIGUEL HIDALGO,Lomas De Chapultepec Iv Seccion,3348,spatial_centroid
+MIGUEL HIDALGO,Lomas De Chapultepec Viii Seccion,5093,spatial_centroid
+MIGUEL HIDALGO,Lomas De Chapultepec Vii Seccion,3348,spatial_centroid
+MIGUEL HIDALGO,Lomas De Chapultepec Vi Seccion,3388,spatial_centroid
+MIGUEL HIDALGO,Lomas De Chapultepec V Seccion,5483,spatial_centroid
+MIGUEL HIDALGO,Lomas De Reforma,2312,exact_key
+MIGUEL HIDALGO,Lomas De Sotelo,5970,exact_key
+MIGUEL HIDALGO,Los Manzanos,8795,spatial_centroid
+MIGUEL HIDALGO,Manuel Avila Camacho,44,exact_key
+MIGUEL HIDALGO,Mariano Escobedo,2533,spatial_centroid
+MIGUEL HIDALGO,Mexico Nuevo,4240,exact_key
+MIGUEL HIDALGO,Modelo Pensil,2466,exact_key
+MIGUEL HIDALGO,Molino Del Rey,540,exact_key
+MIGUEL HIDALGO,Nextitla,1713,exact_key
+MIGUEL HIDALGO,Observatorio,4142,exact_key
+MIGUEL HIDALGO,Panteon Civil De Dolores,3348,spatial_centroid
+MIGUEL HIDALGO,Pensil Norte,10151,exact_key
+MIGUEL HIDALGO,Pensil Sur,2828,exact_key
+MIGUEL HIDALGO,Peralitos,1368,spatial_centroid
+MIGUEL HIDALGO,Periodista,788,exact_key
+MIGUEL HIDALGO,Plutarco Elias Calles,1183,exact_key
+MIGUEL HIDALGO,Polanco Iii Seccion,6174,spatial_centroid
+MIGUEL HIDALGO,Polanco Ii Seccion,1247,spatial_centroid
+MIGUEL HIDALGO,Polanco I Seccion,4340,spatial_centroid
+MIGUEL HIDALGO,Polanco Iv Seccion,6174,spatial_centroid
+MIGUEL HIDALGO,Polanco V Seccion,7345,spatial_centroid
+MIGUEL HIDALGO,Popo,2020,exact_key
+MIGUEL HIDALGO,Popotla,9860,spatial_centroid
+MIGUEL HIDALGO,Real De Las Lomas,2312,spatial_centroid
+MIGUEL HIDALGO,Reforma Pensil,3689,exact_key
+MIGUEL HIDALGO,Reforma Social,6857,exact_key
+MIGUEL HIDALGO,Residencial Militar,5813,spatial_centroid
+MIGUEL HIDALGO,San Diego Ocoyoacac,5584,exact_key
+MIGUEL HIDALGO,San Joaquin,3545,exact_key
+MIGUEL HIDALGO,San Joaquín,3545,exact_key
+MIGUEL HIDALGO,San Juanico,6013,spatial_centroid
+MIGUEL HIDALGO,San Lorenzo Tlatenango,1898,fuzzy_97
+MIGUEL HIDALGO,San Miguel Chapultepec Ii Seccion,2936,spatial_centroid
+MIGUEL HIDALGO,San Miguel Chapultepec I Seccion,3917,spatial_centroid
+MIGUEL HIDALGO,Santo Tomas,531,exact_key
+MIGUEL HIDALGO,Tacuba,11676,exact_key
+MIGUEL HIDALGO,Tacubaya,9525,exact_key
+MIGUEL HIDALGO,Tlaxpana,8037,exact_key
+MIGUEL HIDALGO,Torre Blanca,6382,exact_key
+MIGUEL HIDALGO,Un Hogar Para Nosotros,772,exact_key
+MIGUEL HIDALGO,Ventura Perez De Alva,2856,fuzzy_95
+MIGUEL HIDALGO,Veronica Anzures,3109,exact_key
+MILPA ALTA,Barrio Centro,20355,spatial_centroid
+MILPA ALTA,Barrio Chalmita,20355,spatial_centroid
+MILPA ALTA,Barrio Cruztitla,32538,spatial_centroid
+MILPA ALTA,Barrio La Concepcion,22891,spatial_centroid
+MILPA ALTA,Barrio La Lupita Teticpac,12412,spatial_centroid
+MILPA ALTA,Barrio La Lupita Xolco,12412,spatial_centroid
+MILPA ALTA,Barrio La Luz,22891,spatial_centroid
+MILPA ALTA,Barrio Los Angeles,22891,spatial_centroid
+MILPA ALTA,Barrio Nochtla,14402,spatial_centroid
+MILPA ALTA,Barrio Ocotitla,14402,spatial_centroid
+MILPA ALTA,Barrio Panchimalco,14402,spatial_centroid
+MILPA ALTA,Barrio San Agustin,22891,spatial_centroid
+MILPA ALTA,Barrio San Jose,12412,spatial_centroid
+MILPA ALTA,Barrio San Juan,20355,spatial_centroid
+MILPA ALTA,Barrio San Marcos,12412,spatial_centroid
+MILPA ALTA,Barrio San Mateo,22891,spatial_centroid
+MILPA ALTA,Barrio San Miguel,20355,spatial_centroid
+MILPA ALTA,Barrio San Miguel Pueblo Santa Ana Tlacotenco,12412,spatial_centroid
+MILPA ALTA,Barrio Santa Cruz,22891,spatial_centroid
+MILPA ALTA,Barrio Santa Martha,22891,spatial_centroid
+MILPA ALTA,Barrio Tecaxtitla,32538,spatial_centroid
+MILPA ALTA,Barrio Tenantitla,32538,spatial_centroid
+MILPA ALTA,Barrio Tula,14402,spatial_centroid
+MILPA ALTA,Barrio Xaltipac,32538,spatial_centroid
+MILPA ALTA,Barrio Xochitepetl,32538,spatial_centroid
+MILPA ALTA,La Conchita,2534,spatial_centroid
+MILPA ALTA,Pueblo San Agustin Ohtenco,1595,spatial_centroid
+MILPA ALTA,Pueblo San Bartolome Xicomulco,5375,spatial_centroid
+MILPA ALTA,Pueblo San Francisco Tecoxpa,5866,spatial_centroid
+MILPA ALTA,Pueblo San Jeronimo Miacatlan,3778,spatial_centroid
+MILPA ALTA,Pueblo San Juan Tepenahuac,2513,spatial_centroid
+MILPA ALTA,Pueblo San Lorenzo Tlacoyucan,5414,spatial_centroid
+MILPA ALTA,Pueblo San Salvador Cuauhtenco,16837,spatial_centroid
+MILPA ALTA,San Bartolomé Xicomulco,5375,spatial_centroid
+MILPA ALTA,San Francisco Tecoxpa,5866,spatial_centroid
+MILPA ALTA,San Jerónimo Miacatlán,3778,spatial_centroid
+MILPA ALTA,San Juan Tepenahuac,2513,spatial_centroid
+MILPA ALTA,San Lorenzo Tlacoyucan,5414,spatial_centroid
+MILPA ALTA,Villa Milpa Alta Centro,22891,spatial_centroid
+TLAHUAC,Agricola Metropolitana,9385,exact_key
+TLAHUAC,Ampliacion Jose Lopez Portillo,17494,spatial_centroid
+TLAHUAC,Ampliacion La Conchita,6511,spatial_centroid
+TLAHUAC,Ampliación La Conchita,6511,spatial_centroid
+TLAHUAC,Ampliacion Los Olivos,8943,spatial_centroid
+TLAHUAC,Ampliacion Santa Catarina,1647,spatial_centroid
+TLAHUAC,Ampliación Santa Catarina,1647,spatial_centroid
+TLAHUAC,Ampliacion Selene,6081,spatial_centroid
+TLAHUAC,Ampliacion  Zapotitla,13549,spatial_centroid
+TLAHUAC,Barrio Guadalupe Sta Catarina Yec,6848,spatial_centroid
+TLAHUAC,Barrio La Asuncion,18336,spatial_centroid
+TLAHUAC,Barrio La Concepcion Pueblo San Juan Ixtayopan,10094,spatial_centroid
+TLAHUAC,Barrio La Guadalupe,1533,spatial_centroid
+TLAHUAC,Barrio La Guadalupe Pueblo San Pedro Tlahuac,18336,spatial_centroid
+TLAHUAC,Barrio La Magdalena,18336,spatial_centroid
+TLAHUAC,Barrio La Soledad Del Pueblo  San Juan Ixtayopan,10094,spatial_centroid
+TLAHUAC,Barrio Los Reyes,16265,spatial_centroid
+TLAHUAC,Barrio San Agustin,16265,spatial_centroid
+TLAHUAC,Barrio San Agustin Pueblo San Juan Ixtayopan,10094,spatial_centroid
+TLAHUAC,Barrio San Andres,18336,spatial_centroid
+TLAHUAC,Barrio San Bartolome,16265,spatial_centroid
+TLAHUAC,Barrio San Juan,18336,spatial_centroid
+TLAHUAC,Barrio San Mateo,18336,spatial_centroid
+TLAHUAC,Barrio San Miguel,16265,spatial_centroid
+TLAHUAC,Barrio San Miguel Pueblo San Pedro Tlahuac,18336,spatial_centroid
+TLAHUAC,Barrio Santa Ana,18336,spatial_centroid
+TLAHUAC,Barrio Santa Ana Centro,14299,spatial_centroid
+TLAHUAC,Barrio Santa Ana Norte,13549,spatial_centroid
+TLAHUAC,Barrio Santa Ana Poniente,14299,spatial_centroid
+TLAHUAC,Barrio Santa Ana Sur,11454,spatial_centroid
+TLAHUAC,Barrio Santa Cruz,16265,spatial_centroid
+TLAHUAC,Barrio Santiago,6848,spatial_centroid
+TLAHUAC,Barrio Santiago Centro Del Pueblo Santiago Zapotitlan,14299,spatial_centroid
+TLAHUAC,Barrio Santiago Norte Del Pueblo Santiago Zapotitlan,14299,spatial_centroid
+TLAHUAC,Barrio Santiago Sur,19875,spatial_centroid
+TLAHUAC,Chichilaula,1465,spatial_centroid
+TLAHUAC,Del Mar,15422,spatial_centroid
+TLAHUAC,El Rosario,3496,exact_key
+TLAHUAC,El Triangulo,4126,exact_key
+TLAHUAC,El Triangulo Del Pblo. De Sn. Fco. Tlaltenco,4126,spatial_centroid
+TLAHUAC,Francisco Villa,1532,exact_key
+TLAHUAC,Granjas Cabrera,2251,exact_key
+TLAHUAC,Guadalupe Tlaltenco,17494,spatial_centroid
+TLAHUAC,Jaime Torres Bodet,8309,exact_key
+TLAHUAC,Jardines Del Llano,2796,spatial_centroid
+TLAHUAC,La Asuncion,10094,spatial_centroid
+TLAHUAC,La Concepcion,6848,spatial_centroid
+TLAHUAC,La Conchita,6511,spatial_centroid
+TLAHUAC,La Conchita Zapotitlan,19875,spatial_centroid
+TLAHUAC,La Conchita Zapotitlán,19875,spatial_centroid
+TLAHUAC,La Draga,7148,exact_key
+TLAHUAC,La Estacion,10069,exact_key
+TLAHUAC,La Estación,10069,exact_key
+TLAHUAC,La Guadalupe,1533,spatial_centroid
+TLAHUAC,La Habana,4963,exact_key
+TLAHUAC,La Lupita,10094,spatial_centroid
+TLAHUAC,La Meza,1465,spatial_centroid
+TLAHUAC,La Nopalera,6441,exact_key
+TLAHUAC,Las Arboledas,11661,exact_key
+TLAHUAC,La Turba,2141,exact_key
+TLAHUAC,Lopez Portillo Del Pueblo San Francisco Tlaltenco,4714,spatial_centroid
+TLAHUAC,Los Olivos,8943,exact_key
+TLAHUAC,Los Reyes,16265,spatial_centroid
+TLAHUAC,Miguel Hidalgo,10472,exact_key
+TLAHUAC,Ojo De Agua,3128,exact_key
+TLAHUAC,Peña Alta,6511,exact_key
+TLAHUAC,Potrero Del Llano,2796,spatial_centroid
+TLAHUAC,Pueblo San Francisco Tlaltenco,17494,spatial_centroid
+TLAHUAC,Pueblo San Nicolas Tetelco,4565,spatial_centroid
+TLAHUAC,Pueblo Santa Catarina Yecahuizotl,1533,spatial_centroid
+TLAHUAC,Pueblo Tulyehualco,1712,spatial_centroid
+TLAHUAC,Quiahuatla,4432,exact_key
+TLAHUAC,San Agustin,16265,spatial_centroid
+TLAHUAC,San Andrés,18336,spatial_centroid
+TLAHUAC,San Francisco Tlaltenco,17494,spatial_centroid
+TLAHUAC,San Isidro,22570,spatial_centroid
+TLAHUAC,San Jose Tlahuac Del Pueblo San Pedro Tlahuac,8333,spatial_centroid
+TLAHUAC,San Juan,18336,spatial_centroid
+TLAHUAC,San Miguel,16265,spatial_centroid
+TLAHUAC,San Nicolás Tetelco,4565,spatial_centroid
+TLAHUAC,San Sebastian Del Pueblo San Pedro Tlahuac,22570,spatial_centroid
+TLAHUAC,Santa Ana,18336,spatial_centroid
+TLAHUAC,Santa Ana Sur,11454,spatial_centroid
+TLAHUAC,Santa Cecilia,6122,exact_key
+TLAHUAC,Santiago,6848,spatial_centroid
+TLAHUAC,Santiago Sur,19875,spatial_centroid
+TLAHUAC,Selene,8585,spatial_centroid
+TLAHUAC,Selene Del Pueblo San Francisco Tlaltenco,9055,spatial_centroid
+TLAHUAC,Tempiluli,3699,exact_key
+TLAHUAC,Teozoma,1533,exact_key
+TLAHUAC,Tepantitlamilco,393,exact_key
+TLAHUAC,Tierra Blanca,3466,exact_key
+TLAHUAC,Villa Centroamericana,6670,spatial_centroid
+TLAHUAC,Zacatenco,17494,spatial_centroid
+TLAHUAC,Zapotitla,13549,spatial_centroid
+TLALPAN,2 De Octubre,5780,exact_key
+TLALPAN,Ampliacion Fuentes Del Pedregal,4344,spatial_centroid
+TLALPAN,Ampliacion Isidro Fabela,6064,spatial_centroid
+TLALPAN,A M S A,695,spatial_centroid
+TLALPAN,Arboledas  Del Sur,5590,exact_key
+TLALPAN,Arenal De Guadalupe,2565,spatial_centroid
+TLALPAN,Arenal Tepepan,730,spatial_centroid
+TLALPAN,Barrio De Caramaguey,14008,spatial_centroid
+TLALPAN,Barrio Del Niño Jesus,1644,spatial_centroid
+TLALPAN,Barrio El Capulin,14008,spatial_centroid
+TLALPAN,Barrio El Truenito,7638,spatial_centroid
+TLALPAN,Barrio La Fama,1412,spatial_centroid
+TLALPAN,Barrio La Lonja,2841,exact_key
+TLALPAN,Barrio San Fernando,1084,spatial_centroid
+TLALPAN,Belisario Dominguez,875,exact_key
+TLALPAN,Belisario Dominguez Seccion Xvi,1279,spatial_centroid
+TLALPAN,Belvedere Ajusco,3858,spatial_centroid
+TLALPAN,Bosques Del Pedregal,5916,exact_key
+TLALPAN,Bosques De Tepeximilpa,2515,exact_key
+TLALPAN,Cantera Puente De Piedra,4820,exact_key
+TLALPAN,Chichicaspatl,2676,exact_key
+TLALPAN,Chimalli,894,fuzzy_93
+TLALPAN,Chimilli,1909,exact_key
+TLALPAN,Club De Golf Mexico,2846,spatial_centroid
+TLALPAN,Colinas Del Ajusco,8217,spatial_centroid
+TLALPAN,Colinas Del Bosque,3000,spatial_centroid
+TLALPAN,Comuneros De Santa Ursula,4820,spatial_centroid
+TLALPAN,Cruz Del Farol,4622,exact_key
+TLALPAN,Cuchilla De Padierna,3404,exact_key
+TLALPAN,Cultura Maya,3875,exact_key
+TLALPAN,Cumbres De Tepetongo,1865,spatial_centroid
+TLALPAN,Diamante,1251,exact_key
+TLALPAN,Divisadero,603,spatial_centroid
+TLALPAN,Dolores Tlali,1044,exact_key
+TLALPAN,Ejidos De San Pedro Martir,6646,spatial_centroid
+TLALPAN,El Cantil,15394,spatial_centroid
+TLALPAN,El Charco,16811,spatial_centroid
+TLALPAN,El Fresno,432,spatial_centroid
+TLALPAN,El Mirador 1a Seccion,1976,spatial_centroid
+TLALPAN,El Mirador 1a Sección,1976,spatial_centroid
+TLALPAN,El Mirador 2a Seccion,2316,spatial_centroid
+TLALPAN,El Mirador 2a Sección,2316,spatial_centroid
+TLALPAN,El Mirador 3a Seccion,2316,spatial_centroid
+TLALPAN,El Mirador 3a Sección,2316,spatial_centroid
+TLALPAN,Ex Hacienda Coapa,1199,spatial_centroid
+TLALPAN,Ex Hacienda San Juan De Dios,4508,exact_key
+TLALPAN,Floresta Coyoacan,3186,spatial_centroid
+TLALPAN,Fuentes Brotantes,6663,spatial_centroid
+TLALPAN,Fuentes Del Pedregal,4344,exact_key
+TLALPAN,Fuentes De Tepepan,6085,spatial_centroid
+TLALPAN,Granjas Coapa,4843,exact_key
+TLALPAN,Guadalupe,2240,spatial_centroid
+TLALPAN,Hacienda San Juan,2565,spatial_centroid
+TLALPAN,Heroes De 1910,1000,exact_key
+TLALPAN,Héroes De 1910,1000,exact_key
+TLALPAN,Heroes De Padierna,8217,fuzzy_94
+TLALPAN,Heroico Colegio Militar,5147,spatial_centroid
+TLALPAN,Isidro Fabela,6610,spatial_centroid
+TLALPAN,Jardines Del Ajusco,4091,exact_key
+TLALPAN,Jardines En La Montaña,4418,exact_key
+TLALPAN,Juventud Unida,982,exact_key
+TLALPAN,La Joya,2375,exact_key
+TLALPAN,La Magdalena Petlacalco,8397,spatial_centroid
+TLALPAN,La Palma,2614,exact_key
+TLALPAN,Las Tortolas,4501,spatial_centroid
+TLALPAN,Lomas De Cuilotepec,1975,exact_key
+TLALPAN,Lomas Del Pedregal,957,exact_key
+TLALPAN,Lomas Del Pedregal Framboyanes,7895,spatial_centroid
+TLALPAN,Lomas De Padierna,10328,fuzzy_94
+TLALPAN,Lomas De Padierna Sur,6110,spatial_centroid
+TLALPAN,Lomas Hidalgo,2364,exact_key
+TLALPAN,Los Encinos,2266,exact_key
+TLALPAN,Los Volcanes,4562,exact_key
+TLALPAN,Magisterial,2062,spatial_centroid
+TLALPAN,Magisterial Coapa,4843,spatial_centroid
+TLALPAN,Maria Esther Zuno De Echeverria,27347,spatial_centroid
+TLALPAN,María Esther Zuno De Echeverría,27347,spatial_centroid
+TLALPAN,Mesa De Los Hornos,10476,spatial_centroid
+TLALPAN,Miguel Hidalgo,14008,exact_key
+TLALPAN,Miguel Hidalgo 1a Seccion,16800,spatial_centroid
+TLALPAN,Miguel Hidalgo 2a Seccion,16800,spatial_centroid
+TLALPAN,Miguel Hidalgo 2a Sección,16800,spatial_centroid
+TLALPAN,Miguel Hidalgo 3a Seccion,17283,spatial_centroid
+TLALPAN,Miguel Hidalgo 3a Sección,17283,spatial_centroid
+TLALPAN,Miguel Hidalgo 4a Seccion,8756,spatial_centroid
+TLALPAN,Miguel Hidalgo 4a Sección,8756,spatial_centroid
+TLALPAN,Mirador Del Valle,2130,exact_key
+TLALPAN,Mirador I,1871,exact_key
+TLALPAN,Mirador Ii,4477,exact_key
+TLALPAN,Movimiento Organizado De Tlalpan,984,spatial_centroid
+TLALPAN,Narciso Mendoza,2980,spatial_centroid
+TLALPAN,Nueva Oriental Coapa,3524,spatial_centroid
+TLALPAN,Nuevo Renacimiento De Axalco,1097,exact_key
+TLALPAN,Paraje 38,3034,exact_key
+TLALPAN,Parque Del Pedregal,1916,fuzzy_97
+TLALPAN,Parque Nacional Bosque Del Pedregal,795,spatial_centroid
+TLALPAN,Parres El Guarda,3403,spatial_centroid
+TLALPAN,Pedregal De Las Aguilas,1991,exact_key
+TLALPAN,Pedregal De San Nicolas 1a Seccion,12130,fuzzy_93
+TLALPAN,Pedregal De San Nicolas 2a Seccion,8117,fuzzy_93
+TLALPAN,Pedregal De San Nicolas 3a Seccion,10553,fuzzy_93
+TLALPAN,Pedregal De San Nicolás 3a Sección,10553,fuzzy_93
+TLALPAN,Pedregal De San Nicolas 4a Seccion,10702,fuzzy_93
+TLALPAN,Pedregal De San Nicolás 4a Sección,10702,fuzzy_93
+TLALPAN,Pedregal De San Nicolas 5a Seccion,10702,spatial_centroid
+TLALPAN,Pedregal De Santa Ursula Xitla,5599,fuzzy_96
+TLALPAN,Peña Pobre,1084,spatial_centroid
+TLALPAN,Plan De Ayala,1386,exact_key
+TLALPAN,Popular Santa Teresa,7895,fuzzy_94
+TLALPAN,Prado Coapa 1a Seccion,1868,fuzzy_95
+TLALPAN,Prado Coapa 2a Seccion,1868,exact_key
+TLALPAN,Prado Coapa 3a Seccion,1868,fuzzy_95
+TLALPAN,Primavera,2768,spatial_centroid
+TLALPAN,Pueblo Chimalcoyotl,4633,spatial_centroid
+TLALPAN,Pueblo Jardines De San Juan,5960,spatial_centroid
+TLALPAN,Pueblo La Magdalena Petlacalco,8397,spatial_centroid
+TLALPAN,Pueblo Ocotla,28008,spatial_centroid
+TLALPAN,Pueblo Parres El Guarda,3403,spatial_centroid
+TLALPAN,Pueblo San Andres Totoltepec,27347,spatial_centroid
+TLALPAN,Pueblo San Lorenzo Huipulco,6935,spatial_centroid
+TLALPAN,Pueblo San Miguel Ajusco,16811,spatial_centroid
+TLALPAN,Pueblo San Miguel Topilejo,28008,spatial_centroid
+TLALPAN,Pueblo San Miguel Xicalco,15394,spatial_centroid
+TLALPAN,Pueblo San Pedro Martir,14088,spatial_centroid
+TLALPAN,Pueblo Santa Ursula Xitla,10248,spatial_centroid
+TLALPAN,Pueblo Santo Tomas Ajusco,17779,spatial_centroid
+TLALPAN,Rancho Los Colorines,571,spatial_centroid
+TLALPAN,Residencial Acoxpa,3524,spatial_centroid
+TLALPAN,Residencial Miramontes,1344,spatial_centroid
+TLALPAN,Residencial Villa Coapa,2163,spatial_centroid
+TLALPAN,Rinconada Coapa 1a Seccion,2062,spatial_centroid
+TLALPAN,Rinconada Coapa 2a Seccion,4843,spatial_centroid
+TLALPAN,Rinconada El Mirador,984,spatial_centroid
+TLALPAN,Rinconada Las Hadas,1645,spatial_centroid
+TLALPAN,Rincon Del Pedregal,4344,spatial_centroid
+TLALPAN,Roca De Cristal,435,exact_key
+TLALPAN,Romulo Sanchez Mireles,1084,spatial_centroid
+TLALPAN,San Andrés Totoltepec,27347,spatial_centroid
+TLALPAN,San Bartolo El Chico,1790,exact_key
+TLALPAN,San Buenaventura,2846,spatial_centroid
+TLALPAN,San Juan Tepeximilpa,2220,fuzzy_97
+TLALPAN,San Miguel Ajusco,16811,spatial_centroid
+TLALPAN,San Miguel Topilejo,28008,spatial_centroid
+TLALPAN,San Miguel Xicalco,15394,spatial_centroid
+TLALPAN,San Pedro Apostol,6064,spatial_centroid
+TLALPAN,San Pedro Mártir,14088,spatial_centroid
+TLALPAN,Santisima Trinidad,1507,exact_key
+TLALPAN,Santísima Trinidad,1507,exact_key
+TLALPAN,Santo Tomas Ajusco,17779,spatial_centroid
+TLALPAN,Tecorral,1605,exact_key
+TLALPAN,Tenorios,3159,spatial_centroid
+TLALPAN,Texcaltenco,10476,spatial_centroid
+TLALPAN,Tlalcoligia,7638,exact_key
+TLALPAN,Tlalmille,3060,exact_key
+TLALPAN,Tlalpan,9042,spatial_centroid
+TLALPAN,Tlalpan Centro,9042,exact_key
+TLALPAN,Tlalpuente,2062,spatial_centroid
+TLALPAN,Tlaxcaltenco La Mesa,10476,spatial_centroid
+TLALPAN,Toriello Guerra,6064,exact_key
+TLALPAN,Torres De Padierna,2273,exact_key
+TLALPAN,U.habit. Zapote 1,1409,spatial_centroid
+TLALPAN,Valle De Tepepan,2695,exact_key
+TLALPAN,Valle Escondido,3000,exact_key
+TLALPAN,Valle Verde,876,exact_key
+TLALPAN,Verano,1250,exact_key
+TLALPAN,Vergel Coapa,3186,spatial_centroid
+TLALPAN,Vergel De Coyoacan,2251,spatial_centroid
+TLALPAN,Vergel Del Sur,2251,spatial_centroid
+TLALPAN,Villa Coapa,3524,spatial_centroid
+TLALPAN,Villa Lazaro Cardenas,3859,exact_key
+TLALPAN,Villa Olimpica,1875,spatial_centroid
+TLALPAN,Villa Tlalpan,2099,spatial_centroid
+TLALPAN,Vistas Del Pedregal,2393,exact_key
+TLALPAN,Viveros Coatectlan,3974,spatial_centroid
+TLALPAN,Zacayucan Peña Pobre,795,spatial_centroid
+VENUSTIANO CARRANZA,10 De Mayo,1792,exact_key
+VENUSTIANO CARRANZA,1o De Mayo,2576,spatial_centroid
+VENUSTIANO CARRANZA,20 De Noviembre,12581,exact_key
+VENUSTIANO CARRANZA,24 De Abril,221,exact_key
+VENUSTIANO CARRANZA,4 Arboles,6027,spatial_centroid
+VENUSTIANO CARRANZA,4 Árboles,6027,spatial_centroid
+VENUSTIANO CARRANZA,5to Tramo 20 De Noviembre,7548,fuzzy_94
+VENUSTIANO CARRANZA,7 De Julio,1141,exact_key
+VENUSTIANO CARRANZA,Aaron Saenz,433,exact_key
+VENUSTIANO CARRANZA,Adolfo Lopez Mateos,7131,exact_key
+VENUSTIANO CARRANZA,Aeronautica Militar,2400,exact_key
+VENUSTIANO CARRANZA,Aeronáutica Militar,2400,exact_key
+VENUSTIANO CARRANZA,Alvaro Obregon,3109,exact_key
+VENUSTIANO CARRANZA,Ampliacion 20 De Noviembre,962,spatial_centroid
+VENUSTIANO CARRANZA,Ampliacion Aviacion Civil,1986,spatial_centroid
+VENUSTIANO CARRANZA,Ampliacion Caracol,4496,spatial_centroid
+VENUSTIANO CARRANZA,Ampliacion Michoacana,2319,spatial_centroid
+VENUSTIANO CARRANZA,Ampliacion Penitenciaria,7050,spatial_centroid
+VENUSTIANO CARRANZA,Ampliacion Simon Bolivar,6384,spatial_centroid
+VENUSTIANO CARRANZA,Ampliacion Venustiano Carranza,1934,spatial_centroid
+VENUSTIANO CARRANZA,Aquiles Serdan,8569,exact_key
+VENUSTIANO CARRANZA,Arenal 1a. Seccion,5125,spatial_centroid
+VENUSTIANO CARRANZA,Arenal 2a. Seccion,2045,spatial_centroid
+VENUSTIANO CARRANZA,Arenal 3a. Seccion,10857,spatial_centroid
+VENUSTIANO CARRANZA,Arenal 3a Sección,10857,spatial_centroid
+VENUSTIANO CARRANZA,Arenal 4a. Seccion,8675,spatial_centroid
+VENUSTIANO CARRANZA,Arenal 4a Sección,8675,spatial_centroid
+VENUSTIANO CARRANZA,Arenal Puerto Aereo,4781,spatial_centroid
+VENUSTIANO CARRANZA,Arpto Int De La Cd De Mex-Equipamiento,8675,spatial_centroid
+VENUSTIANO CARRANZA,Artes Graficas,10801,exact_key
+VENUSTIANO CARRANZA,Aviacion Civil,6027,exact_key
+VENUSTIANO CARRANZA,Azteca,1848,exact_key
+VENUSTIANO CARRANZA,Caracol,5053,exact_key
+VENUSTIANO CARRANZA,Cuchilla Pantitlan,8393,exact_key
+VENUSTIANO CARRANZA,Damian Carmona,2872,exact_key
+VENUSTIANO CARRANZA,Del Parque,2660,fuzzy_94
+VENUSTIANO CARRANZA,Emilio Carranza,4681,exact_key
+VENUSTIANO CARRANZA,Escuela De Tiro,1141,spatial_centroid
+VENUSTIANO CARRANZA,Federal,10801,exact_key
+VENUSTIANO CARRANZA,Felipe Angeles,2865,exact_key
+VENUSTIANO CARRANZA,General Ignacio Zaragoza,11066,spatial_centroid
+VENUSTIANO CARRANZA,Industrial Puerto Aereo,97,spatial_centroid
+VENUSTIANO CARRANZA,Jamaica,4440,exact_key
+VENUSTIANO CARRANZA,Janitzio,2459,exact_key
+VENUSTIANO CARRANZA,Jardin Balbuena,11775,fuzzy_93
+VENUSTIANO CARRANZA,Lorenzo Boturini,8247,exact_key
+VENUSTIANO CARRANZA,Magdalena Mixiuhca,4870,spatial_centroid
+VENUSTIANO CARRANZA,Merced Balbuena,4439,exact_key
+VENUSTIANO CARRANZA,Michoacana,946,exact_key
+VENUSTIANO CARRANZA,Miguel Hidalgo,339,exact_key
+VENUSTIANO CARRANZA,Moctezuma 1a Seccion,10771,exact_key
+VENUSTIANO CARRANZA,Moctezuma 2a. Seccion,12607,fuzzy_95
+VENUSTIANO CARRANZA,Morelos,18824,spatial_centroid
+VENUSTIANO CARRANZA,Nicolas Bravo,4237,exact_key
+VENUSTIANO CARRANZA,Penitenciaria,7050,spatial_centroid
+VENUSTIANO CARRANZA,Peñon De Los Baños,8675,exact_key
+VENUSTIANO CARRANZA,Pensador Mexicano,5176,fuzzy_94
+VENUSTIANO CARRANZA,Popular Rastro,6040,exact_key
+VENUSTIANO CARRANZA,Progresista,683,exact_key
+VENUSTIANO CARRANZA,Puebla,6485,exact_key
+VENUSTIANO CARRANZA,Pueblo De La Magdalena Mixiuhca,6965,spatial_centroid
+VENUSTIANO CARRANZA,Revolucion,6100,exact_key
+VENUSTIANO CARRANZA,Romero Rubio,11394,exact_key
+VENUSTIANO CARRANZA,Santa Cruz Aviacion,2306,exact_key
+VENUSTIANO CARRANZA,Sevilla,1717,exact_key
+VENUSTIANO CARRANZA,Simon Bolivar,6384,exact_key
+VENUSTIANO CARRANZA,Tres Mosqueteros,214,exact_key
+VENUSTIANO CARRANZA,Valentin Gomez Farias,5512,exact_key
+VENUSTIANO CARRANZA,Valentín Gómez Farias,5512,exact_key
+VENUSTIANO CARRANZA,Valle Gomez,10007,exact_key
+VENUSTIANO CARRANZA,Venustiano Carranza,3150,exact_key
+VENUSTIANO CARRANZA,Zona Centro,1883,spatial_centroid
+XOCHIMILCO,Ampliacion Nativitas,16013,spatial_centroid
+XOCHIMILCO,Ampliacion San Marcos Norte,17209,spatial_centroid
+XOCHIMILCO,Ampliacion Tepepan,7367,spatial_centroid
+XOCHIMILCO,Año De Juarez,18025,spatial_centroid
+XOCHIMILCO,Barrio 18,6173,exact_key
+XOCHIMILCO,Barrio 3 De Mayo,31758,spatial_centroid
+XOCHIMILCO,Barrio Ahualapa,25353,spatial_centroid
+XOCHIMILCO,Barrio Apatlaco,25353,spatial_centroid
+XOCHIMILCO,Barrio Belen,1213,spatial_centroid
+XOCHIMILCO,Barrio Calpulco,25353,spatial_centroid
+XOCHIMILCO,Barrio Caltongo,9088,spatial_centroid
+XOCHIMILCO,Barrio Calyequita,22570,spatial_centroid
+XOCHIMILCO,Barrio Chapultepec,15226,spatial_centroid
+XOCHIMILCO,Barrio Del Puente,25353,spatial_centroid
+XOCHIMILCO,Barrio El Calvario,15226,spatial_centroid
+XOCHIMILCO,Barrio El Rosario,625,spatial_centroid
+XOCHIMILCO,Barrio La Asuncion,31758,spatial_centroid
+XOCHIMILCO,Barrio La Asunción,31758,spatial_centroid
+XOCHIMILCO,Barrio La Candelaria,31758,spatial_centroid
+XOCHIMILCO,Barrio La Concepcion Tlacoapa,3141,spatial_centroid
+XOCHIMILCO,Barrio La Concepción Tlacoapa,3141,spatial_centroid
+XOCHIMILCO,Barrio La Gallera,25353,spatial_centroid
+XOCHIMILCO,Barrio La Guadalupana,15418,spatial_centroid
+XOCHIMILCO,Barrio La Guadalupita,6096,spatial_centroid
+XOCHIMILCO,Barrio La Planta,25353,spatial_centroid
+XOCHIMILCO,Barrio La Santisima,2245,spatial_centroid
+XOCHIMILCO,Barrio La Santísima,2245,spatial_centroid
+XOCHIMILCO,Barrio Las Cruces,25353,spatial_centroid
+XOCHIMILCO,Barrio Las Flores,1675,spatial_centroid
+XOCHIMILCO,Barrio Los Reyes,31758,spatial_centroid
+XOCHIMILCO,Barrio Niños Heroes,15418,spatial_centroid
+XOCHIMILCO,Barrio Pocitos,25353,spatial_centroid
+XOCHIMILCO,Barrio San Andres,31758,spatial_centroid
+XOCHIMILCO,Barrio San Andrés,31758,spatial_centroid
+XOCHIMILCO,Barrio San Antonio,31758,spatial_centroid
+XOCHIMILCO,Barrio San Cristobal,2418,spatial_centroid
+XOCHIMILCO,Barrio San Diego,1521,spatial_centroid
+XOCHIMILCO,Barrio San Esteban,2359,spatial_centroid
+XOCHIMILCO,Barrio San Jose Pueblo San Luis Tlaxialtemalco,7932,spatial_centroid
+XOCHIMILCO,Barrio San Juan,1692,spatial_centroid
+XOCHIMILCO,Barrio San Juan Minas,31758,spatial_centroid
+XOCHIMILCO,Barrio San Juan Moyotepec,31758,spatial_centroid
+XOCHIMILCO,Barrio San Juan Pueblo San Luis Tlaxialtemalco,15418,spatial_centroid
+XOCHIMILCO,Barrio San Lorenzo,4946,spatial_centroid
+XOCHIMILCO,Barrio San Marcos,3796,spatial_centroid
+XOCHIMILCO,Barrio San Pedro,2918,spatial_centroid
+XOCHIMILCO,Barrio Santa Crucita,382,spatial_centroid
+XOCHIMILCO,Barrio Tetitla,25353,spatial_centroid
+XOCHIMILCO,Barrio Tetitla Del Pueblo Santa Cruz Acalpixca,25353,spatial_centroid
+XOCHIMILCO,Barrio Xaltocan,10717,spatial_centroid
+XOCHIMILCO,Bosque Residencial Del Sur,2911,spatial_centroid
+XOCHIMILCO,Caltongo,9088,spatial_centroid
+XOCHIMILCO,Cerrillos Primera Seccion,1823,spatial_centroid
+XOCHIMILCO,Cerrillos Primera Sección,1823,spatial_centroid
+XOCHIMILCO,Cerrillos Segunda Seccion,6395,spatial_centroid
+XOCHIMILCO,Cerrillos Segunda Sección,6395,spatial_centroid
+XOCHIMILCO,Cerrillos Tercera Seccion,6183,spatial_centroid
+XOCHIMILCO,Cerrillos Tercera Sección,6183,spatial_centroid
+XOCHIMILCO,Cristo Rey,2323,exact_key
+XOCHIMILCO,Del Carmen,7932,fuzzy_94
+XOCHIMILCO,El Arenal,12700,nearest_fallback
+XOCHIMILCO,El Jazmin,18025,spatial_centroid
+XOCHIMILCO,El Mirador,6183,spatial_centroid
+XOCHIMILCO,El Sacrificio,6395,spatial_centroid
+XOCHIMILCO,Guadalupita,22570,spatial_centroid
+XOCHIMILCO,Huichapan,993,exact_key
+XOCHIMILCO,Jardines Del Sur,5022,exact_key
+XOCHIMILCO,La Cañada,699,exact_key
+XOCHIMILCO,La Concha,3531,exact_key
+XOCHIMILCO,La Noria,1241,exact_key
+XOCHIMILCO,Las Animas,22570,spatial_centroid
+XOCHIMILCO,Las Mesitas,6395,spatial_centroid
+XOCHIMILCO,Las Peritas,895,exact_key
+XOCHIMILCO,Lomas De Nativitas,18025,spatial_centroid
+XOCHIMILCO,Lomas De Tonalco,10180,spatial_centroid
+XOCHIMILCO,Los Reyes,31758,spatial_centroid
+XOCHIMILCO,Nativitas,2187,exact_key
+XOCHIMILCO,Paseos Del Sur,1567,exact_key
+XOCHIMILCO,Potrero San Bernardino,2329,fuzzy_93
+XOCHIMILCO,Pueblo Nativitas,2187,spatial_centroid
+XOCHIMILCO,Pueblo San Andres Ahuayucan,15226,spatial_centroid
+XOCHIMILCO,Pueblo San Francisco Tlalnepantla,8300,spatial_centroid
+XOCHIMILCO,Pueblo San Gregorio Atlapulco,31758,spatial_centroid
+XOCHIMILCO,Pueblo San Jose Zacatepec,17248,spatial_centroid
+XOCHIMILCO,Pueblo San Lorenzo Atemoaya,10180,spatial_centroid
+XOCHIMILCO,Pueblo San Lucas Xochimanca,12986,spatial_centroid
+XOCHIMILCO,Pueblo San Luis Tlaxialtemalco,15418,spatial_centroid
+XOCHIMILCO,Pueblo San Mateo Xalpa,12700,spatial_centroid
+XOCHIMILCO,Pueblo San Salvador Cuauhtenco,16837,spatial_centroid
+XOCHIMILCO,Pueblo Santa Cecilia Tepetlapa,13438,spatial_centroid
+XOCHIMILCO,Pueblo Santa Cruz Acalpixca,25353,spatial_centroid
+XOCHIMILCO,Pueblo Santa Cruz Xochitepec,14451,spatial_centroid
+XOCHIMILCO,Pueblo Santa Maria Nativitas,18025,spatial_centroid
+XOCHIMILCO,Pueblo Santa Maria Tepepan,14016,spatial_centroid
+XOCHIMILCO,Pueblo Santiago Tepalcatlalpan,17248,spatial_centroid
+XOCHIMILCO,Pueblo Santiago Tepalcatlalpan U H Rcda Del Sur,1616,spatial_centroid
+XOCHIMILCO,Quirino Mendoza,22570,spatial_centroid
+XOCHIMILCO,Rancho Tejomulco,18025,spatial_centroid
+XOCHIMILCO,Rinconada Coapa,10873,spatial_centroid
+XOCHIMILCO,Rosario Tlali,15226,spatial_centroid
+XOCHIMILCO,San Andrés Ahuayucan,15226,spatial_centroid
+XOCHIMILCO,San Bartolo El Chico,440,exact_key
+XOCHIMILCO,San Felipe,22570,spatial_centroid
+XOCHIMILCO,San Francisco Tlalnepantla,8300,spatial_centroid
+XOCHIMILCO,San Gregorio Atlapulco,31758,spatial_centroid
+XOCHIMILCO,San Isidro,22570,spatial_centroid
+XOCHIMILCO,San Jeronimo,18025,spatial_centroid
+XOCHIMILCO,San Juan Tepepan,3290,exact_key
+XOCHIMILCO,San Lorenzo Atemoaya,10180,spatial_centroid
+XOCHIMILCO,San Lorenzo La Cebada,10873,fuzzy_95
+XOCHIMILCO,San Lucas Oriente,12986,spatial_centroid
+XOCHIMILCO,San Lucas Xochimanca,12986,spatial_centroid
+XOCHIMILCO,San Marcos Norte,17209,spatial_centroid
+XOCHIMILCO,San Mateo Xalpa,12700,spatial_centroid
+XOCHIMILCO,Santa  Cecilia Tepetlapa,13438,spatial_centroid
+XOCHIMILCO,Santa Cecilia Tepetlapa,13438,spatial_centroid
+XOCHIMILCO,Santa Cruz Chavarrieta,2393,exact_key
+XOCHIMILCO,Santa Cruz De Guadalupe,6358,spatial_centroid
+XOCHIMILCO,Santa Cruz Xochitepec,14451,spatial_centroid
+XOCHIMILCO,Santa Ines,1936,exact_key
+XOCHIMILCO,Santa María Tepepan,14016,spatial_centroid
+XOCHIMILCO,Santiago Tepalcatlalpan,17248,spatial_centroid
+XOCHIMILCO,Santiaguito,22570,spatial_centroid
+XOCHIMILCO,Tablas De San Lorenzo,10180,spatial_centroid
+XOCHIMILCO,Tepepan,7367,spatial_centroid
+XOCHIMILCO,Texmic,465,spatial_centroid
+XOCHIMILCO,Tierra Nueva,1804,exact_key
+XOCHIMILCO,Valle De Santa Maria,10180,spatial_centroid
+XOCHIMILCO,Xochipilli,18025,spatial_centroid
