@@ -276,6 +276,7 @@ function setupRateModeToggle() {
         State.rateMode = e.target.checked;
         renderKPIs();
         renderKPITable();
+        renderChart();
     });
 }
 
@@ -295,7 +296,7 @@ function getActivePopulation() {
 function formatMetricValue(value, population) {
     if (!State.rateMode) return Math.round(value).toLocaleString('es-MX');
     if (!population || population <= 0) return 'N/A';
-    return ((value / population) * 100000).toFixed(1);
+    return ((value / population) * 10000).toFixed(1);
 }
 
 // ==========================================
@@ -1108,6 +1109,10 @@ function renderChart() {
         catTotals[r.macro_cat][q] = (catTotals[r.macro_cat][q] || 0) + total;
     });
 
+    const pop = getActivePopulation();
+    const isRate = State.rateMode && pop > 0;
+    const factor = isRate ? (10000 / pop) : 1;
+
     // 3. Build Datasets
     const datasets = [];
     
@@ -1115,7 +1120,7 @@ function renderChart() {
     if (State.activeCategories.size !== 1) {
         datasets.push({
             label: 'Total General',
-            data: allQs.map(q => qTotals[q] || 0),
+            data: allQs.map(q => (qTotals[q] || 0) * factor),
             borderColor: '#f8fafc',
             borderWidth: 3,
             backgroundColor: 'transparent',
@@ -1128,7 +1133,7 @@ function renderChart() {
         if(State.activeCategories.has(id)) {
             datasets.push({
                 label: catInfo.label,
-                data: allQs.map(q => catTotals[id][q] || 0),
+                data: allQs.map(q => (catTotals[id][q] || 0) * factor),
                 borderColor: catInfo.color,
                 borderWidth: 2,
                 backgroundColor: catInfo.color,
@@ -1141,6 +1146,16 @@ function renderChart() {
 
     UI.chart.data.labels = allQs;
     UI.chart.data.datasets = datasets;
+    
+    // Add Y axis label indicating if it's a rate or absolute number
+    if (UI.chart.options.scales && UI.chart.options.scales.y) {
+        UI.chart.options.scales.y.title = {
+            display: true,
+            text: isRate ? 'Tasa por 10k hab.' : 'Número de delitos',
+            color: 'rgba(255,255,255,0.6)',
+            font: { size: 11, family: 'Inter' }
+        };
+    }
     
     // Attempt to add a vertical line plugin for the selected quarter
     // Easiest is just ensuring points render.

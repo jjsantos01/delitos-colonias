@@ -42,14 +42,6 @@ def normalize(txt: str) -> str:
     return txt
 
 
-def find_col(df: pd.DataFrame, candidates: list[str]) -> str:
-    nmap = {normalize(c): c for c in df.columns}
-    for c in candidates:
-        if normalize(c) in nmap:
-            return nmap[normalize(c)]
-    raise RuntimeError(f"No se encontró columna entre candidatos: {candidates}")
-
-
 resp = requests.get(SRC_URL, timeout=120)
 resp.raise_for_status()
 zf = zipfile.ZipFile(io.BytesIO(resp.content))
@@ -58,15 +50,11 @@ extract_dir = ROOT / "tmp" / "colonias_iecm_2022"
 extract_dir.mkdir(parents=True, exist_ok=True)
 zf.extractall(extract_dir)
 
-iecm = gpd.read_file(extract_dir / Path(shp_name).name)
+iecm = gpd.read_file(extract_dir / shp_name)
 geojson = json.loads((ROOT / "colonias_geo.json").read_text(encoding="utf-8"))
 geo = gpd.GeoDataFrame.from_features(geojson["features"], crs="EPSG:4326")
 
-alc_col = find_col(iecm, ["ALCALDIA", "DEMARCACION", "NOM_MUN", "ALC"])
-col_col = find_col(iecm, ["COLONIA", "NOMBRE", "NOM_COL", "COL"])
-pop_col = find_col(iecm, ["POB_TOTAL", "POBTOT", "POB2020", "POB_2020", "POBLACION", "TOTAL"])
-
-iecm = iecm[[alc_col, col_col, pop_col, "geometry"]].copy()
+iecm = iecm[["DEMARCACIO", "UT", "POBL", "geometry"]].copy()
 iecm.columns = ["alcaldia", "colonia", "poblacion", "geometry"]
 iecm["poblacion"] = pd.to_numeric(iecm["poblacion"], errors="coerce").fillna(0).astype(int)
 iecm["norm_key"] = iecm["alcaldia"].map(normalize) + "||" + iecm["colonia"].map(normalize)
@@ -99,22 +87,26 @@ for idx, row in geo[geo["matched_pop"].isna()].iterrows():
         geo.at[idx, "matched_pop"] = int(best.poblacion)
         geo.at[idx, "match_type"] = f"fuzzy_{int(score * 100)}"
 
+# Proyección a CRS métrico (UTM 14N para CDMX) para cálculos espaciales precisos
+PROJECTED_CRS = "EPSG:32614"
+geo_proj = geo.to_crs(PROJECTED_CRS)
+iecm_proj = iecm.to_crs(PROJECTED_CRS)
+
 # 3) centroid->polygon spatial
-unmatched = geo[geo["matched_pop"].isna()].copy()
-if not unmatched.empty:
-    iecm_poly = iecm.to_crs(geo.crs)
-    unmatched["geometry"] = unmatched.geometry.centroid
-    sj = gpd.sjoin(unmatched, iecm_poly[["poblacion", "geometry"]], how="left", predicate="within")
+unmatched_proj = geo_proj[geo["matched_pop"].isna()].copy()
+if not unmatched_proj.empty:
+    unmatched_proj["geometry"] = unmatched_proj.geometry.centroid
+    sj = gpd.sjoin(unmatched_proj, iecm_proj[["poblacion", "geometry"]], how="left", predicate="within")
     for idx, r in sj.dropna(subset=["poblacion"]).iterrows():
         geo.at[idx, "matched_pop"] = int(r["poblacion"])
         geo.at[idx, "match_type"] = "spatial_centroid"
 
 # 4) nearest fallback in same alcaldia
-for idx, row in geo[geo["matched_pop"].isna()].iterrows():
+for idx, row in geo_proj[geo["matched_pop"].isna()].iterrows():
     alc = normalize(row["alcaldia"])
-    pool = iecm[iecm["alcaldia"].map(normalize) == alc]
+    pool = iecm_proj[iecm_proj["alcaldia"].map(normalize) == alc]
     if pool.empty:
-        pool = iecm
+        pool = iecm_proj
     d = pool.geometry.distance(row.geometry.centroid)
     j = d.idxmin()
     geo.at[idx, "matched_pop"] = int(pool.loc[j, "poblacion"])

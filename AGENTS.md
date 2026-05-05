@@ -89,3 +89,9 @@ Solo se realiza si hay un cambio mayor en el trazado de las colonias de CDMX (ra
    ```bash
    uv run scripts/compute_neighbors.py
    ```
+
+4. **Población por Colonia (`colonia_population.json`)**
+   Cruza el archivo `colonias_geo.json` con el Shapefile de población del IECM (2022) usando métodos de similitud de texto y emparejamiento espacial para asignar población a cada colonia.
+   ```bash
+   uv run scripts/build_colonia_population.py
+   ```
